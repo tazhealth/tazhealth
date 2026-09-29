@@ -4,11 +4,10 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react';
+import { MenuIcon, XIcon } from 'lucide-react';
 import { Logo } from './Logo';
 import { OutreachBanner } from './OutreachBanner';
 import { ButtonLink } from '../ui/ButtonLink';
-import { EcgLine } from '../ui/EcgLine';
 import { WhatsAppIcon } from '../ui/SocialIcon';
 import { navLinks, site } from '../../data/site';
 import { cn } from '../../utils/cn';
@@ -109,75 +108,75 @@ export function Navbar() {
 
       <AnimatePresence>
         {open &&
-        <>
-            <motion.div
-            key="backdrop"
-            className="fixed inset-0 z-[60] bg-ink/40 lg:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={() => setOpen(false)} />
-
-            <motion.aside
-            key="panel"
-            role="dialog"
-            aria-modal="true"
-            aria-label="Menu"
-            className="fixed inset-y-0 right-0 z-[70] flex w-[88%] max-w-sm flex-col overflow-y-auto bg-white lg:hidden"
-            initial={{ x: '100%' }}
-            animate={{ x: 0 }}
-            exit={{ x: '100%' }}
-            transition={{ duration: 0.3, ease: EASE }}>
-
-              <div className="flex h-[72px] items-center justify-between px-5">
+        <motion.aside
+          key="panel"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Menu"
+          className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-white lg:hidden"
+          initial={{ opacity: 0, y: -12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -12 }}
+          transition={{ duration: 0.25, ease: EASE }}>
+          
+            <div className="flex h-[72px] shrink-0 items-center justify-between px-5 sm:px-8">
+              <Link href="/" aria-label="TAZhealth home" onClick={() => setOpen(false)}>
                 <Logo />
-                <button
-                type="button"
-                onClick={() => setOpen(false)}
-                aria-label="Close menu"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-mint text-forest">
+              </Link>
+              <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full text-ink ring-1 ring-ink/10 transition-colors hover:bg-ink/5">
+              
+                <XIcon className="h-5 w-5" />
+              </button>
+            </div>
 
-                  <XIcon className="h-5 w-5" />
-                </button>
-              </div>
-              <nav aria-label="Mobile" className="px-3 pt-2">
-                <ul>
-                  {navLinks.map((link, i) => {
-                    const isActive = isLinkActive(pathname, link.to);
-                    return (
-                      <motion.li
-                        key={link.to}
-                        initial={{ opacity: 0, x: 16 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, ease: EASE, delay: 0.05 + i * 0.04 }}>
+            <nav aria-label="Mobile" className="px-5 pt-6 sm:px-8">
+              <ul className="border-t border-ink/10">
+                {navLinks.map((link, i) => {
+                const isActive = isLinkActive(pathname, link.to);
+                return (
+                  <motion.li
+                    key={link.to}
+                    className="border-b border-ink/10"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3, ease: EASE, delay: 0.04 + i * 0.04 }}>
+                    
+                      <Link
+                      href={link.to}
+                      aria-current={isActive ? 'page' : undefined}
+                      className={cn(
+                        'flex items-center justify-between py-4 text-[28px] font-medium tracking-[-0.02em] transition-colors',
+                        isActive ? 'text-forest' : 'text-ink hover:text-forest'
+                      )}>
+                      
+                        {link.label}
+                        {isActive && <span className="h-2 w-2 rounded-full bg-leaf" aria-hidden="true" />}
+                      </Link>
+                    </motion.li>);
 
-                        <Link
-                          href={link.to}
-                          className={cn(
-                            'flex items-center justify-between rounded-2xl px-4 py-4 text-xl font-medium',
-                            isActive ? 'bg-mint text-forest' : 'text-ink'
-                          )}>
+              })}
+              </ul>
+            </nav>
 
-                          {link.label}
-                          <ArrowRightIcon className="h-5 w-5 text-leaf" />
-                        </Link>
-                      </motion.li>
-                    );
-                  })}
-                </ul>
-              </nav>
-              <div className="mt-auto space-y-3 px-5 pb-8 pt-6">
-                <EcgLine className="mb-4 h-8" />
-                <ButtonLink to="/partner" size="lg" className="w-full">
+            <div className="mt-auto px-5 pb-8 pt-10 sm:px-8">
+              <div className="grid grid-cols-2 gap-2.5">
+                <ButtonLink to="/partner" className="w-full">
                   Partner with us
                 </ButtonLink>
-                <ButtonLink href={site.whatsapp} external variant="secondary" size="lg" className="w-full">
-                  <WhatsAppIcon className="h-5 w-5" /> Chat on WhatsApp
+                <ButtonLink href={site.whatsapp} external variant="secondary" className="w-full">
+                  <WhatsAppIcon className="h-4 w-4" /> WhatsApp
                 </ButtonLink>
               </div>
-            </motion.aside>
-          </>
+              <p className="mt-5 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm text-ink/50">
+                <a href={`mailto:${site.email}`} className="hover:text-forest">{site.email}</a>
+                <a href={site.phoneHref} className="hover:text-forest">{site.phone}</a>
+              </p>
+            </div>
+          </motion.aside>
         }
       </AnimatePresence>
     </>);

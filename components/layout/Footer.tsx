@@ -1,5 +1,7 @@
+'use client';
+
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRightIcon, CheckIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
 import { Logo } from './Logo';
 import { EcgLine } from '../ui/EcgLine';

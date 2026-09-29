@@ -51,7 +51,7 @@ export const getInvolvedFaqs: Faq[] = [
 export const aboutFaqs: Faq[] = [
 {
   q: 'What does TAZhealth actually do?',
-  a: 'We run free medical outreaches in underserved Nigerian communities: screening, consultations, medicine and referrals. Then we keep following up with every person we met, by SMS, phone calls and tracked referrals.'
+  a: 'We are a nonprofit public health initiative expanding healthcare access in underserved Nigerian communities. Our medical outreaches deliver essential services such as screening, consultations and medication alongside health education, and our advocacy works for systemic changes that reduce disparities in healthcare access.'
 },
 {
   q: 'Where do you run outreaches?',

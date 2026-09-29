@@ -2,7 +2,8 @@ export type SocialKey = 'instagram' | 'x' | 'linkedin' | 'facebook';
 
 export const site = {
   name: 'TAZhealth',
-  mission: 'Bringing continuous care to underserved Nigerian communities - long after the outreach tent comes down.',
+  mission:
+  'To improve health outcomes by ensuring equitable healthcare access and equipping individuals with the resources and knowledge needed to make informed health decisions.',
   email: 'hello@tazhealth.org',
   phone: '+234 800 000 0000',
   phoneHref: 'tel:+2348000000000',

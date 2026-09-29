@@ -7,6 +7,11 @@ import { team } from '@/data/people';
 import { aboutFaqs } from '@/data/faqs';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 
+const values = [
+{ title: 'Equity', text: 'Closing the healthcare access gap.' },
+{ title: 'Community', text: 'Solutions built with the people.' },
+{ title: 'Impact', text: 'Change that truly improves health.' }];
+
 const letter = [
 '“Our first outreach was one morning at an orphanage in Abeokuta: twenty malaria tests, a health talk and a pile of mosquito nets.”',
 'TAZhealth began with a borrowed canopy, a few young doctors and a table of donated drugs. When we called to follow up, most phones rang out. Prescriptions hadn’t been filled. Referrals hadn’t happened.',
@@ -28,8 +33,8 @@ export default function About() {
               We’re the people who <span className="text-leaf">come back.</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/65">
-              TAZhealth is a small Nigerian nonprofit. We run free medical outreaches, and then we keep checking on
-              the people we met.
+              We are a nonprofit public health initiative expanding healthcare access in underserved Nigerian
+              communities through medical outreach and advocacy for systemic change.
             </p>
           </Reveal>
         </div>
@@ -65,22 +70,49 @@ export default function About() {
         </div>
       </section>
 
-      {/* Why and hope */}
+      {/* Mission and vision */}
       <section className="bg-forest py-20 text-white lg:py-24">
         <div className="mx-auto grid max-w-5xl gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16">
           <Reveal>
-            <p className="text-sm font-medium text-white/60">Why we exist</p>
+            <p className="text-sm font-medium text-white/60">Our mission</p>
             <p className="mt-4 text-xl leading-snug sm:text-2xl">
-              To bring good care to underserved Nigerian communities, and make sure it keeps going after the outreach
-              ends.
+              To improve health outcomes by ensuring equitable healthcare access and equipping individuals with the
+              resources and knowledge needed to make informed health decisions.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-sm font-medium text-white/60">What we hope for</p>
+            <p className="text-sm font-medium text-white/60">Our vision</p>
             <p className="mt-4 text-xl leading-snug sm:text-2xl">
-              A Nigeria where nobody is forgotten after their first diagnosis.
+              To create a healthier society by driving impactful public health initiatives and ensuring equitable
+              healthcare access, especially for those facing barriers to care.
             </p>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Who we are and core values */}
+      <section className="bg-white py-20 lg:py-28" aria-labelledby="values-title">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <Reveal className="mx-auto max-w-2xl text-center">
+            <h2 id="values-title" className="text-2xl font-semibold text-ink sm:text-3xl">
+              Who we are
+            </h2>
+            <p className="mt-4 text-[16px] leading-relaxed text-ink/65 sm:text-lg">
+              Through medical outreach programs, we deliver essential healthcare services while integrating health
+              education to empower people to prioritize their health. Alongside this, our advocacy efforts aim to drive
+              systemic changes that reduce disparities in healthcare access.
+            </p>
+          </Reveal>
+          <p className="mt-14 text-center text-sm font-medium text-leaf">Our core values</p>
+          <RevealGroup as="ul" className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
+            {values.map((v, i) =>
+            <RevealItem as="li" key={v.title} className="rounded-2xl bg-mint p-6 sm:p-7">
+                <p className="font-mono text-xs text-forest/60">0{i + 1}</p>
+                <h3 className="mt-3 text-xl font-semibold text-forest">{v.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{v.text}</p>
+              </RevealItem>
+            )}
+          </RevealGroup>
         </div>
       </section>
 

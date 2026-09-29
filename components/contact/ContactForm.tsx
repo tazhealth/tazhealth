@@ -5,11 +5,19 @@ import { useSearchParams } from 'next/navigation';
 import { TextAreaField, TextField } from '../forms/Field';
 import { SubmitButton } from '../forms/FormPanel';
 import { FormSuccess } from '../forms/FormSuccess';
+import { upcomingOutreaches } from '../../data/outreaches';
 import { isEmail, useSimpleForm } from '../../hooks/useSimpleForm';
 
 export function ContactForm() {
-  const topic = useSearchParams().get('topic');
-  const prefill = topic === 'partner' ? 'Hi TAZhealth, I’d like to talk about partnering with you. Our organisation is ' : '';
+  const params = useSearchParams();
+  const topic = params.get('topic');
+  const outreach = upcomingOutreaches.find((u) => u.id === params.get('outreach'));
+  const prefill =
+  topic === 'partner' ? 'Hi TAZhealth, I’d like to talk about partnering with you. Our organisation is ' :
+  topic === 'volunteer' ?
+  `Hi TAZhealth, I’d like to volunteer${outreach ? ` at the ${outreach.community} outreach on ${outreach.weekday} ${outreach.day} ${outreach.month}` : ''}. My background is ` :
+  topic === 'donate' ? 'Hi TAZhealth, I’d like to support your work with a donation. ' :
+  '';
   const { values, errors, status, setField, handleSubmit, reset } = useSimpleForm(
     { cName: '', cEmail: '', cMessage: prefill },
     (v) => ({

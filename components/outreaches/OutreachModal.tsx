@@ -137,7 +137,7 @@ export function OutreachModal({ outreach, onClose }: OutreachModalProps) {
                         {next.month}
                         <span className="block text-sm text-ink/50">{next.volunteersNeeded} volunteers needed</span>
                       </p>
-                      <ButtonLink to={`/get-involved?outreach=${next.id}#volunteer`} onClick={onClose} className="h-10 px-5">
+                      <ButtonLink to={`/contact?topic=volunteer&outreach=${next.id}`} onClick={onClose} className="h-10 px-5">
                         Volunteer
                       </ButtonLink>
                     </div>

@@ -141,7 +141,7 @@ export default function About() {
               Anything else you want to know? Message us and a real person will reply.
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
-              <ButtonLink to="/get-involved#volunteer">Volunteer with us</ButtonLink>
+              <ButtonLink to="/contact?topic=volunteer">Volunteer with us</ButtonLink>
               <ButtonLink to="/contact" variant="secondary">Contact us</ButtonLink>
             </div>
           </div>

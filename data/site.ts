@@ -15,8 +15,8 @@ export const navLinks = [
 { label: 'Home', to: '/' },
 { label: 'About', to: '/about' },
 { label: 'Outreaches', to: '/outreaches' },
-{ label: 'TAZ AI', to: '/taz-ai' },
-{ label: 'Get Involved', to: '/get-involved' },
+// { label: 'TAZ AI', to: '/taz-ai' }, // moving to its own site
+{ label: 'Partner', to: '/partner' },
 { label: 'Contact', to: '/contact' }];
 
 

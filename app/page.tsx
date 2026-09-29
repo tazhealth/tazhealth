@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { HomeHero } from '@/components/home/HomeHero';
-import { TazAiShowcase } from '@/components/home/TazAiShowcase';
+// TAZ AI moving to its own site; re-enable when ready.
+// import { TazAiShowcase } from '@/components/home/TazAiShowcase';
 import { PartnersStrip } from '@/components/home/PartnersStrip';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { CountUp } from '@/components/ui/CountUp';
@@ -116,7 +117,7 @@ export default function Home() {
         </div>
       </section>
 
-      <TazAiShowcase />
+      {/* <TazAiShowcase /> */}
 
       {/* Gallery */}
       <section className="bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="gallery-title">

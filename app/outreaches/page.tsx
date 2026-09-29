@@ -2,7 +2,7 @@
 
 import { useCallback, useState } from 'react';
 import Link from 'next/link';
-import { ArrowRightIcon, ArrowUpRightIcon } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { WhatsAppIcon } from '@/components/ui/SocialIcon';
 import { OutreachModal } from '@/components/outreaches/OutreachModal';
@@ -21,7 +21,7 @@ const day = [
 { when: 'The weeks after', title: 'Follow-up', text: 'SMS check-ins and calls start the next morning, until care actually happens.' }];
 
 
-const volunteerHref = (id: string) => `/get-involved?outreach=${id}#volunteer`;
+const volunteerHref = (id: string) => `/contact?topic=volunteer&outreach=${id}`;
 
 function SectionHead({ index, title, aside }: {index: string;title: string;aside?: string;}) {
   return (
@@ -169,9 +169,10 @@ export default function Outreaches() {
             )}
           </ol>
 
+          {/* TAZ AI moving to its own site.
           <Link href="/taz-ai" className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-leaf hover:text-forest">
             How follow-up works on TAZ AI <ArrowUpRightIcon className="h-4 w-4" />
-          </Link>
+          </Link> */}
         </div>
       </section>
 

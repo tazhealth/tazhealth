@@ -6,6 +6,7 @@ import { ArrowRightIcon, ArrowUpRightIcon } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { WhatsAppIcon } from '@/components/ui/SocialIcon';
 import { OutreachModal } from '@/components/outreaches/OutreachModal';
+import { OutreachStack } from '@/components/outreaches/OutreachStack';
 import { images } from '@/data/images';
 import { pastOutreaches, upcomingOutreaches } from '@/data/outreaches';
 import { fieldStories } from '@/data/people';
@@ -143,68 +144,7 @@ export default function Outreaches() {
             aside="Every outreach we’ve run, newest first. What we did, who we reached, and what happened after." />
 
 
-          <ol className="mt-8 space-y-5 pb-4 sm:mt-16 sm:space-y-20 sm:pb-0 lg:space-y-28">
-            {pastOutreaches.map((o, i) =>
-            <li
-              key={o.id}
-              style={{ top: `${84 + i * 10}px` }}
-              className="grid gap-4 rounded-2xl bg-white p-4 shadow-[0_-10px_30px_-18px_rgba(16,24,16,0.35)] ring-1 ring-ink/10 max-sm:sticky sm:gap-5 sm:rounded-none sm:p-0 sm:shadow-none sm:ring-0 lg:grid-cols-12 lg:gap-10">
-                <div className="lg:col-span-3">
-                  <div className="flex gap-3 text-xs text-ink/50 sm:text-sm lg:sticky lg:top-28 lg:block">
-                    <p className="tabular-nums">{o.date}</p>
-                    <p className="lg:mt-1">{o.state}</p>
-                  </div>
-                </div>
-
-                <div className="lg:col-span-9">
-                  <h3 className="text-xl font-medium tracking-[-0.02em] text-ink sm:text-3xl">{o.community}</h3>
-                  <p className="mt-1.5 line-clamp-2 max-w-2xl text-sm leading-relaxed text-ink/60 sm:mt-3 sm:line-clamp-none sm:text-lg">{o.summary}</p>
-
-                  <button
-                  type="button"
-                  onClick={() => setSelected(o)}
-                  aria-label={`Read the full story of the ${o.community} outreach`}
-                  className="group mt-4 block w-full overflow-hidden rounded-lg sm:mt-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-4">
-
-                    <img
-                    src={o.image}
-                    alt=""
-                    loading="lazy"
-                    className="aspect-[16/10] w-full object-cover sm:aspect-[2/1] transition-transform duration-500 ease-smooth group-hover:scale-[1.02]" />
-
-                  </button>
-
-                  <dl className="mt-4 grid grid-cols-2 gap-y-4 border-t border-ink/10 pt-4 sm:mt-6 sm:grid-cols-4 sm:gap-y-5 sm:pt-5">
-                    <div>
-                      <dt className="text-xs text-ink/45">People reached</dt>
-                      <dd className="mt-0.5 text-lg font-medium tabular-nums text-ink sm:mt-1 sm:text-xl">{o.peopleReached}</dd>
-                    </div>
-                    <div>
-                      <dt className="text-xs text-ink/45">Referrals</dt>
-                      <dd className="mt-0.5 text-lg font-medium tabular-nums text-ink sm:mt-1 sm:text-xl">{o.referrals}</dd>
-                    </div>
-                    <div className="col-span-2 hidden sm:block">
-                      <dt className="text-xs text-ink/45">What we did</dt>
-                      <dd className="mt-0.5 text-sm leading-relaxed text-ink/70 sm:mt-1 sm:text-[15px]">{o.services.join(', ')}</dd>
-                    </div>
-                  </dl>
-
-                  <p className="mt-4 hidden gap-3 text-[15px] leading-relaxed text-ink/75 sm:mt-6 sm:flex sm:text-[16px]">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-sun sm:mt-2.5" aria-hidden="true" />
-                    {o.highlight}
-                  </p>
-
-                  <button
-                  type="button"
-                  onClick={() => setSelected(o)}
-                  className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-leaf hover:text-forest sm:mt-5">
-
-                    Read the full story <ArrowUpRightIcon className="h-4 w-4" />
-                  </button>
-                </div>
-              </li>
-            )}
-          </ol>
+          <OutreachStack outreaches={pastOutreaches} onSelect={setSelected} />
         </div>
       </section>
 

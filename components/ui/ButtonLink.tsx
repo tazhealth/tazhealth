@@ -49,7 +49,7 @@ export function ButtonLink({
 
   if (to) {
     return (
-      <Link to={to} className={classes} onClick={onClick}>
+      <Link href={to} className={classes} onClick={onClick}>
         {children}
       </Link>);
 

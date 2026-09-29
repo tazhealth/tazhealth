@@ -74,10 +74,10 @@ export const team: TeamMember[] = [
   x: 'https://x.com'
 },
 {
-  name: 'Tobi Adeleke',
-  role: 'Product Lead, TAZ AI',
-  image: images.team4,
-  bio: 'Software engineer designing TAZ AI for low-end phones and low-data settings.',
+  name: 'Olukare David',
+  role: 'Media Director',
+  image: '/team/olukare-david.jpg',
+  bio: 'Oversees TAZhealth’s media, from our online platforms and health advocacy content to publicity for every outreach.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
 }];

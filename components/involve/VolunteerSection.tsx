@@ -20,7 +20,7 @@ export function VolunteerSection() {
   const outreach = upcomingOutreaches.find((u) => u.id === params.get('outreach'));
 
   const { values, errors, status, setField, handleSubmit, reset } = useSimpleForm(
-    { volRole: '', volName: '', volEmail: '', volPhone: '', volState: '', volAvailability: '', volSkills: '', volConsent: false },
+    { volRole: '', volName: '', volEmail: '', volPhone: '', volState: '', volAvailability: '', volSkills: '', volConsent: false as boolean },
     (v) => ({
       volRole: v.volRole ? undefined : 'Please choose a role.',
       volName: v.volName.trim() ? undefined : 'Please tell us your name.',

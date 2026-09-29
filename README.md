@@ -8,19 +8,3 @@ TAZhealth is a small Nigerian nonprofit. We run free medical outreaches in under
 
 Most outreaches keep paper lists that get lost. Our tool, **TAZ AI**, keeps a record for every person we meet and follows up in the language they speak.
 
-This repo holds the TAZhealth website.
-
-## Getting started
-
-```bash
-npm install
-npm run dev
-```
-
-Then open [http://localhost:3000](http://localhost:3000).
-
-## Stack
-
-- [Next.js](https://nextjs.org) 16 (App Router), React 19, TypeScript
-- Tailwind CSS 4
-- Framer Motion

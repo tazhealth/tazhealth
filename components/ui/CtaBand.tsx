@@ -42,7 +42,7 @@ export function CtaBand({ title, text, primaryLabel = 'Get involved', primaryTo 
             {paths.map((p) =>
             <li key={p.label}>
                 <Link
-                to={p.to}
+                href={p.to}
                 className="group flex items-center justify-between gap-4 rounded-2xl bg-white/[0.07] px-5 py-4 transition-[background-color,transform] duration-200 ease-smooth hover:-translate-y-0.5 hover:bg-white/[0.14]">
                 
                   <span>

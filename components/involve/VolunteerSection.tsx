@@ -1,5 +1,7 @@
+'use client';
+
 import React from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'next/navigation';
 import { CalendarIcon, Loader2Icon } from 'lucide-react';
 import { CheckboxField, SelectField, TextAreaField, TextField } from '../forms/Field';
 import { FormSuccess } from '../forms/FormSuccess';
@@ -14,7 +16,7 @@ const states = ['Lagos', 'Ogun', 'Oyo', 'FCT Abuja', 'Other state', 'Outside Nig
 const availability = ['Outreach days (Saturdays)', 'A few hours a week, remote', 'Flexible'];
 
 export function VolunteerSection() {
-  const [params] = useSearchParams();
+  const params = useSearchParams();
   const outreach = upcomingOutreaches.find((u) => u.id === params.get('outreach'));
 
   const { values, errors, status, setField, handleSubmit, reset } = useSimpleForm(

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRightIcon, MegaphoneIcon } from 'lucide-react';
 import { SectionHeading } from '../ui/SectionHeading';
 import { RevealGroup, RevealItem } from '../ui/Reveal';
@@ -22,7 +22,7 @@ export function WhatWeDo() {
         <RevealGroup className="mt-12 grid gap-4 lg:grid-cols-12 lg:grid-rows-2">
           <RevealItem className="lg:col-span-7 lg:row-span-2">
             <Link
-              to="/outreaches"
+              href="/outreaches"
               className={`group flex h-full flex-col overflow-hidden rounded-[2rem] bg-white ${cardHover}`}>
               
               <div className="aspect-[16/10] overflow-hidden lg:aspect-auto lg:flex-1">
@@ -46,7 +46,7 @@ export function WhatWeDo() {
           </RevealItem>
 
           <RevealItem className="lg:col-span-5">
-            <Link to="/about" className={`group flex h-full flex-col rounded-[2rem] bg-white p-7 sm:p-9 ${cardHover}`}>
+            <Link href="/about" className={`group flex h-full flex-col rounded-[2rem] bg-white p-7 sm:p-9 ${cardHover}`}>
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sun/20 text-forest">
                 <MegaphoneIcon className="h-6 w-6" aria-hidden="true" />
               </span>
@@ -63,7 +63,7 @@ export function WhatWeDo() {
 
           <RevealItem className="lg:col-span-5">
             <Link
-              to="/taz-ai"
+              href="/taz-ai"
               className={`group relative flex h-full flex-col overflow-hidden rounded-[2rem] bg-forest p-7 text-white sm:p-9 ${cardHover}`}>
               
               <div className="max-w-[15rem] self-end rounded-2xl rounded-br-md bg-white px-4 py-3 text-sm text-ink shadow-card">

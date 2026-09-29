@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { ExpandIcon } from 'lucide-react';
 import { Lightbox } from './Lightbox';

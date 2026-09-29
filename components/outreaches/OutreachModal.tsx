@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CalendarIcon, MapPinIcon, XIcon } from 'lucide-react';

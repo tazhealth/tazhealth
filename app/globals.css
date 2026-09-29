@@ -2,23 +2,23 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a;
+  --foreground: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-hanken-grotesk);
+  --font-sans: var(--font-montserrat);
 
-  --color-leaf: #3a9a3f;
-  --color-forest: #1f5e2a;
-  --color-forest-dark: #163f1e;
-  --color-ink: #1a1a1a;
-  --color-mint: #eef7ee;
-  --color-sun: #f2a93b;
+  --color-leaf: #098933;
+  --color-forest: #047228;
+  --color-forest-dark: #024712;
+  --color-ink: #000000;
+  --color-mint: #ebf6ee;
+  --color-sun: #000000;
   --color-risk-high: #d6453d;
   --color-risk-medium: #f2a93b;
-  --color-risk-low: #3a9a3f;
+  --color-risk-low: #098933;
 
   --shadow-lift: 0 8px 18px -10px rgba(16, 24, 16, 0.3);
   --shadow-card: 0 24px 48px -24px rgba(26, 26, 26, 0.28);
@@ -33,6 +33,8 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  /* Montserrat runs large; keep text at the visual size the layout was designed for. */
+  font-size-adjust: 0.47;
 }
 
 html {
@@ -41,16 +43,20 @@ html {
 }
 
 h1,
-h2,
+h2 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
 h3,
 h4 {
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
 /* Adire-inspired tile: concentric resist-dye circles, corner ticks and dots */
 .adire {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%233A9A3F' stroke-width='1.3'%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Ccircle cx='32' cy='32' r='11'/%3E%3Ccircle cx='32' cy='32' r='17' stroke-dasharray='2 4'/%3E%3Cpath d='M0 0h8M0 0v8M64 0h-8M64 0v8M0 64h8M0 64v-8M64 64h-8M64 64v-8'/%3E%3C/g%3E%3Cg fill='%233A9A3F'%3E%3Ccircle cx='0' cy='32' r='2'/%3E%3Ccircle cx='64' cy='32' r='2'/%3E%3Ccircle cx='32' cy='0' r='2'/%3E%3Ccircle cx='32' cy='64' r='2'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23098933' stroke-width='1.3'%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Ccircle cx='32' cy='32' r='11'/%3E%3Ccircle cx='32' cy='32' r='17' stroke-dasharray='2 4'/%3E%3Cpath d='M0 0h8M0 0v8M64 0h-8M64 0v8M0 64h8M0 64v-8M64 64h-8M64 64v-8'/%3E%3C/g%3E%3Cg fill='%23098933'%3E%3Ccircle cx='0' cy='32' r='2'/%3E%3Ccircle cx='64' cy='32' r='2'/%3E%3Ccircle cx='32' cy='0' r='2'/%3E%3Ccircle cx='32' cy='64' r='2'/%3E%3C/g%3E%3C/svg%3E");
   background-size: 64px 64px;
 }
 .adire-light {
@@ -59,7 +65,7 @@ h4 {
 }
 /* Ankara-inspired zigzag band for dividers */
 .ankara-band {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cpath d='M0 15 L8 3 L16 15 L24 3 L32 15' fill='none' stroke='%233A9A3F' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='12' r='1.6' fill='%23F2A93B'/%3E%3Ccircle cx='24' cy='12' r='1.6' fill='%23F2A93B'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16' viewBox='0 0 32 16'%3E%3Cpath d='M0 15 L8 3 L16 15 L24 3 L32 15' fill='none' stroke='%23098933' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='12' r='1.6' fill='%23000000'/%3E%3Ccircle cx='24' cy='12' r='1.6' fill='%23000000'/%3E%3C/svg%3E");
   background-size: 32px 16px;
   background-repeat: repeat-x;
 }

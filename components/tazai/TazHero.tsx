@@ -21,7 +21,7 @@ export function TazHero() {
 
         <motion.path
           d="M-40 560 C 120 420, 260 380, 330 470 C 400 560, 300 760, 150 820 M 1180 260 C 1320 120, 1480 150, 1500 330 C 1520 520, 1380 700, 1280 900"
-          stroke="#F2A93B"
+          stroke="#000000"
           strokeWidth="10"
           strokeLinecap="round"
           initial={{ pathLength: 0 }}

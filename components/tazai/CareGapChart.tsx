@@ -33,8 +33,8 @@ export function CareGapChart() {
           <p className="text-sm text-ink/55">Screened on Day 0 - then silence</p>
         </div>
         <svg viewBox={`0 0 ${W} 120`} className="mt-4 h-20 w-full sm:h-24" fill="none" aria-hidden="true">
-          <path d={withoutSolid} stroke="#1A1A1A" strokeOpacity="0.55" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
-          <path d={`M220 ${BASE} H${W}`} stroke="#1A1A1A" strokeOpacity="0.18" strokeWidth="3" strokeDasharray="4 12" strokeLinecap="round" />
+          <path d={withoutSolid} stroke="#000000" strokeOpacity="0.55" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />
+          <path d={`M220 ${BASE} H${W}`} stroke="#000000" strokeOpacity="0.18" strokeWidth="3" strokeDasharray="4 12" strokeLinecap="round" />
         </svg>
         <div className="mt-2 flex justify-between text-sm">
           <span className="text-ink/70">Outreach day</span>
@@ -50,7 +50,7 @@ export function CareGapChart() {
         <svg viewBox={`0 0 ${W} 120`} className="mt-4 h-20 w-full sm:h-24" fill="none" aria-hidden="true">
           <motion.path
             d={withPath}
-            stroke="#3A9A3F"
+            stroke="#098933"
             strokeWidth="3.5"
             strokeLinejoin="round"
             strokeLinecap="round"
@@ -66,7 +66,7 @@ export function CareGapChart() {
             cy={BASE}
             r="7"
             fill="#FFFFFF"
-            stroke="#1F5E2A"
+            stroke="#047228"
             strokeWidth="3"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

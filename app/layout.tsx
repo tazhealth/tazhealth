@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Hanken_Grotesk } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import "./globals.css";
 
-const hankenGrotesk = Hanken_Grotesk({
-  variable: "--font-hanken-grotesk",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${hankenGrotesk.variable} antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${montserrat.variable} antialiased`}>
       <body className="bg-white font-sans text-ink">
         <SiteLayout>{children}</SiteLayout>
       </body>

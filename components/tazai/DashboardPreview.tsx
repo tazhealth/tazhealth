@@ -12,7 +12,7 @@ const kpis = [
 const risk = [
 { label: 'High', value: 38, color: '#D6453D' },
 { label: 'Medium', value: 124, color: '#F2A93B' },
-{ label: 'Low', value: 350, color: '#3A9A3F' }];
+{ label: 'Low', value: 350, color: '#098933' }];
 
 
 const weekly = [42, 68, 55, 81, 74, 90];

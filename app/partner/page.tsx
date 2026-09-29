@@ -122,7 +122,7 @@ export default function Partner() {
       <section className="bg-white px-3 py-16 sm:px-5 sm:py-24">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-forest px-6 pt-12 text-center text-white sm:px-12 sm:pt-16">
           <Reveal>
-            <p className="text-sm text-sun">Co-host an outreach</p>
+            <p className="text-sm text-white/65">Co-host an outreach</p>
             <h2 className="mx-auto mt-3 max-w-xl text-balance text-[30px] font-semibold leading-[1.08] tracking-[-0.03em] sm:text-5xl">
               Bring your people. We bring the care.
             </h2>
@@ -147,7 +147,7 @@ export default function Partner() {
       </section>
 
       {/* TAZ AI */}
-      <section className="overflow-hidden bg-sun/15 pt-16 sm:pt-24">
+      <section className="overflow-hidden bg-[#F4F5F4] pt-16 sm:pt-24">
         <Split
           eyebrow="Bring TAZ AI to your programme"
           title="Follow-up that runs itself."
@@ -204,7 +204,7 @@ export default function Partner() {
 
       {/* Volunteer banner */}
       <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-3xl bg-sun/20 p-7 sm:flex-row sm:items-center sm:justify-between sm:p-12">
+        <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-3xl bg-[#F4F5F4] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-12">
           <div>
             <h2 className="text-2xl font-semibold tracking-[-0.025em] text-ink sm:text-4xl">Rather volunteer?</h2>
             <p className="mt-2 max-w-md text-[15px] text-ink/65 sm:text-base">

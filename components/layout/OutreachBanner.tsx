@@ -48,8 +48,8 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
             className="group flex min-w-0 items-center gap-2.5 text-white/85 hover:text-white">
 
             <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
-              <span className="absolute inset-0 animate-ping rounded-full bg-sun opacity-60" />
-              <span className="relative h-2 w-2 rounded-full bg-sun" />
+              <span className="absolute inset-0 animate-ping rounded-full bg-white opacity-60" />
+              <span className="relative h-2 w-2 rounded-full bg-white" />
             </span>
             <span className="truncate">
               <span className="hidden sm:inline">Next outreach: </span>
@@ -60,7 +60,7 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
                 {' '}· {next.focus} · {next.volunteersNeeded} volunteers needed
               </span>
             </span>
-            <span className="flex shrink-0 items-center gap-1 font-medium text-sun">
+            <span className="flex shrink-0 items-center gap-1 font-medium text-white underline underline-offset-2">
               Volunteer
               <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </span>

@@ -79,7 +79,7 @@ export default function Home() {
         <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-y-10 px-5 sm:px-8 lg:grid-cols-4">
           {outreachImpact.map((s, i) =>
           <li key={s.label} className={cn('text-center', i > 0 && 'lg:border-l lg:border-white/15')}>
-              <p className="text-4xl font-semibold tracking-tight text-sun sm:text-5xl">
+              <p className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
                 <CountUp to={s.value} suffix={s.suffix} />
               </p>
               <p className="mt-1 text-[15px] text-white/75">{s.label}</p>

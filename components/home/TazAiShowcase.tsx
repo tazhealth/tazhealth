@@ -23,7 +23,7 @@ export function TazAiShowcase() {
     <section className="relative overflow-hidden bg-forest-dark py-20 text-white sm:py-24 lg:py-32" aria-labelledby="taz-title">
       <div className="mx-auto grid max-w-6xl gap-14 px-5 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-10">
         <Reveal className="min-w-0 lg:col-span-6">
-          <p className="text-sm text-sun">TAZ AI</p>
+          <p className="text-sm text-white">TAZ AI</p>
           <h2 id="taz-title" className="mt-4 text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] sm:text-4xl">
             The tool that remembers every patient.
           </h2>
@@ -44,7 +44,7 @@ export function TazAiShowcase() {
             )}
           </ol>
 
-          <Link href="/taz-ai" className="group mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-sun">
+          <Link href="/taz-ai" className="group mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-white">
             See how TAZ AI works
             <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>

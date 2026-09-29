@@ -37,7 +37,7 @@ export function HomeHero() {
             <svg viewBox="0 0 200 12" className="absolute -bottom-2 left-0 h-3 w-full" fill="none" aria-hidden="true">
               <motion.path
                 d="M2 8 C 50 2, 120 2, 198 7"
-                stroke="#F2A93B"
+                stroke="#000000"
                 strokeWidth="4"
                 strokeLinecap="round"
                 initial={{ pathLength: 0 }}

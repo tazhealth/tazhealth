@@ -69,14 +69,14 @@ export default function About() {
       <section className="bg-forest py-20 text-white lg:py-24">
         <div className="mx-auto grid max-w-5xl gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16">
           <Reveal>
-            <p className="text-sm font-medium text-sun">Why we exist</p>
+            <p className="text-sm font-medium text-white/60">Why we exist</p>
             <p className="mt-4 text-xl leading-snug sm:text-2xl">
               To bring good care to underserved Nigerian communities, and make sure it keeps going after the outreach
               ends.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="text-sm font-medium text-sun">What we hope for</p>
+            <p className="text-sm font-medium text-white/60">What we hope for</p>
             <p className="mt-4 text-xl leading-snug sm:text-2xl">
               A Nigeria where nobody is forgotten after their first diagnosis.
             </p>

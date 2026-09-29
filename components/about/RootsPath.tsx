@@ -29,11 +29,11 @@ const nodes = [
 
 
 const icons: {icon: LucideIcon;tone: string;}[] = [
-{ icon: HelpCircleIcon, tone: 'bg-sun text-forest' },
+{ icon: HelpCircleIcon, tone: 'bg-ink text-white' },
 { icon: StethoscopeIcon, tone: 'bg-leaf text-white' },
 { icon: ClipboardListIcon, tone: 'bg-mint text-forest ring-1 ring-leaf/30' },
 { icon: SmartphoneIcon, tone: 'bg-forest text-white' },
-{ icon: MessageSquareTextIcon, tone: 'bg-sun text-forest' },
+{ icon: MessageSquareTextIcon, tone: 'bg-ink text-white' },
 { icon: UsersIcon, tone: 'bg-leaf text-white' },
 { icon: FlagIcon, tone: 'bg-white text-forest ring-2 ring-dashed ring-forest/40' }];
 
@@ -51,11 +51,11 @@ export function RootsPath() {
   return (
     <div ref={ref} className="relative mx-auto w-full max-w-[1000px]" style={{ aspectRatio: `${W} / ${H}` }}>
       <svg viewBox={`0 0 ${W} ${H}`} className="absolute inset-0 h-full w-full" fill="none" aria-hidden="true">
-        <path d={solid} stroke="#1A1A1A" strokeOpacity="0.08" strokeWidth="2" />
-        <motion.path d={solid} stroke="#1F5E2A" strokeWidth="2" style={{ pathLength: reduce ? 1 : draw }} />
+        <path d={solid} stroke="#000000" strokeOpacity="0.08" strokeWidth="2" />
+        <motion.path d={solid} stroke="#047228" strokeWidth="2" style={{ pathLength: reduce ? 1 : draw }} />
         <motion.path
           d={dashed}
-          stroke="#1F5E2A"
+          stroke="#047228"
           strokeOpacity="0.5"
           strokeWidth="2"
           strokeDasharray="6 8"

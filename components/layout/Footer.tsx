@@ -54,13 +54,13 @@ export function Footer() {
             <ul className="mt-4 space-y-3">
               {navLinks.map((l) =>
               <li key={l.to}>
-                  <Link to={l.to} className="text-[15px] text-white/90 transition-colors hover:text-sun">
+                  <Link href={l.to} className="text-[15px] text-white/90 transition-colors hover:text-sun">
                     {l.label}
                   </Link>
                 </li>
               )}
               <li>
-                <Link to="/privacy" className="text-[15px] text-white/90 transition-colors hover:text-sun">
+                <Link href="/privacy" className="text-[15px] text-white/90 transition-colors hover:text-sun">
                   Privacy Policy
                 </Link>
               </li>
@@ -139,7 +139,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© {new Date().getFullYear()} TAZhealth Initiative. A Nigerian nonprofit.</p>
-          <Link to="/privacy" className="hover:text-white">
+          <Link href="/privacy" className="hover:text-white">
             Privacy Policy
           </Link>
         </div>

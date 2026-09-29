@@ -9,7 +9,6 @@ import { navLinks, site, socials } from '../../data/site';
 
 const involveLinks = [
 { label: 'Volunteer', to: '/contact?topic=volunteer' },
-{ label: 'Partner with us', to: '/partner' },
 { label: 'Donate', to: '/contact?topic=donate' },
 // { label: 'Book a TAZ AI demo', to: '/taz-ai#demo' },
 { label: 'Upcoming outreaches', to: '/outreaches#upcoming' }];
@@ -17,11 +16,11 @@ const involveLinks = [
 
 const linkClass = 'text-[15px] text-white/70 transition-colors duration-200 hover:text-white';
 
-function Column({ title, children }: {title: string;children: React.ReactNode;}) {
+function Column({ title, children, className, listClassName }: {title: string;children: React.ReactNode;className?: string;listClassName?: string;}) {
   return (
-    <div>
+    <div className={className}>
       <h2 className="text-sm text-white/40">{title}</h2>
-      <ul className="mt-4 space-y-3">{children}</ul>
+      <ul className={listClassName ?? 'mt-3 space-y-2'}>{children}</ul>
     </div>);
 
 }
@@ -44,14 +43,14 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-forest-dark text-white">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         {/* Statement + newsletter */}
-        <div className="grid gap-10 py-16 lg:grid-cols-12 lg:items-end lg:py-20">
-          <p className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] sm:text-4xl lg:col-span-7">
+        <div className="grid gap-6 py-10 sm:gap-8 lg:grid-cols-12 lg:items-end lg:py-14">
+          <p className="text-balance text-2xl font-medium leading-[1.1] tracking-[-0.025em] sm:text-3xl lg:col-span-7">
             Care that keeps going, long after the tents come down.
           </p>
 
           <div className="lg:col-span-5">
             <h2 className="text-[15px] font-medium">Field notes, once a month</h2>
-            <p className="mt-1 text-sm text-white/55">Stories from our outreaches, TAZ AI updates and ways to help.</p>
+            <p className="mt-1 text-sm text-white/55">Stories from our outreaches and ways to help.</p>
             {status === 'success' ?
             <p className="mt-4 flex h-12 items-center gap-2 text-[15px] text-white/85" role="status">
                 <CheckIcon className="h-5 w-5 text-sun" /> You’re subscribed. Thank you!
@@ -93,10 +92,10 @@ export function Footer() {
         </div>
 
         {/* Links */}
-        <div className="grid grid-cols-2 gap-x-6 gap-y-12 border-t border-white/10 py-14 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-7 border-t border-white/10 py-10 md:grid-cols-4">
           <div className="col-span-2 md:col-span-1">
             <Logo tone="light" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
+            <p className="mt-4 hidden max-w-xs text-sm leading-relaxed text-white/55 md:block">
               A Nigerian nonprofit bringing free outreaches and real follow-up to underserved communities.
             </p>
           </div>
@@ -121,7 +120,7 @@ export function Footer() {
             )}
           </Column>
 
-          <Column title="Reach us">
+          <Column title="Reach us" className="col-span-2 md:col-span-1" listClassName="mt-3 flex flex-wrap gap-x-5 gap-y-2 md:block md:space-y-2">
             <li>
               <a href={`mailto:${site.email}`} className={linkClass}>
                 {site.email}
@@ -142,7 +141,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col-reverse gap-5 border-t border-white/10 py-6 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col-reverse gap-5 border-t border-white/10 py-5 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} TAZhealth Initiative ·{' '}
             <Link href="/privacy" className="transition-colors hover:text-white">
@@ -169,7 +168,7 @@ export function Footer() {
 
       <p
         aria-hidden="true"
-        className="pointer-events-none -mb-[4.5vw] select-none text-center text-[21vw] font-semibold leading-none tracking-[-0.06em] text-white/[0.05]">
+        className="pointer-events-none select-none px-2 pb-4 text-center text-[19vw] font-semibold leading-[0.9] tracking-[-0.06em] text-white/[0.08] sm:pb-6">
 
         TAZhealth
       </p>

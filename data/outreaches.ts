@@ -1,90 +1,150 @@
 import { images } from './images';
 import type { Outreach, UpcomingOutreach } from '../types/content';
 
+// Source: TAZhealth Outreach Report. Newest first.
 export const pastOutreaches: Outreach[] = [
 {
-  id: 'ilaro-2026',
-  community: 'Ilaro',
+  id: 'health-fair-3-sagamu',
+  name: 'Health Fair 3.0',
+  location: 'Sagamu',
   state: 'Ogun State',
-  date: 'June 2026',
-  image: images.hero,
-  summary: 'Hypertension and diabetes screening for 118 adults, and our first full TAZ AI follow-up cohort.',
-  peopleReached: 118,
-  referrals: 17,
-  services: ['BP screening', 'Glucose testing', 'Consultations', 'Free medication', 'SMS follow-up'],
-  highlight: '41 patients flagged for follow-up; 36 reached by SMS or phone within a week.',
-  story:
-  'Ilaro was the first outreach where every patient was registered on TAZ AI. By the time the team left, clinicians already had a call list of high-risk patients, and the first Yoruba SMS check-ins went out the next morning.'
+  date: '14 December 2025',
+  image: images.community,
+  summary:
+  'With the Babcock University Association of Medical Students (BUAMS), we took Health Fair 3.0 to Sagamu, bringing healthcare services and health education to community members.',
+  peopleReached: 500,
+  reachedLabel: 'community members',
+  services: ['Health education', 'Vitals', 'Blood glucose', 'BMI', 'Malaria testing', 'HPV testing', 'Free consultations', 'Free medication'],
+  partners: ['Babcock University Association of Medical Students (BUAMS)'],
+  contribution: 350000,
+  volunteers: 4
 },
 {
-  id: 'akinyele-2026',
-  community: 'Akinyele',
-  state: 'Oyo State',
-  date: 'March 2026',
-  image: images.education,
-  summary: 'A health talk under the village tree, followed by maternal health and blood pressure checks.',
-  peopleReached: 96,
-  referrals: 12,
-  services: ['Health education', 'Antenatal checks', 'BP screening', 'Consultations'],
-  highlight: 'Eight expectant mothers linked to their nearest primary healthcare centre.',
-  story:
-  'We partnered with the community leader to host a health talk before screening began. Turnout doubled when people heard the team would come back to check on them.'
-},
-{
-  id: 'kuje-2025',
-  community: 'Kuje',
-  state: 'FCT Abuja',
-  date: 'November 2025',
-  image: images.queue,
-  summary: 'Our largest turnout yet. Registration queues formed before sunrise.',
-  peopleReached: 104,
-  referrals: 15,
-  services: ['Registration on TAZ AI', 'BP screening', 'Malaria testing', 'Consultations'],
-  highlight: 'First field test of offline registration and instant risk triage.',
-  story:
-  'Kuje had no reliable network. It was the perfect test: every registration was saved on the phone and synced that evening when the team got signal on the road home.'
-},
-{
-  id: 'makoko-2025',
-  community: 'Makoko',
+  id: 'joy-to-the-world-isheri-osun',
+  name: 'Joy to the World',
+  location: 'Isheri Osun Community, Alimosho LG',
   state: 'Lagos State',
-  date: 'August 2025',
-  image: images.motherChild,
-  summary: 'Child wellness checks and malaria testing for families in the waterfront community.',
-  peopleReached: 78,
-  referrals: 9,
-  services: ['Child wellness', 'Malaria testing', 'Nutrition counselling', 'Free medication'],
-  highlight: 'Paper-based follow-up pilot: volunteers called every family within 10 days.',
-  story:
-  'We tested follow-up with paper registers and volunteer phone calls. It worked, and families answered. But it showed us we needed a tool to do this at scale.'
+  date: '14 December 2025',
+  image: images.bpCheck,
+  summary:
+  'With BUAMS, we ran the “Joy to the World” medical outreach at Isheri Osun Community, bringing healthcare services and health education to community members.',
+  peopleReached: 120,
+  reachedLabel: 'community members',
+  services: ['Health education', 'Vitals', 'Blood glucose', 'BMI', 'Malaria testing', 'HPV testing', 'Free consultations', 'Free medication'],
+  partners: [
+  'Babcock University Association of Medical Students (BUAMS)',
+  'DaveStar Hospital',
+  'NiMSA Standing Committee on Public Health'],
+
+  contribution: 200000,
+  volunteers: 4
 },
 {
-  id: 'ijebu-2025',
-  community: 'Ijebu-Ode',
+  id: 'health-fair-2-babcock',
+  name: 'Health Fair 2.0',
+  location: 'Babcock University, Ilishan-Remo',
   state: 'Ogun State',
-  date: 'May 2025',
-  image: images.glucose,
-  summary: 'A diabetes-focused outreach with glucose testing and practical diet counselling.',
-  peopleReached: 64,
-  referrals: 8,
-  services: ['Glucose testing', 'Diet counselling', 'Consultations'],
-  highlight: '1 in 5 adults screened had a high blood sugar reading they didn’t know about.',
-  story:
-  'Many people had never had their blood sugar checked. Our dietitian volunteers turned local foods into simple, affordable meal plans.'
+  date: '30 October 2025',
+  image: images.pharmacy,
+  summary:
+  'With BUAMS, we organised Health Fair 2.0 at Babcock University, giving students, staff and other beneficiaries healthcare services and health education.',
+  peopleReached: 121,
+  reachedLabel: 'community members',
+  services: ['Health education', 'Vitals', 'Blood glucose', 'BMI', 'Malaria testing', 'HPV testing', 'Free consultations', 'Free medication'],
+  partners: [
+  'Babcock University Association of Medical Students (BUAMS)',
+  'Babcock University Teaching Hospital',
+  'Biomedical Laboratory Science Innovation Academy (BMLSIA)'],
+
+  contribution: 160000,
+  volunteers: 5
 },
 {
-  id: 'ogbomosho-2025',
-  community: 'Ogbomosho',
-  state: 'Oyo State',
-  date: 'February 2025',
-  image: images.consult,
-  summary: 'Our very first outreach, and the one that showed us what happens when care stops.',
-  peopleReached: 52,
-  referrals: 11,
-  services: ['BP screening', 'Consultations', 'Free medication'],
-  highlight: 'Weeks later, we could reach fewer than 1 in 5 patients. TAZhealth’s mission was born.',
-  story:
-  'We screened 52 people and referred 11. When we tried to follow up a month later, most numbers were wrong or unanswered. That gap is the reason TAZ AI exists.'
+  id: 'world-heart-day-ilishan',
+  name: 'World Heart Day: “Don’t Miss A Beat”',
+  location: 'Ilishan Market, Ilishan-Remo',
+  state: 'Ogun State',
+  date: '25 September 2025',
+  image: images.worldHeartDay,
+  summary:
+  'With EOhealth, we organised a World Heart Day outreach at Ilishan Market focused on heart health, with free checks, consultations, medication and a fitness session.',
+  peopleReached: 112,
+  reachedLabel: 'community members',
+  services: ['Heart health education', 'Vitals', 'Blood glucose', 'BMI', 'Free consultations', 'Free medication', 'Fitness & aerobics'],
+  partners: [
+  'EOhealth',
+  'Babcock University Teaching Hospital',
+  'The Cardio Health',
+  'Nigerian Medical Laboratory Students’ Association (Babcock University)',
+  'Public Health Students’ Association (Babcock University)',
+  'Agram Pharmacy',
+  'GlucoVive'],
+
+  contribution: 50000,
+  volunteers: 3
+},
+{
+  id: 'buth-maternal-health',
+  name: 'Maternal Health Outreach',
+  location: 'BUTH Obstetrics & Gynaecology Department, Ilishan-Remo',
+  state: 'Ogun State',
+  date: '10 September 2025',
+  image: images.healthEducation,
+  summary:
+  'With the BUAMS Chaplaincy Committee at Babcock University Teaching Hospital, we supported a maternal health outreach: health education for expecting mothers and infant care items such as diapers and hand-held dopplers.',
+  peopleReached: 25,
+  reachedLabel: 'mothers',
+  services: ['Maternal health education', 'Infant care items'],
+  partners: [
+  'Babcock University Association of Medical Students (BUAMS)',
+  'Mirabel Foundation for Health Empowerment',
+  'Nigerian Medical Students’ Association (NiMSA)'],
+
+  contribution: 30000,
+  volunteers: 5
+},
+{
+  id: 'odogbolu-community',
+  name: 'Odogbolu Community Outreach',
+  location: 'Odogbolu',
+  state: 'Ogun State',
+  date: '28 August 2025',
+  image: images.aboutHero,
+  summary:
+  'With the Babcock University Public Health Department, we ran a community-wide medical outreach in Odogbolu that benefited over 120 people.',
+  peopleReached: 120,
+  reachedLabel: 'people',
+  services: ['Blood glucose', 'Blood pressure', 'BMI', 'Malaria testing', 'Hepatitis B testing', 'Free consultations', 'Free medication'],
+  partners: [
+  'Babcock University Public Health Department',
+  'Public Health Students’ Association (PUHSA), Babcock University',
+  'Babcock University Association of Medical Students (BUAMS)',
+  'EOhealth'],
+
+  contribution: 60000,
+  volunteers: 2
+},
+{
+  id: 'yemisi-alogi-orphanage',
+  name: 'Yemisi Alogi Orphanage and Children’s Home',
+  location: 'Abeokuta',
+  state: 'Ogun State',
+  date: '27 April 2025',
+  image: images.orphanage,
+  summary:
+  'TAZhealth’s launch outreach. We tested children and caregivers for malaria, taught malaria prevention and control, and donated mosquito nets and other essential amenities.',
+  peopleReached: 20,
+  reachedLabel: 'people',
+  services: ['Malaria testing', 'Malaria prevention education', 'Mosquito nets & amenities'],
+  partners: [
+  'NiMSA Medical Outreach Program (Southwest Region)',
+  'Standing Committee on Public Health, Babcock Chapter',
+  'Technical Office for Maternal Health and Child Nutrition',
+  'NiMSA Liaison Office to the World Health Organization',
+  'The Campus Lifestyle (TCL) & TCL Foundation'],
+
+  contribution: 100000,
+  volunteers: 2
 }];
 
 

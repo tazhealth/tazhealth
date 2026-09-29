@@ -50,7 +50,7 @@ function Split({
 
 export default function Partner() {
   const people = pastOutreaches.reduce((n, o) => n + o.peopleReached, 0);
-  const referrals = pastOutreaches.reduce((n, o) => n + o.referrals, 0);
+  const volunteers = pastOutreaches.reduce((n, o) => n + o.volunteers, 0);
 
   return (
     <>
@@ -96,8 +96,8 @@ export default function Partner() {
             <dl className="mt-5 grid grid-cols-3 gap-3">
               {[
               ['Outreaches', pastOutreaches.length],
-              ['People seen', people],
-              ['Referrals', referrals]].
+              ['People reached', people.toLocaleString()],
+              ['Volunteers', volunteers]].
               map(([l, v]) =>
               <div key={l} className="rounded-xl bg-[#F7F8F6] p-3 sm:p-4">
                   <dt className="text-[11px] text-ink/50 sm:text-xs">{l}</dt>
@@ -108,9 +108,8 @@ export default function Partner() {
             <ul className="mt-5 divide-y divide-ink/5">
               {pastOutreaches.slice(0, 4).map((o) =>
               <li key={o.id} className="flex items-center justify-between py-2.5 text-sm">
-                  <span className="font-medium text-ink">{o.community}</span>
-                  <span className="text-ink/50">{o.peopleReached} people</span>
-                  <span className="rounded-full bg-mint px-2 py-0.5 text-xs text-forest">{o.referrals} referred</span>
+                  <span className="min-w-0 truncate font-medium text-ink">{o.name}</span>
+                  <span className="shrink-0 pl-3 text-ink/50">{o.peopleReached} reached</span>
                 </li>
               )}
             </ul>

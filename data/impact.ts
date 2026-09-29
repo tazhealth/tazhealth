@@ -1,8 +1,8 @@
 import type { Stat } from '../types/content';
 
-// Placeholder figures - update with verified TAZhealth numbers.
+// Source: TAZhealth Outreach Report (April–December 2025).
 export const outreachImpact: Stat[] = [
 { value: 1000, suffix: '+', label: 'people reached' },
-{ value: 8, label: 'outreaches held' },
-{ value: 6, label: 'communities served' },
-{ value: 70, suffix: '+', label: 'referrals made' }];
+{ value: 7, label: 'outreaches held' },
+{ value: 25, label: 'volunteers deployed' },
+{ value: 950, prefix: '₦', suffix: 'k', label: 'contributed to care' }];

@@ -6,7 +6,7 @@ export const testimonials: Testimonial[] = [
   quote:
   'After the outreach, I thought that was the end. Then an SMS came in Yoruba asking about my pressure. Somebody still remembered me.',
   name: 'Mama Folake',
-  role: 'Community member, Ilaro'
+  role: 'Community member'
 },
 {
   quote:
@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
 {
   quote: 'They came back to check on us. That is how we knew they were serious about our health.',
   name: 'Baba Sule',
-  role: 'Community leader, Kuje'
+  role: 'Community leader'
 }];
 
 
@@ -28,7 +28,7 @@ export const fieldStories: FieldStory[] = [
   quote:
   'My pressure was 190 over 120 and I felt fine. The doctor referred me, and the messages kept reminding me to go. Now I take my drugs every morning.',
   name: 'Mr. Adewale, 64',
-  role: 'Patient, Ogbomosho'
+  role: 'Patient'
 },
 {
   image: images.phone,
@@ -44,7 +44,7 @@ export const fieldStories: FieldStory[] = [
   quote:
   'They tested my son for malaria and gave us medicine. One week later, a volunteer called to ask if his fever had gone. It had.',
   name: 'Aisha M.',
-  role: 'Mother, Makoko'
+  role: 'Mother'
 }];
 
 
@@ -90,29 +90,29 @@ export const milestones: Milestone[] = [
   text: 'A group of young doctors and public health students start asking what happens to patients after free medical outreaches.'
 },
 {
-  date: 'Feb 2025',
-  title: 'First outreach in Ogbomosho',
-  text: '52 people screened, 11 referred. A month later, we couldn’t reach most of them. That became our problem to solve.'
+  date: 'Apr 2025',
+  title: 'TAZhealth launches',
+  text: 'Our first outreach, at Yemisi Alogi Orphanage in Abeokuta: malaria testing, prevention talks and mosquito nets for 20 children and caregivers.'
 },
 {
   date: 'Aug 2025',
-  title: 'Paper follow-up pilot',
-  text: 'Volunteers called every family from paper registers. It worked, but it could never scale.'
+  title: 'Our first community-wide outreach',
+  text: '120 people in Odogbolu screened for blood pressure, glucose, malaria and hepatitis B, with free consultations and medication.'
 },
 {
-  date: 'Nov 2025',
-  title: 'TAZ AI prototype',
-  text: 'Offline registration and instant risk triage tested at our Kuje outreach, with no network at all.'
+  date: 'Sep 2025',
+  title: 'Mothers and hearts',
+  text: 'Health education for 25 expecting mothers at BUTH, then World Heart Day at Ilishan Market for 112 community members.'
 },
 {
-  date: 'Mar 2026',
-  title: 'Follow-up in five languages',
-  text: 'Automatic SMS check-ins in English, Pidgin, Yoruba, Hausa and Igbo go live.'
+  date: 'Oct 2025',
+  title: 'Health Fair 2.0',
+  text: 'Free checks, consultations and medication for 121 students, staff and beneficiaries at Babcock University.'
 },
 {
-  date: 'Jun 2026',
-  title: '500 people reached',
-  text: 'Across six communities, with more than 70 referrals tracked through to care.'
+  date: 'Dec 2025',
+  title: '1,018 people reached',
+  text: 'Two outreaches in one day, 500 people in Sagamu and 120 in Isheri Osun, Lagos, took us past a thousand across seven outreaches.'
 },
 {
   date: 'Next',

@@ -9,16 +9,21 @@ export type Stat = {
 
 export type Outreach = {
   id: string;
-  community: string;
+  name: string;
+  location: string;
   state: string;
+  /** Formatted as "27 April 2025". */
   date: string;
   image: string;
   summary: string;
   peopleReached: number;
-  referrals: number;
+  /** Who was reached, e.g. "people", "mothers", "community members". */
+  reachedLabel: string;
   services: string[];
-  highlight: string;
-  story: string;
+  partners: string[];
+  /** TAZhealth's contribution in naira. */
+  contribution: number;
+  volunteers: number;
 };
 
 export type UpcomingOutreach = {

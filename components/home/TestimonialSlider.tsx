@@ -46,10 +46,10 @@ export function TestimonialSlider() {
               exit={reduce ? { opacity: 0 } : { opacity: 0, x: dir * -40 }}
               transition={{ duration: 0.35, ease: EASE }}>
               
-              <blockquote className="text-balance text-[19px] leading-snug text-forest sm:text-[30px] sm:leading-[1.25] lg:text-[34px]">{t.quote}</blockquote>
-              <figcaption className="mt-6 sm:mt-7">
-                <span className="block font-medium text-ink">{t.name}</span>
-                <span className="mt-0.5 block text-sm text-ink/55">{t.role}</span>
+              <blockquote className="text-balance text-base leading-snug text-forest sm:text-[30px] sm:leading-[1.25] lg:text-[34px]">{t.quote}</blockquote>
+              <figcaption className="mt-4 sm:mt-7">
+                <span className="block text-sm font-medium text-ink sm:text-base">{t.name}</span>
+                <span className="mt-0.5 block text-xs text-ink/55 sm:text-sm">{t.role}</span>
               </figcaption>
             </motion.figure>
           </AnimatePresence>

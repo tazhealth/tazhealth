@@ -39,11 +39,11 @@ export default function Outreaches() {
   const [selected, setSelected] = useState<Outreach | null>(null);
   const close = useCallback(() => setSelected(null), []);
   const totalPeople = pastOutreaches.reduce((s, o) => s + o.peopleReached, 0);
-  const totalReferrals = pastOutreaches.reduce((s, o) => s + o.referrals, 0);
+  const totalVolunteers = pastOutreaches.reduce((s, o) => s + o.volunteers, 0);
   const stats = [
   { label: 'Outreaches held', value: pastOutreaches.length },
-  { label: 'People seen', value: totalPeople },
-  { label: 'Referrals tracked', value: totalReferrals }];
+  { label: 'People reached', value: totalPeople.toLocaleString() },
+  { label: 'Volunteers deployed', value: totalVolunteers }];
 
 
   return (
@@ -137,7 +137,7 @@ export default function Outreaches() {
           <SectionHead
             index="02"
             title="Outreach log"
-            aside="Every outreach we’ve run, newest first. What we did, who we reached, and what happened after." />
+            aside="Every outreach we’ve run, newest first. What we did, who we reached, and who we did it with." />
 
 
           <OutreachStack outreaches={pastOutreaches} onSelect={setSelected} />

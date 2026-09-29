@@ -8,7 +8,7 @@ import { aboutFaqs } from '@/data/faqs';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 
 const letter = [
-'“We screened 52 people in Ogbomosho. A month later, we could reach fewer than ten of them.”',
+'“Our first outreach was one morning at an orphanage in Abeokuta: twenty malaria tests, a health talk and a pile of mosquito nets.”',
 'TAZhealth began with a borrowed canopy, a few young doctors and a table of donated drugs. When we called to follow up, most phones rang out. Prescriptions hadn’t been filled. Referrals hadn’t happened.',
 'We had helped for one afternoon, and then care simply stopped. That year taught us three things. Screening is the start, not the finish. Trust is built by coming back. And tools have to fit the field.',
 'So we stopped counting how many people we saw, and started asking how many we stayed with. That question is why we exist.'];

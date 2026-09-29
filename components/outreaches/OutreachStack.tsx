@@ -39,7 +39,7 @@ function Card({
         <button
           type="button"
           onClick={() => onSelect(o)}
-          aria-label={`Read the full story of the ${o.community} outreach`}
+          aria-label={`See details of ${o.name}`}
           className={cn(
             'group block h-full w-full overflow-hidden rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf sm:rounded-2xl',
             imageLeft ? 'lg:order-first' : 'lg:order-last'
@@ -55,21 +55,20 @@ function Card({
 
         <div className="flex flex-col justify-center px-2 pb-2 pt-4 sm:px-5 sm:pb-5 sm:pt-6 lg:px-12 lg:py-10">
           <p className="text-xs text-ink/50 sm:text-sm">
-            {o.date}, {o.state}
+            {o.date} · {o.location}, {o.state}
           </p>
 
           <h3 className="mt-3 text-xl font-medium tracking-[-0.02em] text-ink sm:mt-3 sm:text-3xl lg:text-[34px] lg:leading-[1.1]">
-            {o.community}
+            {o.name}
           </h3>
           <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink/60 sm:mt-3 sm:line-clamp-none sm:text-base lg:max-w-md">
             {o.summary}
           </p>
 
           <p className="mt-4 text-sm text-ink/70 sm:text-[15px]">
-            <span className="font-medium text-ink">{o.peopleReached}</span> people reached ·{' '}
-            <span className="font-medium text-ink">{o.referrals}</span> referrals
+            <span className="font-medium text-ink">{o.peopleReached}</span> {o.reachedLabel} reached ·{' '}
+            <span className="font-medium text-ink">{o.volunteers}</span> volunteers
           </p>
-          <p className="mt-3 hidden text-[15px] leading-relaxed text-ink/70 sm:block lg:max-w-md">{o.highlight}</p>
 
           <div className="mt-5 sm:mt-6">
             <button
@@ -77,7 +76,7 @@ function Card({
               onClick={() => onSelect(o)}
               className="inline-flex w-fit items-center gap-1 text-sm font-medium text-leaf hover:text-forest">
 
-              Read the full story <ArrowUpRightIcon className="h-4 w-4" />
+              See details <ArrowUpRightIcon className="h-4 w-4" />
             </button>
           </div>
         </div>

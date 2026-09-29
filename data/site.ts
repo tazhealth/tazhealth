@@ -28,10 +28,15 @@ export const socials: {key: SocialKey;label: string;href: string;}[] = [
 
 
 export const partners = [
-'Kindred Health Foundation',
-'Unity Medical Students’ Assoc.',
-'Grace Chapel Health Ministry',
-'Oyo Care Network',
-'Bloom Pharmacy',
-'Ikeja Health Collective',
-'Northstar Diagnostics'];
+'Babcock University Association of Medical Students (BUAMS)',
+'Babcock University Teaching Hospital',
+'Babcock University Public Health Department',
+'EOhealth',
+'NiMSA',
+'Mirabel Foundation for Health Empowerment',
+'The Campus Lifestyle (TCL) Foundation',
+'The Cardio Health',
+'DaveStar Hospital',
+'Agram Pharmacy',
+'GlucoVive',
+'BMLSIA'];

@@ -5,9 +5,9 @@ import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion
 import {
   ClipboardListIcon,
   FlagIcon,
+  GraduationCapIcon,
+  HeartPulseIcon,
   HelpCircleIcon,
-  MessageSquareTextIcon,
-  SmartphoneIcon,
   StethoscopeIcon,
   UsersIcon } from
 'lucide-react';
@@ -32,8 +32,8 @@ const icons: {icon: LucideIcon;tone: string;}[] = [
 { icon: HelpCircleIcon, tone: 'bg-ink text-white' },
 { icon: StethoscopeIcon, tone: 'bg-leaf text-white' },
 { icon: ClipboardListIcon, tone: 'bg-mint text-forest ring-1 ring-leaf/30' },
-{ icon: SmartphoneIcon, tone: 'bg-forest text-white' },
-{ icon: MessageSquareTextIcon, tone: 'bg-ink text-white' },
+{ icon: HeartPulseIcon, tone: 'bg-forest text-white' },
+{ icon: GraduationCapIcon, tone: 'bg-ink text-white' },
 { icon: UsersIcon, tone: 'bg-leaf text-white' },
 { icon: FlagIcon, tone: 'bg-white text-forest ring-2 ring-dashed ring-forest/40' }];
 

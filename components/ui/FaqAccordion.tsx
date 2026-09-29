@@ -12,7 +12,7 @@ export function FaqAccordion({ items }: {items: Faq[];}) {
   const baseId = useId();
 
   return (
-    <ul className="divide-y divide-forest/10 border-y border-forest/10">
+    <ul className="divide-y divide-ink/10 border-y border-ink/10">
       {items.map((item, i) => {
         const isOpen = open === i;
         const panelId = `${baseId}-panel-${i}`;
@@ -24,13 +24,13 @@ export function FaqAccordion({ items }: {items: Faq[];}) {
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="flex w-full items-center justify-between gap-6 py-5 text-left text-lg font-medium text-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf sm:py-6">
+                className="flex w-full items-center justify-between gap-6 py-5 text-left text-[17px] font-medium text-ink transition-colors hover:text-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf">
                 
                 {item.q}
                 <span
                   className={cn(
-                    'flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition-[transform,background-color,color] duration-200 ease-smooth',
-                    isOpen ? 'rotate-45 bg-leaf text-white' : 'bg-mint text-forest'
+                    'flex h-8 w-8 shrink-0 items-center justify-center rounded-md text-ink/50 transition-transform duration-200 ease-smooth',
+                    isOpen && 'rotate-45 text-ink'
                   )}>
                   
                   <PlusIcon className="h-4 w-4" />
@@ -47,7 +47,7 @@ export function FaqAccordion({ items }: {items: Faq[];}) {
                 transition={{ duration: 0.25, ease: EASE }}
                 className="overflow-hidden">
                 
-                  <p className="max-w-2xl pb-6 pr-12 text-[16px] leading-relaxed text-ink/70">{item.a}</p>
+                  <p className="max-w-2xl pb-6 pr-12 text-[15px] leading-relaxed text-ink/60">{item.a}</p>
                 </motion.div>
               }
             </AnimatePresence>

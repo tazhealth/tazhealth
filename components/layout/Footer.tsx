@@ -2,11 +2,29 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { ArrowRightIcon, CheckIcon, MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react';
+import { ArrowRightIcon, CheckIcon } from 'lucide-react';
 import { Logo } from './Logo';
-import { EcgLine } from '../ui/EcgLine';
-import { SocialIcon, WhatsAppIcon } from '../ui/SocialIcon';
+import { SocialIcon } from '../ui/SocialIcon';
 import { navLinks, site, socials } from '../../data/site';
+
+const involveLinks = [
+{ label: 'Volunteer', to: '/get-involved#volunteer' },
+{ label: 'Partner with us', to: '/get-involved#partner' },
+{ label: 'Donate', to: '/get-involved#donate' },
+{ label: 'Book a TAZ AI demo', to: '/taz-ai#demo' },
+{ label: 'Upcoming outreaches', to: '/outreaches#upcoming' }];
+
+
+const linkClass = 'text-[15px] text-white/70 transition-colors duration-200 hover:text-white';
+
+function Column({ title, children }: {title: string;children: React.ReactNode;}) {
+  return (
+    <div>
+      <h2 className="text-sm text-white/40">{title}</h2>
+      <ul className="mt-4 space-y-3">{children}</ul>
+    </div>);
+
+}
 
 export function Footer() {
   const [email, setEmail] = useState('');
@@ -23,89 +41,27 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative overflow-hidden bg-forest text-white">
-      <div className="adire-light pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden="true" />
-      <EcgLine tone="white" className="relative h-14 opacity-70" baseOpacity={0.18} />
+    <footer className="relative overflow-hidden bg-forest-dark text-white">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        {/* Statement + newsletter */}
+        <div className="grid gap-10 py-16 lg:grid-cols-12 lg:items-end lg:py-20">
+          <p className="text-balance text-3xl font-medium leading-[1.1] tracking-[-0.025em] sm:text-4xl lg:col-span-7">
+            Care that keeps going, long after the tents come down.
+          </p>
 
-      <div className="relative mx-auto max-w-7xl px-5 pb-10 pt-10 sm:px-8 lg:pt-14">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_1fr_1fr_1.4fr]">
-          <div>
-            <Logo tone="light" />
-            <p className="mt-5 max-w-xs text-[15px] leading-relaxed text-white/75">{site.mission}</p>
-            <ul className="mt-6 flex gap-2" aria-label="Social media">
-              {socials.map((s) =>
-              <li key={s.key}>
-                  <a
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-white transition-[background-color,color,transform] duration-200 hover:-translate-y-0.5 hover:bg-white hover:text-forest">
-                  
-                    <SocialIcon name={s.key} className="h-5 w-5" />
-                  </a>
-                </li>
-              )}
-            </ul>
-          </div>
-
-          <nav aria-label="Footer">
-            <h2 className="text-sm font-medium text-white/60">Explore</h2>
-            <ul className="mt-4 space-y-3">
-              {navLinks.map((l) =>
-              <li key={l.to}>
-                  <Link href={l.to} className="text-[15px] text-white/90 transition-colors hover:text-sun">
-                    {l.label}
-                  </Link>
-                </li>
-              )}
-              <li>
-                <Link href="/privacy" className="text-[15px] text-white/90 transition-colors hover:text-sun">
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </nav>
-
-          <div>
-            <h2 className="text-sm font-medium text-white/60">Reach us</h2>
-            <ul className="mt-4 space-y-4 text-[15px]">
-              <li>
-                <a href={`mailto:${site.email}`} className="flex items-start gap-3 text-white/90 hover:text-sun">
-                  <MailIcon className="mt-0.5 h-4 w-4 shrink-0 text-white/60" /> {site.email}
-                </a>
-              </li>
-              <li>
-                <a href={site.phoneHref} className="flex items-start gap-3 text-white/90 hover:text-sun">
-                  <PhoneIcon className="mt-0.5 h-4 w-4 shrink-0 text-white/60" /> {site.phone}
-                </a>
-              </li>
-              <li>
-                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-start gap-3 text-white/90 hover:text-sun">
-                  <WhatsAppIcon className="mt-0.5 h-4 w-4 shrink-0 text-white/60" /> WhatsApp us
-                </a>
-              </li>
-              <li className="flex items-start gap-3 text-white/90">
-                <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-white/60" /> {site.address}
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-3xl bg-white/[0.07] p-6">
-            <h2 className="text-lg font-medium">Field notes, once a month</h2>
-            <p className="mt-2 text-[15px] leading-relaxed text-white/70">
-              Stories from our outreaches, TAZ AI updates and ways to help. No spam.
-            </p>
+          <div className="lg:col-span-5">
+            <h2 className="text-[15px] font-medium">Field notes, once a month</h2>
+            <p className="mt-1 text-sm text-white/55">Stories from our outreaches, TAZ AI updates and ways to help.</p>
             {status === 'success' ?
-            <p className="mt-5 flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-3 text-[15px]" role="status">
+            <p className="mt-4 flex h-12 items-center gap-2 text-[15px] text-white/85" role="status">
                 <CheckIcon className="h-5 w-5 text-sun" /> You’re subscribed. Thank you!
               </p> :
 
-            <form onSubmit={onSubmit} className="mt-5" noValidate>
+            <form onSubmit={onSubmit} className="mt-4" noValidate>
                 <label htmlFor="newsletter" className="sr-only">
                   Email address
                 </label>
-                <div className="flex gap-2">
+                <div className="flex h-12 items-center rounded-full bg-white/[0.08] p-1 pl-5 ring-1 ring-white/15 transition-shadow focus-within:ring-sun">
                   <input
                   id="newsletter"
                   type="email"
@@ -117,14 +73,13 @@ export function Footer() {
                   placeholder="you@email.com"
                   aria-invalid={status === 'error'}
                   aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
-                  className="h-12 min-w-0 flex-1 rounded-full bg-white px-5 text-[15px] text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-sun" />
-                
+                  className="h-full min-w-0 flex-1 bg-transparent text-[15px] text-white placeholder:text-white/40 focus:outline-none" />
+
                   <button
                   type="submit"
-                  aria-label="Subscribe"
-                  className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-leaf transition-[background-color,transform] duration-200 hover:-translate-y-0.5 hover:bg-sun hover:text-forest">
-                  
-                    <ArrowRightIcon className="h-5 w-5" />
+                  className="flex h-10 shrink-0 items-center gap-1.5 rounded-full bg-white px-4 text-sm font-medium text-forest transition-colors duration-200 hover:bg-sun">
+
+                    Subscribe <ArrowRightIcon className="h-4 w-4" />
                   </button>
                 </div>
                 {status === 'error' &&
@@ -137,13 +92,87 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} TAZhealth Initiative. A Nigerian nonprofit.</p>
-          <Link href="/privacy" className="hover:text-white">
-            Privacy Policy
-          </Link>
+        {/* Links */}
+        <div className="grid grid-cols-2 gap-x-6 gap-y-12 border-t border-white/10 py-14 md:grid-cols-4">
+          <div className="col-span-2 md:col-span-1">
+            <Logo tone="light" />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
+              A Nigerian nonprofit bringing free outreaches and real follow-up to underserved communities.
+            </p>
+          </div>
+
+          <Column title="Explore">
+            {navLinks.map((l) =>
+            <li key={l.to}>
+                <Link href={l.to} className={linkClass}>
+                  {l.label}
+                </Link>
+              </li>
+            )}
+          </Column>
+
+          <Column title="Get involved">
+            {involveLinks.map((l) =>
+            <li key={l.to}>
+                <Link href={l.to} className={linkClass}>
+                  {l.label}
+                </Link>
+              </li>
+            )}
+          </Column>
+
+          <Column title="Reach us">
+            <li>
+              <a href={`mailto:${site.email}`} className={linkClass}>
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a href={site.phoneHref} className={linkClass}>
+                {site.phone}
+              </a>
+            </li>
+            <li>
+              <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                WhatsApp us
+              </a>
+            </li>
+            <li className="text-[15px] text-white/70">{site.address}</li>
+          </Column>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="flex flex-col-reverse gap-5 border-t border-white/10 py-6 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {new Date().getFullYear()} TAZhealth Initiative ·{' '}
+            <Link href="/privacy" className="transition-colors hover:text-white">
+              Privacy Policy
+            </Link>
+          </p>
+          <ul className="flex gap-1" aria-label="Social media">
+            {socials.map((s) =>
+            <li key={s.key}>
+                <a
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="flex h-9 w-9 items-center justify-center rounded-full text-white/60 transition-colors duration-200 hover:bg-white/10 hover:text-white">
+
+                  <SocialIcon name={s.key} className="h-4 w-4" />
+                </a>
+              </li>
+            )}
+          </ul>
         </div>
       </div>
+
+      <p
+        aria-hidden="true"
+        className="pointer-events-none -mb-[4.5vw] select-none text-center text-[21vw] font-semibold leading-none tracking-[-0.06em] text-white/[0.05]">
+
+        TAZhealth
+      </p>
     </footer>);
 
 }

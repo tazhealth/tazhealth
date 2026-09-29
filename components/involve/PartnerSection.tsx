@@ -1,86 +1,115 @@
 'use client';
 
 import React from 'react';
-import { Loader2Icon } from 'lucide-react';
-import { SelectField, TextAreaField, TextField } from '../forms/Field';
+import { ChoiceChips, TextAreaField, TextField } from '../forms/Field';
+import { FormPanel, FormSection, SubmitButton } from '../forms/FormPanel';
 import { FormSuccess } from '../forms/FormSuccess';
-import { ButtonLink } from '../ui/ButtonLink';
-import { RevealGroup, RevealItem } from '../ui/Reveal';
-import { SectionHeading } from '../ui/SectionHeading';
+import { SideIntro } from './SideIntro';
 import { partnerTypes } from '../../data/involve';
 import { isEmail, useSimpleForm } from '../../hooks/useSimpleForm';
 
-const interests = ['Sponsor an outreach', 'Bring TAZ AI to our programme', 'Receive referrals', 'Co-host an outreach', 'Something else'];
+const interests = ['Sponsor an outreach', 'Co-host an outreach', 'Bring TAZ AI to our programme', 'Receive referrals', 'Something else'];
 
 export function PartnerSection() {
   const { values, errors, status, setField, handleSubmit, reset } = useSimpleForm(
-    { ptOrg: '', ptName: '', ptEmail: '', ptPhone: '', ptType: '', ptInterest: '', ptMessage: '' },
+    { ptOrg: '', ptType: '', ptInterest: '', ptMessage: '', ptName: '', ptEmail: '', ptPhone: '' },
     (v) => ({
       ptOrg: v.ptOrg.trim() ? undefined : 'Please add your organisation.',
+      ptType: v.ptType ? undefined : 'Please choose your organisation type.',
       ptName: v.ptName.trim() ? undefined : 'Please tell us your name.',
-      ptEmail: isEmail(v.ptEmail) ? undefined : 'Please enter a valid email.',
-      ptType: v.ptType ? undefined : 'Please choose your organisation type.'
+      ptEmail: isEmail(v.ptEmail) ? undefined : 'Please enter a valid email.'
     })
   );
 
   return (
-    <section id="partner" className="relative scroll-mt-20 overflow-hidden bg-mint py-20 lg:py-28" aria-labelledby="partner-title">
-      <div className="adire pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden="true" />
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <div>
-          <SectionHeading
+    <section id="partner" className="scroll-mt-20 border-t border-ink/10 bg-white py-24 lg:py-32" aria-labelledby="partner-title">
+      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-10">
+        <div className="lg:col-span-4">
+          <SideIntro
+            index="02"
             id="partner-title"
-            title="Partner with us."
-            intro="Together we can make continuous care the standard for every outreach in Nigeria." />
-          
-          <RevealGroup as="ul" className="mt-10 space-y-3">
-            {partnerTypes.map((p) => {
-              const Icon = p.icon;
-              return (
-                <RevealItem as="li" key={p.title} className="flex gap-4 rounded-3xl bg-white p-5">
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-forest text-white">
-                    <Icon className="h-5 w-5" aria-hidden="true" />
-                  </span>
-                  <div>
-                    <h3 className="text-lg text-forest">{p.title}</h3>
-                    <p className="mt-0.5 text-[15px] text-ink/70">{p.text}</p>
-                  </div>
-                </RevealItem>);
+            title="Partner"
+            text="Together we can make follow-up the standard for every outreach in Nigeria.">
 
-            })}
-          </RevealGroup>
+            <div className="mt-10">
+              <p className="text-sm text-ink/45">Who we work with</p>
+              <ul className="mt-3 border-t border-ink/10">
+                {partnerTypes.map((p) =>
+                <li key={p.title} className="border-b border-ink/10 py-3.5">
+                    <p className="text-[15px] font-medium text-ink">{p.title}</p>
+                    <p className="mt-0.5 text-sm text-ink/55">{p.text}</p>
+                  </li>
+                )}
+              </ul>
+            </div>
+          </SideIntro>
         </div>
 
-        <div>
+        <div className="lg:col-span-8">
           {status === 'success' ?
           <FormSuccess
-            title="Thank you for reaching out"
+            title="Thanks for reaching out"
             text="Our partnerships lead will get back to you within two working days."
             onReset={reset}
             resetLabel="Send another enquiry" /> :
 
 
-          <form onSubmit={handleSubmit} noValidate className="rounded-[2rem] bg-white p-6 sm:p-8">
-              <h3 className="text-xl text-forest">Partnership enquiry</h3>
-              <div className="mt-6 grid gap-5 sm:grid-cols-2">
-                <TextField id="ptOrg" label="Organisation" className="sm:col-span-2" value={values.ptOrg} onChange={(v) => setField('ptOrg', v)} error={errors.ptOrg} autoComplete="organization" />
-                <TextField id="ptName" label="Your name" value={values.ptName} onChange={(v) => setField('ptName', v)} error={errors.ptName} autoComplete="name" />
-                <TextField id="ptEmail" type="email" label="Email" value={values.ptEmail} onChange={(v) => setField('ptEmail', v)} error={errors.ptEmail} autoComplete="email" />
-                <SelectField id="ptType" label="Organisation type" value={values.ptType} onChange={(v) => setField('ptType', v)} options={partnerTypes.map((p) => p.title)} error={errors.ptType} />
-                <SelectField id="ptInterest" label="I’m interested in" optional value={values.ptInterest} onChange={(v) => setField('ptInterest', v)} options={interests} />
-                <TextField id="ptPhone" type="tel" label="Phone" optional className="sm:col-span-2" value={values.ptPhone} onChange={(v) => setField('ptPhone', v)} autoComplete="tel" />
-                <TextAreaField id="ptMessage" label="Message" optional rows={4} className="sm:col-span-2" value={values.ptMessage} onChange={(v) => setField('ptMessage', v)} placeholder="Tell us what you have in mind" />
-              </div>
-              <ButtonLink type="submit" size="lg" className="mt-6 w-full sm:w-auto" disabled={status === 'submitting'}>
-                {status === 'submitting' ?
-              <>
-                    <Loader2Icon className="h-5 w-5 animate-spin" aria-hidden="true" /> Sending…
-                  </> :
+          <FormPanel
+            label="Partnership enquiry"
+            onSubmit={handleSubmit}
+            footer={
+            <>
+                  <p className="text-sm text-ink/50">We reply within two working days.</p>
+                  <SubmitButton busy={status === 'submitting'}>Send enquiry</SubmitButton>
+                </>
+            }>
 
-              'Send enquiry'
-              }
-              </ButtonLink>
-            </form>
+              <FormSection title="Your organisation">
+                <div className="space-y-5">
+                  <TextField id="ptOrg" label="Organisation name" value={values.ptOrg} onChange={(v) => setField('ptOrg', v)} error={errors.ptOrg} autoComplete="organization" placeholder="e.g. Oyo Care Network" />
+                  <ChoiceChips
+                  id="ptType"
+                  name="ptType"
+                  label="Type of organisation"
+                  options={partnerTypes.map((p) => p.title)}
+                  value={values.ptType}
+                  onChange={(v) => setField('ptType', v)}
+                  error={errors.ptType} />
+
+                </div>
+              </FormSection>
+
+              <FormSection title="What you have in mind">
+                <div className="space-y-5">
+                  <ChoiceChips
+                  id="ptInterest"
+                  name="ptInterest"
+                  label="I’m interested in"
+                  optional
+                  options={interests}
+                  value={values.ptInterest}
+                  onChange={(v) => setField('ptInterest', v)} />
+
+                  <TextAreaField
+                  id="ptMessage"
+                  label="Tell us more"
+                  optional
+                  rows={4}
+                  value={values.ptMessage}
+                  onChange={(v) => setField('ptMessage', v)}
+                  placeholder="Communities you work in, timelines, anything useful." />
+
+                </div>
+              </FormSection>
+
+              <FormSection title="Contact person">
+                <div className="grid gap-5 sm:grid-cols-2">
+                  <TextField id="ptName" label="Your name" value={values.ptName} onChange={(v) => setField('ptName', v)} error={errors.ptName} autoComplete="name" />
+                  <TextField id="ptEmail" type="email" label="Work email" value={values.ptEmail} onChange={(v) => setField('ptEmail', v)} error={errors.ptEmail} autoComplete="email" placeholder="you@organisation.org" />
+                  <TextField id="ptPhone" type="tel" label="Phone" optional className="sm:col-span-2" value={values.ptPhone} onChange={(v) => setField('ptPhone', v)} autoComplete="tel" />
+                </div>
+              </FormSection>
+            </FormPanel>
           }
         </div>
       </div>

@@ -13,7 +13,7 @@ import { navLinks, site } from '../../data/site';
 import { cn } from '../../utils/cn';
 import { EASE } from '../../utils/motion';
 
-const DARK_HERO_ROUTES = ['/taz-ai'];
+const DARK_HERO_ROUTES: string[] = [];
 
 function isLinkActive(pathname: string, to: string) {
   return to === '/' ? pathname === '/' : pathname === to || pathname.startsWith(`${to}/`);

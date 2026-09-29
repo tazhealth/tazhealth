@@ -52,15 +52,16 @@ function Donut() {
 
 }
 
-export function DashboardPreview() {
-  return (
-    <div className="mx-auto w-full max-w-5xl">
-      <div className="rounded-t-[1.25rem] bg-ink p-2 sm:p-3">
-        <div className="flex overflow-hidden rounded-xl bg-[#F7FAF7]" role="img" aria-label="TAZ AI community dashboard showing outreach statistics and risk breakdown">
+export function DashboardPreview({ frame = 'laptop' }: {frame?: 'laptop' | 'browser';}) {
+  const browser = frame === 'browser';
+  const screen =
+  <div className="flex overflow-hidden rounded-xl bg-[#F7FAF7]" role="img" aria-label="TAZ AI community dashboard showing outreach statistics and risk breakdown">
           <aside className="hidden w-44 shrink-0 flex-col gap-1 bg-forest p-4 text-white md:flex" aria-hidden="true">
-            <p className="mb-4 text-sm font-semibold">
-              <span className="text-sun">TAZ</span> AI
-            </p>
+            {!browser &&
+      <p className="mb-4 text-sm font-semibold">
+                <span className="text-sun">TAZ</span> AI
+              </p>
+      }
             {[
             { icon: LayoutDashboardIcon, label: 'Dashboard', active: true },
             { icon: UsersIcon, label: 'Patients' },
@@ -112,8 +113,10 @@ export function DashboardPreview() {
                 <p className="text-xs font-medium text-ink">Follow-ups completed per week</p>
                 <div className="mt-3 flex h-28 items-end gap-2">
                   {weekly.map((v, i) =>
-                  <div key={i} className="flex flex-1 flex-col items-center gap-1">
-                      <div className={`w-full rounded-t-md ${i === weekly.length - 1 ? 'bg-leaf' : 'bg-leaf/30'}`} style={{ height: `${v}%` }} />
+                  <div key={i} className="flex h-full flex-1 flex-col items-center gap-1">
+                      <div className="flex w-full flex-1 items-end">
+                        <div className={`w-full rounded-t-md ${i === weekly.length - 1 ? 'bg-leaf' : 'bg-leaf/30'}`} style={{ height: `${v}%` }} />
+                      </div>
                       <span className="text-[9px] text-ink/45">W{i + 1}</span>
                     </div>
                   )}
@@ -135,8 +138,31 @@ export function DashboardPreview() {
               </ul>
             </div>
           </div>
+        </div>;
+
+  if (browser) {
+    return (
+      <div className="mx-auto w-full max-w-5xl rounded-[1.75rem] bg-white/70 p-2 shadow-card ring-1 ring-forest/10 backdrop-blur sm:p-3">
+        <div className="mb-2 flex items-center justify-between gap-4 rounded-2xl bg-white px-4 py-3 ring-1 ring-ink/5 sm:mb-3 sm:px-5" aria-hidden="true">
+          <p className="text-base font-semibold text-forest">
+            <span className="text-leaf">TAZ</span> AI
+          </p>
+          <div className="flex items-center gap-5 text-xs text-ink/70">
+            <span className="hidden sm:inline">Patients</span>
+            <span className="hidden sm:inline">Outreaches</span>
+            <span className="hidden sm:inline">Reports</span>
+            <span className="rounded-lg px-3 py-1.5 text-forest ring-1 ring-leaf">Sync now</span>
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-sun/30 text-[11px] font-medium text-forest">AO</span>
+          </div>
         </div>
-      </div>
+        {screen}
+      </div>);
+
+  }
+
+  return (
+    <div className="mx-auto w-full max-w-5xl">
+      <div className="rounded-t-[1.25rem] bg-ink p-2 sm:p-3">{screen}</div>
       <div className="mx-auto h-4 w-[106%] -translate-x-[3%] rounded-b-2xl bg-[#D5DAD5]" aria-hidden="true" />
     </div>);
 

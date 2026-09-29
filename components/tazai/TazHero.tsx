@@ -58,7 +58,7 @@ export function TazHero() {
           day keeps going after you leave.
         </motion.p>
         <motion.div
-          className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"
+          className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: EASE, delay: 0.25 }}>

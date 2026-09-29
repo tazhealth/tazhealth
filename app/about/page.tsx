@@ -133,7 +133,7 @@ export default function About() {
           <p className="mt-4 text-ink/65">
             Doctors, nurses, students, or anyone with a few hours and a phone. There’s a place for you.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
             <ButtonLink to="/get-involved#volunteer" size="lg">
               Volunteer with us
             </ButtonLink>

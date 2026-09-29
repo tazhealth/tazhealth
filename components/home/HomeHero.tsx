@@ -54,10 +54,10 @@ export function HomeHero() {
         </motion.p>
 
         <motion.div {...rise(0.25)} className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
-          <ButtonLink to="/get-involved#volunteer" size="lg" className="h-11 px-5 text-sm sm:h-14 sm:px-7 sm:text-base">
+          <ButtonLink to="/get-involved#volunteer" size="lg">
             Volunteer with us
           </ButtonLink>
-          <ButtonLink to="/taz-ai" size="lg" variant="secondary" className="h-11 px-5 text-sm sm:h-14 sm:px-7 sm:text-base">
+          <ButtonLink to="/taz-ai" size="lg" variant="secondary">
             See how we follow up <ArrowRightIcon className="h-4 w-4" />
           </ButtonLink>
         </motion.div>

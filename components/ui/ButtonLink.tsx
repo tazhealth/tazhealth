@@ -30,7 +30,7 @@ const variants: Record<Variant, string> = {
 
 const sizes: Record<Size, string> = {
   md: 'h-12 px-6 text-[15px]',
-  lg: 'h-14 px-7 text-base'
+  lg: 'h-11 px-5 text-sm sm:h-14 sm:px-7 sm:text-base'
 };
 
 export function ButtonLink({

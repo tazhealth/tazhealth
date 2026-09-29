@@ -147,7 +147,7 @@ export default function Home() {
           <p className="mt-4 text-ink/65">
             Give a Saturday at an outreach, make follow-up calls from home, or bring us to your community.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
             <ButtonLink to="/get-involved#volunteer" size="lg">
               Volunteer with us
             </ButtonLink>

@@ -12,7 +12,7 @@ export default function Blog() {
     <section className="bg-white pb-16 pt-28 sm:pb-24 sm:pt-32 lg:pb-32 lg:pt-40">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <p className="text-sm text-ink/50">Blog</p>
-        <h1 className="mt-4 text-[34px] font-medium leading-[1.05] tracking-[-0.03em] text-ink sm:mt-6 sm:text-6xl">
+        <h1 className="mt-4 text-[34px] font-medium leading-[1.05] tracking-[-0.03em] text-ink sm:mt-6 sm:text-5xl">
           Blogs & Articles
         </h1>
         <p className="mt-4 max-w-xl text-[15px] leading-relaxed text-ink/60 sm:text-lg">

@@ -53,7 +53,7 @@ export default function Outreaches() {
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <p className="text-sm text-ink/50">Outreaches</p>
           <div className="mt-4 grid gap-5 sm:mt-6 sm:gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
-            <h1 className="text-[32px] font-medium leading-[1.05] tracking-[-0.03em] text-ink sm:text-6xl sm:leading-[1.02] sm:tracking-[-0.035em] lg:col-span-8 lg:text-[64px]">
+            <h1 className="text-[32px] font-medium leading-[1.05] tracking-[-0.03em] text-ink sm:text-5xl sm:leading-[1.02] sm:tracking-[-0.035em] lg:col-span-8 lg:text-[64px]">
               One Saturday of care. Months of follow-up.
             </h1>
             <p className="text-[15px] leading-relaxed text-ink/60 sm:text-lg lg:col-span-4">

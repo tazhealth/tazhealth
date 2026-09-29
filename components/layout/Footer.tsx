@@ -9,6 +9,7 @@ import { navLinks, site, socials } from '../../data/site';
 
 const involveLinks = [
 { label: 'Volunteer', to: '/contact?topic=volunteer' },
+{ label: 'Partner with us', to: '/partner' },
 { label: 'Donate', to: '/contact?topic=donate' },
 // { label: 'Book a TAZ AI demo', to: '/taz-ai#demo' },
 { label: 'Upcoming outreaches', to: '/outreaches#upcoming' }];

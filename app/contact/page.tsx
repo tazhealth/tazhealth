@@ -11,7 +11,7 @@ export default function Contact() {
             <span className="h-1.5 w-1.5 rounded-full bg-leaf" aria-hidden="true" />
             Contact
           </p>
-          <h1 className="mt-5 text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-ink sm:text-6xl">Let’s talk.</h1>
+          <h1 className="mt-5 text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-ink sm:text-5xl">Let’s talk.</h1>
           <p className="mx-auto mt-4 max-w-sm text-[15px] leading-relaxed text-ink/60 sm:text-base lg:mx-0">
             Questions about volunteering, partnering or TAZ AI? Send us a message. We read every one.
           </p>

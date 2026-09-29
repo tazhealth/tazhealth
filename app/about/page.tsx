@@ -1,15 +1,8 @@
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { JourneyTimeline } from '@/components/about/JourneyTimeline';
-import { images } from '@/data/images';
+import { PhotoMarquee } from '@/components/about/PhotoMarquee';
 import { team } from '@/data/people';
-import { cn } from '@/utils/cn';
-
-const polaroids = [
-{ src: images.motherChild, caption: 'Makoko, a second visit', alt: 'Nurse examining a child with her mother', tilt: '-rotate-6', offset: 'sm:translate-y-6' },
-{ src: images.aboutHero, caption: 'Ogbomosho, where it started', alt: 'TAZhealth volunteers carrying medical supplies along a village path', tilt: 'rotate-2', offset: '' },
-{ src: images.education, caption: 'Akinyele, health talk', alt: 'Health talk under a shade tree', tilt: 'rotate-6', offset: 'sm:translate-y-8' }];
-
 
 const lessons = [
 'Screening is the start, not the finish. A high reading means nothing if nobody checks what happened next.',
@@ -37,16 +30,9 @@ export default function About() {
           </Reveal>
         </div>
 
-        <RevealGroup className="mx-auto mt-14 flex max-w-4xl flex-col items-center gap-8 px-5 sm:flex-row sm:justify-center sm:gap-0 sm:px-8">
-          {polaroids.map((p) =>
-          <RevealItem key={p.caption} className={cn('w-60 sm:-mx-3 sm:w-64', p.offset)}>
-              <figure className={cn('bg-white p-3 pb-4 shadow-card transition-transform duration-300 ease-smooth hover:rotate-0 hover:scale-105', p.tilt)}>
-                <img src={p.src} alt={p.alt} className="aspect-square w-full object-cover" />
-                <figcaption className="mt-3 text-center text-sm text-ink/70">{p.caption}</figcaption>
-              </figure>
-            </RevealItem>
-          )}
-        </RevealGroup>
+        <div className="mt-10 lg:mt-12">
+          <PhotoMarquee />
+        </div>
       </section>
 
       {/* The letter */}

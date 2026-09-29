@@ -46,7 +46,14 @@ export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
 
         <div className="mx-auto mt-10 max-w-2xl space-y-5 px-5 text-[16px] leading-[1.8] text-ink/75 sm:px-8 sm:text-[17px]">
           <p className="text-lg leading-relaxed text-ink sm:text-xl">{article.excerpt}</p>
-          {article.body.map((p, i) => <p key={i}>{p}</p>)}
+          {article.body.map((p, i) =>
+          p.startsWith('## ') ?
+          <h2 key={i} className="!mt-12 text-xl font-medium tracking-[-0.015em] text-ink sm:text-2xl">
+                {p.slice(3)}
+              </h2> :
+
+          <p key={i}>{p}</p>
+          )}
         </div>
       </article>
 

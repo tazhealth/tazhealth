@@ -50,10 +50,10 @@ export const fieldStories: FieldStory[] = [
 
 export const team: TeamMember[] = [
 {
-  name: 'Amara Okafor',
-  role: 'Founder & Executive Director',
-  image: images.team1,
-  bio: 'Public health specialist who has organised community outreaches since medical school.',
+  name: 'OjiChukwujife Chuka-Utazi',
+  role: 'Founder & CEO',
+  image: '/team/ojichukwujife-chuka-utazi.jpg',
+  bio: 'Doctor in training, 2025 UN Millennium Fellow and Top 150 Outstanding Young Nigerian. His outreaches have reached 15,000+ people.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
 },

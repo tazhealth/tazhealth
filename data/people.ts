@@ -58,18 +58,18 @@ export const team: TeamMember[] = [
   x: 'https://x.com'
 },
 {
-  name: 'Dr. Emeka Nwosu',
-  role: 'Medical Lead',
-  image: images.team2,
-  bio: 'Family physician leading clinical protocols, triage rules and referral pathways.',
+  name: 'Kamal Ayisat',
+  role: 'Chief Operating Officer',
+  image: '/team/kamal-ayisat.jpg',
+  bio: 'Oversees TAZhealth’s operations, making sure our outreaches and initiatives are well coordinated and carried out effectively.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
 },
 {
-  name: 'Zainab Bello',
-  role: 'Community Programmes Lead',
-  image: images.team3,
-  bio: 'Builds trust with community leaders and coordinates volunteers on outreach day.',
+  name: 'Offor Chidoziem Francis',
+  role: 'Chief Technology Officer',
+  image: '/team/offor-chidoziem-francis.jpg',
+  bio: 'Leads TAZhealth’s technology, building the digital tools behind our outreaches and patient follow-up.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
 },

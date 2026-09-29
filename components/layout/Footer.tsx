@@ -24,57 +24,72 @@ const columns: {title: string;links: FooterLink[];}[] = [
   { label: site.phone, href: site.phoneHref },
   { label: 'WhatsApp us', href: site.whatsapp, external: true }]
 
-},
-{ title: 'Legal', links: [{ label: 'Privacy Policy', href: '/privacy' }] }];
+}];
 
+
+const linkClass = 'text-sm text-white/70 transition-colors hover:text-white';
 
 export function Footer() {
   return (
-    <footer className="border-t border-ink/10 bg-white">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:px-8 lg:grid-cols-12 lg:gap-8 lg:py-16">
-        <div className="lg:col-span-4">
-          <Logo />
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink/65">
-            Free medical outreaches and real follow-up for underserved Nigerian communities.
-          </p>
-          <ul className="mt-5 flex gap-4" aria-label="Social media">
-            {socials.map((s) =>
-            <li key={s.key}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label} className="text-ink transition-colors hover:text-forest">
-                  <SocialIcon name={s.key} className="h-5 w-5" />
-                </a>
-              </li>
+    <footer className="bg-black text-white">
+      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="grid gap-12 py-14 lg:grid-cols-12 lg:gap-8 lg:py-20">
+          <div className="lg:col-span-5">
+            <Logo tone="light" />
+            <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
+              Free medical outreaches and real follow-up for underserved Nigerian communities.
+            </p>
+            <ul className="mt-6 flex gap-3" aria-label="Social media">
+              {socials.map((s) =>
+              <li key={s.key}>
+                  <a
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:border-white hover:bg-white hover:text-black">
+
+                    <SocialIcon name={s.key} className="h-4 w-4" />
+                  </a>
+                </li>
+              )}
+            </ul>
+          </div>
+
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:col-span-7">
+            {columns.map((c) =>
+            <div key={c.title}>
+                <h2 className="text-xs font-semibold uppercase tracking-widest text-white">{c.title}</h2>
+                <ul className="mt-5 space-y-3">
+                  {c.links.map((l) =>
+                <li key={l.label}>
+                      {l.external || l.href.startsWith('mailto:') || l.href.startsWith('tel:') ?
+                  <a
+                    href={l.href}
+                    {...l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
+                    className={`break-words ${linkClass}`}>
+
+                          {l.label}
+                        </a> :
+
+                  <Link href={l.href} className={linkClass}>
+                          {l.label}
+                        </Link>
+                  }
+                    </li>
+                )}
+                </ul>
+              </div>
             )}
-          </ul>
-          <p className="mt-5 text-sm text-ink/55">© {new Date().getFullYear()} TAZhealth Initiative. All rights reserved.</p>
+          </nav>
         </div>
 
-        <nav aria-label="Footer" className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-4 lg:col-span-8">
-          {columns.map((c) =>
-          <div key={c.title}>
-              <h2 className="text-base font-semibold text-ink">{c.title}</h2>
-              <ul className="mt-4 space-y-3">
-                {c.links.map((l) =>
-              <li key={l.label}>
-                    {l.external || l.href.startsWith('mailto:') || l.href.startsWith('tel:') ?
-                <a
-                  href={l.href}
-                  {...l.external ? { target: '_blank', rel: 'noopener noreferrer' } : {}}
-                  className="break-words text-sm text-ink/70 transition-colors hover:text-forest">
-
-                        {l.label}
-                      </a> :
-
-                <Link href={l.href} className="text-sm text-ink/70 transition-colors hover:text-forest">
-                        {l.label}
-                      </Link>
-                }
-                  </li>
-              )}
-              </ul>
-            </div>
-          )}
-        </nav>
+        <div className="flex flex-col gap-3 border-t border-white/15 py-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} TAZhealth Initiative. All rights reserved.</p>
+          <Link href="/privacy" className="transition-colors hover:text-white">
+            Privacy Policy
+          </Link>
+        </div>
       </div>
     </footer>);
 

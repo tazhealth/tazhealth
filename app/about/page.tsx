@@ -1,143 +1,128 @@
-import { CompassIcon, HeartPulseIcon, TargetIcon } from 'lucide-react';
-import { PageHero } from '@/components/ui/PageHero';
 import { ButtonLink } from '@/components/ui/ButtonLink';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
-import { CtaBand } from '@/components/ui/CtaBand';
-import { SocialIcon } from '@/components/ui/SocialIcon';
 import { JourneyTimeline } from '@/components/about/JourneyTimeline';
 import { images } from '@/data/images';
 import { team } from '@/data/people';
+import { cn } from '@/utils/cn';
+
+const polaroids = [
+{ src: images.motherChild, caption: 'Makoko, a second visit', alt: 'Nurse examining a child with her mother', tilt: '-rotate-6', offset: 'sm:translate-y-6' },
+{ src: images.aboutHero, caption: 'Ogbomosho, where it started', alt: 'TAZhealth volunteers carrying medical supplies along a village path', tilt: 'rotate-2', offset: '' },
+{ src: images.education, caption: 'Akinyele, health talk', alt: 'Health talk under a shade tree', tilt: 'rotate-6', offset: 'sm:translate-y-8' }];
+
 
 const lessons = [
-{
-  title: 'Screening is the start, not the finish.',
-  text: 'Finding a high blood pressure reading means nothing if no one checks whether treatment followed.'
-},
-{
-  title: 'Trust is built by coming back.',
-  text: 'Communities opened up when they saw us return - and when our messages spoke their language.'
-},
-{
-  title: 'Tools must fit the field.',
-  text: 'No network, cheap phones, busy volunteers. Anything we build has to work in those conditions first.'
-}];
+'Screening is the start, not the finish. A high reading means nothing if nobody checks what happened next.',
+'Trust is built by coming back. People opened up when they saw us return, and when our messages spoke their language.',
+'Tools have to fit the field. No network, cheap phones, busy volunteers. Whatever we build must work there first.'];
 
 
-const values = [
-{ name: 'Human-centred', text: 'We design around the dignity, language and daily reality of the people we serve.' },
-{ name: 'Community-first', text: 'Community leaders shape where we go and how we work. We are guests, and we act like it.' },
-{ name: 'Accountable', text: 'We track what happens after every outreach and report it honestly - to communities, partners and donors.' },
-{ name: 'Innovative', text: 'When the old way loses patients, we build a better one - simply, affordably and responsibly.' }];
-
+const founder = team[0];
 
 export default function About() {
   return (
     <>
-      <PageHero
-        title={
-        <>
-            Building <span className="text-leaf">continuous care</span> for underserved communities.
-          </>
-        }
-        description="TAZhealth is a Nigerian nonprofit that brings medical outreaches to communities who need them most - and builds the tools to keep caring after we leave."
-        image={images.aboutHero}
-        imageAlt="TAZhealth volunteers carrying medical supplies along a village path"
-        actions={
-        <>
-            <ButtonLink to="/get-involved" size="lg">
-              Join us
-            </ButtonLink>
-            <ButtonLink to="/outreaches" size="lg" variant="secondary">
-              See our outreaches
-            </ButtonLink>
-          </>
-        }
-        aside={
-        <div className="absolute -left-3 bottom-10 rounded-2xl bg-white p-4 shadow-card sm:-left-8">
-            <p className="text-2xl font-medium text-forest">2025</p>
-            <p className="text-sm text-ink/60">First outreach, Ogbomosho</p>
-          </div>
-        } />
-
-
-      {/* Our story */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="story-title">
-        <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
+      {/* Opening */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-[#F6F7E6] to-mint pb-20 pt-32 lg:pb-28 lg:pt-40">
+        <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <Reveal>
-            <h2 id="story-title" className="text-lg font-medium text-leaf">
-              Our story
-            </h2>
-            <p className="mt-4 text-[22px] leading-[1.25] text-forest sm:text-3xl sm:leading-[1.2]">
-              “We screened 52 people in Ogbomosho. A month later, we could reach fewer than ten of them.”
+            <p className="text-sm font-medium text-leaf">About us</p>
+            <h1 className="mt-4 text-balance text-[34px] font-semibold leading-[1.08] tracking-tight text-ink sm:text-5xl">
+              We’re the people who <span className="text-leaf">come back.</span>
+            </h1>
+            <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/65">
+              TAZhealth is a small Nigerian nonprofit. We run free medical outreaches, and then we keep checking on
+              the people we met.
             </p>
-            <p className="mt-6 text-[15px] text-ink/60"> Amara Okafor, Founder</p>
-          </Reveal>
-          <Reveal delay={0.1} className="space-y-5 text-lg leading-relaxed text-ink/75">
-            <p>
-              TAZhealth began with a simple outreach: a few young doctors, a borrowed canopy and a table of donated drugs.
-              We found blood pressure readings that should have sent people straight to a clinic.
-            </p>
-            <p>
-              When we called to follow up, most phones went unanswered. People hadn’t filled their prescriptions. Some
-              never made it to the referral. The outreach had helped for a day - and then care simply stopped.
-            </p>
-            <p>That year of outreaches taught us three things that now shape everything we do.</p>
           </Reveal>
         </div>
 
-        <RevealGroup as="ol" className="mx-auto mt-14 grid max-w-7xl gap-4 px-5 sm:px-8 md:grid-cols-3">
-          {lessons.map((l) =>
-          <RevealItem as="li" key={l.title} className="flex flex-col rounded-[2rem] bg-mint p-7 sm:p-8">
-              <HeartPulseIcon className="h-7 w-7 text-leaf" aria-hidden="true" />
-              <h3 className="mt-5 text-xl text-forest">{l.title}</h3>
-              <p className="mt-2 text-[16px] leading-relaxed text-ink/70">{l.text}</p>
+        <RevealGroup className="mx-auto mt-14 flex max-w-4xl flex-col items-center gap-8 px-5 sm:flex-row sm:justify-center sm:gap-0 sm:px-8">
+          {polaroids.map((p) =>
+          <RevealItem key={p.caption} className={cn('w-60 sm:-mx-3 sm:w-64', p.offset)}>
+              <figure className={cn('bg-white p-3 pb-4 shadow-card transition-transform duration-300 ease-smooth hover:rotate-0 hover:scale-105', p.tilt)}>
+                <img src={p.src} alt={p.alt} className="aspect-square w-full object-cover" />
+                <figcaption className="mt-3 text-center text-sm text-ink/70">{p.caption}</figcaption>
+              </figure>
             </RevealItem>
           )}
         </RevealGroup>
       </section>
 
-      {/* Mission & vision */}
-      <section className="bg-white pb-20 lg:pb-28" aria-label="Mission and vision">
-        <div className="mx-auto grid max-w-7xl gap-4 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr]">
-          <Reveal className="relative overflow-hidden rounded-[2rem] bg-forest p-8 text-white sm:p-12">
-            <div className="adire-light pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden="true" />
-            <TargetIcon className="relative h-8 w-8 text-sun" aria-hidden="true" />
-            <h2 className="relative mt-6 text-lg font-medium text-white/70">Our mission</h2>
-            <p className="relative mt-3 text-xl leading-snug sm:text-[28px] sm:leading-[1.2]">
-              To bring quality healthcare to underserved Nigerian communities - and make sure it continues long after the
-              outreach ends.
-            </p>
-          </Reveal>
-          <Reveal className="rounded-[2rem] bg-mint p-8 sm:p-12" delay={0.08}>
-            <CompassIcon className="h-8 w-8 text-leaf" aria-hidden="true" />
-            <h2 className="mt-6 text-lg font-medium text-ink/60">Our vision</h2>
-            <p className="mt-3 text-xl leading-snug text-forest sm:text-[24px] sm:leading-[1.25]">
-              A Nigeria where no patient is forgotten after their first diagnosis.
-            </p>
-          </Reveal>
-        </div>
-      </section>
+      {/* The letter */}
+      <section className="bg-white py-20 lg:py-28" aria-labelledby="letter-title">
+        <Reveal className="mx-auto max-w-2xl px-5 sm:px-8">
+          <p id="letter-title" className="text-sm font-medium text-leaf">
+            A note from our founder
+          </p>
+          <p className="mt-5 text-2xl leading-snug text-forest sm:text-[28px]">
+            “We screened 52 people in Ogbomosho. A month later, we could reach fewer than ten of them.”
+          </p>
 
-      {/* Values */}
-      <section className="bg-mint py-20 lg:py-28" aria-labelledby="values-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="values-title" title="What we stand on." />
-          <RevealGroup as="ul" className="mt-12 border-t border-forest/15">
-            {values.map((v) =>
-            <RevealItem as="li" key={v.name} className="grid gap-3 border-b border-forest/15 py-8 md:grid-cols-[1fr_1.4fr] md:items-baseline md:gap-10">
-                <h3 className="text-2xl text-forest sm:text-3xl">{v.name}</h3>
-                <p className="max-w-xl text-lg leading-relaxed text-ink/70">{v.text}</p>
-              </RevealItem>
+          <div className="mt-8 space-y-5 text-[17px] leading-[1.8] text-ink/75">
+            <p>
+              TAZhealth began with a borrowed canopy, a few young doctors and a table of donated drugs. That first day,
+              we found blood pressure readings that should have sent people straight to a clinic.
+            </p>
+            <p>
+              When we called to follow up, most phones rang out. Prescriptions hadn’t been filled. Referrals hadn’t
+              happened. We had helped for one afternoon, and then care simply stopped.
+            </p>
+            <p>That year taught us three things we still hold on to:</p>
+          </div>
+
+          <ol className="mt-6 space-y-4">
+            {lessons.map((l, i) =>
+            <li key={i} className="flex gap-4 rounded-2xl bg-mint px-5 py-4">
+                <span className="text-lg font-semibold text-leaf">{i + 1}</span>
+                <p className="text-[16px] leading-relaxed text-ink/80">{l}</p>
+              </li>
             )}
-          </RevealGroup>
+          </ol>
+
+          <p className="mt-8 text-[17px] leading-[1.8] text-ink/75">
+            So we stopped measuring ourselves by how many people we saw, and started asking how many we stayed with.
+            That question is why we exist.
+          </p>
+
+          <div className="mt-10 flex items-center gap-4 border-t border-forest/10 pt-8">
+            <img src={founder.image} alt="" className="h-14 w-14 rounded-full object-cover" />
+            <div>
+              <p className="font-medium text-ink">{founder.name}</p>
+              <p className="text-sm text-ink/60">{founder.role}</p>
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* Why and hope */}
+      <section className="bg-forest py-20 text-white lg:py-24">
+        <div className="mx-auto grid max-w-5xl gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16">
+          <Reveal>
+            <p className="text-sm font-medium text-sun">Why we exist</p>
+            <p className="mt-4 text-xl leading-snug sm:text-2xl">
+              To bring good care to underserved Nigerian communities, and make sure it keeps going after the outreach
+              ends.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="text-sm font-medium text-sun">What we hope for</p>
+            <p className="mt-4 text-xl leading-snug sm:text-2xl">
+              A Nigeria where nobody is forgotten after their first diagnosis.
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* Journey */}
       <section className="bg-white py-20 lg:py-28" aria-labelledby="journey-title">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
-          <SectionHeading id="journey-title" align="center" title="Our journey so far." intro="From one outreach to a care platform." />
+          <Reveal className="text-center">
+            <h2 id="journey-title" className="text-2xl font-semibold text-ink sm:text-3xl">
+              How we got here
+            </h2>
+            <p className="mt-3 text-ink/60">From one outreach to a care platform.</p>
+          </Reveal>
           <div className="mt-14">
             <JourneyTimeline />
           </div>
@@ -145,39 +130,51 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="bg-white pb-8 lg:pb-12" aria-labelledby="team-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="team-title" title="The people behind the pulse." intro="A small core team, supported by dozens of volunteers at every outreach." />
-          <RevealGroup as="ul" className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+      <section className="bg-mint py-20 lg:py-28" aria-labelledby="team-title">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <Reveal className="text-center">
+            <h2 id="team-title" className="text-2xl font-semibold text-ink sm:text-3xl">
+              The people behind the pulse
+            </h2>
+            <p className="mt-3 text-ink/60">A small core team, and dozens of volunteers at every outreach.</p>
+          </Reveal>
+          <RevealGroup as="ul" className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {team.map((m) =>
-            <RevealItem as="li" key={m.name}>
-                <article className="group flex h-full flex-col">
-                  <div className="aspect-[3/4] overflow-hidden rounded-b-3xl rounded-t-full bg-mint transition-transform duration-200 ease-smooth group-hover:-translate-y-1">
-                    <img src={m.image} alt={`Portrait of ${m.name}`} loading="lazy" className="h-full w-full object-cover transition-transform duration-300 ease-smooth group-hover:scale-105" />
-                  </div>
-                  <h3 className="mt-5 text-xl text-forest">{m.name}</h3>
-                  <p className="text-[15px] font-medium text-leaf">{m.role}</p>
-                  <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{m.bio}</p>
-                  <div className="mt-auto flex gap-2 pt-4">
-                    <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`} className="flex h-10 w-10 items-center justify-center rounded-full bg-mint text-forest transition-colors hover:bg-forest hover:text-white">
-                      <SocialIcon name="linkedin" className="h-4 w-4" />
-                    </a>
-                    <a href={m.x} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on X`} className="flex h-10 w-10 items-center justify-center rounded-full bg-mint text-forest transition-colors hover:bg-forest hover:text-white">
-                      <SocialIcon name="x" className="h-4 w-4" />
-                    </a>
-                  </div>
-                </article>
+            <RevealItem as="li" key={m.name} className="text-center">
+                <img
+                src={m.image}
+                alt={`Portrait of ${m.name}`}
+                loading="lazy"
+                className="mx-auto aspect-square w-40 rounded-full object-cover ring-4 ring-white" />
+
+                <h3 className="mt-5 text-lg font-medium text-forest">{m.name}</h3>
+                <p className="text-sm text-leaf">{m.role}</p>
+                <p className="mx-auto mt-2 max-w-xs text-[15px] leading-relaxed text-ink/65">{m.bio}</p>
               </RevealItem>
             )}
           </RevealGroup>
         </div>
       </section>
 
-      <CtaBand
-        title="Join the people keeping care going."
-        text="Whether you’re a clinician, a student, a developer or simply someone who cares - there’s a place for you at TAZhealth."
-        primaryLabel="Join us" />
-
+      {/* Closing */}
+      <section className="bg-white py-20 lg:py-28">
+        <Reveal className="mx-auto max-w-xl px-5 text-center sm:px-8">
+          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">
+            Come to an outreach. <span className="text-leaf">Stay for the follow-up.</span>
+          </h2>
+          <p className="mt-4 text-ink/65">
+            Doctors, nurses, students, or anyone with a few hours and a phone. There’s a place for you.
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+            <ButtonLink to="/get-involved#volunteer" size="lg">
+              Volunteer with us
+            </ButtonLink>
+            <ButtonLink to="/outreaches#upcoming" size="lg" variant="secondary">
+              See upcoming outreaches
+            </ButtonLink>
+          </div>
+        </Reveal>
+      </section>
     </>);
 
 }

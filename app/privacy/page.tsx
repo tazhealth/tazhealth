@@ -7,7 +7,7 @@ import { EASE } from '@/utils/motion';
 export default function Privacy() {
   return (
     <>
-      <section className="bg-mint pb-12 pt-28 lg:pb-16 lg:pt-36">
+      <section className="bg-mint pb-12 pt-32 lg:pb-16 lg:pt-40">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <motion.h1
             className="text-[32px] leading-[1.05] text-forest sm:text-4xl lg:text-5xl"

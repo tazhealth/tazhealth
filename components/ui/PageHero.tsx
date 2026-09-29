@@ -16,7 +16,7 @@ type PageHeroProps = {
 
 export function PageHero({ title, description, image, imageAlt, actions, aside }: PageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-mint pb-16 pt-28 lg:pb-24 lg:pt-36">
+    <section className="relative overflow-hidden bg-mint pb-16 pt-32 lg:pb-24 lg:pt-40">
       <div className="adire pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <div>

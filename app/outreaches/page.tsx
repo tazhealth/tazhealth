@@ -2,237 +2,278 @@
 
 import { useCallback, useState } from 'react';
 import Link from 'next/link';
-import { ActivityIcon, ArrowRightIcon, BookOpenIcon, CalendarIcon, PillIcon, SendIcon, StethoscopeIcon, UsersIcon } from 'lucide-react';
-import { PageHero } from '@/components/ui/PageHero';
+import { ArrowRightIcon, ArrowUpRightIcon } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/ButtonLink';
-import { SectionHeading } from '@/components/ui/SectionHeading';
-import { RevealGroup, RevealItem } from '@/components/ui/Reveal';
-import { CountUp } from '@/components/ui/CountUp';
-import { EcgLine } from '@/components/ui/EcgLine';
-import { GalleryGrid } from '@/components/ui/GalleryGrid';
-import { CtaBand } from '@/components/ui/CtaBand';
+import { WhatsAppIcon } from '@/components/ui/SocialIcon';
 import { OutreachModal } from '@/components/outreaches/OutreachModal';
-import { gallery, images } from '@/data/images';
-import { outreachImpact } from '@/data/impact';
+import { images } from '@/data/images';
 import { pastOutreaches, upcomingOutreaches } from '@/data/outreaches';
 import { fieldStories } from '@/data/people';
+import { site } from '@/data/site';
 import type { Outreach } from '@/types/content';
 
-const journey = [
-{ icon: ActivityIcon, title: 'Screening', text: 'Blood pressure, blood sugar, malaria and BMI checks for every adult.' },
-{ icon: StethoscopeIcon, title: 'Consultation', text: 'One-to-one time with a volunteer doctor or nurse.' },
-{ icon: PillIcon, title: 'Treatment', text: 'Free essential medication and clear instructions to take home.' },
-{ icon: SendIcon, title: 'Referral', text: 'Serious cases linked to the nearest PHC or hospital - and tracked.' },
-{ icon: BookOpenIcon, title: 'Health education', text: 'Practical talks on diet, hypertension, maternal and child health.' }];
+const day = [
+{ when: 'Morning', title: 'Registration and screening', text: 'Blood pressure, blood sugar, malaria and BMI for every adult.' },
+{ when: 'Late morning', title: 'Time with a doctor', text: 'A proper one-to-one with a volunteer doctor or nurse.' },
+{ when: 'Midday', title: 'Medicine and referrals', text: 'Free essential drugs, and a referral for anyone who needs more care.' },
+{ when: 'Afternoon', title: 'A health talk', text: 'Plain talk on diet, blood pressure, and mother and child health.' },
+{ when: 'The weeks after', title: 'Follow-up', text: 'SMS check-ins and calls start the next morning, until care actually happens.' }];
 
 
-const cardHover = 'transition-[transform,box-shadow] duration-200 ease-smooth hover:-translate-y-1 hover:scale-[1.01] hover:shadow-card';
+const volunteerHref = (id: string) => `/get-involved?outreach=${id}#volunteer`;
+
+function SectionHead({ index, title, aside }: {index: string;title: string;aside?: string;}) {
+  return (
+    <div className="grid gap-4 lg:grid-cols-12 lg:items-end">
+      <div className="lg:col-span-7">
+        <p className="font-mono text-xs text-ink/40">{index}</p>
+        <h2 className="mt-3 text-3xl font-medium tracking-[-0.025em] text-ink sm:text-4xl">{title}</h2>
+      </div>
+      {aside && <p className="text-[16px] leading-relaxed text-ink/55 lg:col-span-5">{aside}</p>}
+    </div>);
+
+}
 
 export default function Outreaches() {
   const [selected, setSelected] = useState<Outreach | null>(null);
   const close = useCallback(() => setSelected(null), []);
-  const next = upcomingOutreaches[0];
+  const totalPeople = pastOutreaches.reduce((s, o) => s + o.peopleReached, 0);
+  const totalReferrals = pastOutreaches.reduce((s, o) => s + o.referrals, 0);
+  const stats = [
+  { label: 'Outreaches held', value: pastOutreaches.length },
+  { label: 'People seen', value: totalPeople },
+  { label: 'Referrals followed up', value: totalReferrals }];
+
 
   return (
     <>
-      <PageHero
-        title={
-        <>
-            Bringing care to <span className="text-leaf">where people are.</span>
-          </>
-        }
-        description="We set up under canopies, in church halls and village squares - wherever the community gathers - and we keep in touch after we leave."
-        image={images.queue}
-        imageAlt="Community members waiting at an outreach registration desk"
-        actions={
-        <>
-            <ButtonLink href="#upcoming" size="lg">
-              Upcoming outreaches
-            </ButtonLink>
-            <ButtonLink href="#past" size="lg" variant="secondary">
-              Past outreaches
-            </ButtonLink>
-          </>
-        }
-        aside={
-        <a href="#upcoming" className="absolute -right-2 bottom-10 flex items-center gap-3 rounded-2xl bg-white p-3.5 shadow-card transition-transform duration-200 hover:-translate-y-0.5 sm:-right-8">
-            <span className="flex h-12 w-12 flex-col items-center justify-center rounded-xl bg-forest text-white">
-              <span className="text-lg font-medium leading-none">{next.day}</span>
-              <span className="text-[10px] uppercase">{next.month}</span>
-            </span>
-            <span>
-              <span className="block text-sm font-medium text-ink">Next: {next.community}</span>
-              <span className="block text-xs text-ink/60">{next.volunteersNeeded} volunteers needed</span>
-            </span>
-          </a>
-        } />
-
-
-      {/* Impact numbers */}
-      <section className="bg-forest text-white" aria-label="Impact numbers">
-        <RevealGroup as="ul" className="mx-auto grid max-w-7xl grid-cols-2 px-5 sm:px-8 lg:grid-cols-4">
-          {outreachImpact.map((s, i) =>
-          <RevealItem
-            as="li"
-            key={s.label}
-            className={`py-10 lg:py-14 ${i % 2 === 1 ? 'pl-6 lg:pl-10' : 'pr-6'} ${i > 0 ? 'lg:border-l lg:border-white/15 lg:pl-10' : ''} ${i >= 2 ? 'border-t border-white/15 lg:border-t-0' : ''}`}>
-
-              <p className="text-4xl font-medium tracking-tight text-sun sm:text-5xl">
-                <CountUp to={s.value} suffix={s.suffix} />
-              </p>
-              <p className="mt-1 text-[15px] text-white/75">{s.label}</p>
-            </RevealItem>
-          )}
-        </RevealGroup>
-      </section>
-
-      {/* Past outreaches */}
-      <section id="past" className="scroll-mt-20 bg-white py-20 lg:py-28" aria-labelledby="past-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="past-title" title="Past outreaches" intro="Tap any outreach to see who we reached and what happened next." />
-          <RevealGroup as="ul" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {pastOutreaches.map((o) =>
-            <RevealItem as="li" key={o.id}>
-                <button
-                type="button"
-                onClick={() => setSelected(o)}
-                className={`group flex h-full w-full flex-col overflow-hidden rounded-[2rem] border border-forest/10 bg-white text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf ${cardHover}`}>
-
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <img src={o.image} alt="" loading="lazy" className="h-full w-full object-cover transition-transform duration-300 ease-smooth group-hover:scale-105" />
-                    <span className="absolute left-4 top-4 flex items-center gap-1.5 rounded-full bg-white px-3 py-1.5 text-xs font-medium text-forest">
-                      <CalendarIcon className="h-3.5 w-3.5" aria-hidden="true" /> {o.date}
-                    </span>
-                  </div>
-                  <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-xl text-forest">{o.community}</h3>
-                    <p className="text-sm text-ink/55">{o.state}</p>
-                    <p className="mt-3 text-[15px] leading-relaxed text-ink/75">{o.summary}</p>
-                    <div className="mt-auto flex items-center justify-between pt-6">
-                      <span className="flex items-center gap-1.5 text-sm text-ink/60">
-                        <UsersIcon className="h-4 w-4" aria-hidden="true" /> {o.peopleReached} reached
-                      </span>
-                      <span className="inline-flex items-center gap-1.5 text-[15px] font-medium text-leaf group-hover:text-forest">
-                        View details <ArrowRightIcon className="h-4 w-4" />
-                      </span>
-                    </div>
-                  </div>
-                </button>
-              </RevealItem>
-            )}
-          </RevealGroup>
-        </div>
-      </section>
-
-      {/* What happens at an outreach */}
-      <section className="relative overflow-hidden bg-mint py-20 lg:py-28" aria-labelledby="journey-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="journey-title" align="center" title="What happens at an outreach" intro="Five stations, one continuous journey - and it doesn’t end at the last one." />
-          <div className="relative mt-14">
-            <EcgLine className="absolute inset-x-0 top-12 hidden h-12 lg:block" />
-            <RevealGroup as="ol" className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-5" stagger={0.09}>
-              {journey.map((j, i) => {
-                const Icon = j.icon;
-                return (
-                  <RevealItem as="li" key={j.title} className="flex flex-col items-center rounded-b-[2rem] rounded-t-full bg-white px-6 pb-8 pt-10 text-center">
-                    <span className="flex h-16 w-16 items-center justify-center rounded-full bg-forest text-white">
-                      <Icon className="h-7 w-7" aria-hidden="true" />
-                    </span>
-                    <p className="mt-5 text-sm font-medium text-leaf">Station {i + 1}</p>
-                    <h3 className="mt-1 text-xl text-forest">{j.title}</h3>
-                    <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{j.text}</p>
-                  </RevealItem>);
-
-              })}
-            </RevealGroup>
+      {/* Hero */}
+      <section className="bg-white pt-32 lg:pt-40">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <p className="text-sm text-ink/50">Outreaches</p>
+          <div className="mt-6 grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-10">
+            <h1 className="text-[40px] font-medium leading-[1.02] tracking-[-0.035em] text-ink sm:text-6xl lg:col-span-8 lg:text-[64px]">
+              One Saturday of care. Months of follow-up.
+            </h1>
+            <p className="text-lg leading-relaxed text-ink/60 lg:col-span-4">
+              We set up where people already gather, in church halls, village squares and by the road. Then we keep
+              checking on every person we met.
+            </p>
           </div>
-          <p className="mt-10 text-center text-[16px] text-ink/70">
-            Then TAZ AI takes over the follow-up.{' '}
-            <Link href="/taz-ai" className="font-medium text-leaf underline-offset-4 hover:text-forest hover:underline">
-              See how it works
-            </Link>
-          </p>
-        </div>
-      </section>
 
-      {/* Gallery */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="gallery-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="gallery-title" title="The gallery" intro="Tap a photo to open it full-screen. Use arrow keys to browse." />
-          <div className="mt-10">
-            <GalleryGrid images={gallery} />
-          </div>
-        </div>
-      </section>
-
-      {/* Stories */}
-      <section className="bg-mint py-20 lg:py-28" aria-labelledby="stories-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="stories-title" title="Stories from the field" />
-          <RevealGroup className="mt-12 grid gap-5 lg:grid-cols-3">
-            {fieldStories.map((s) =>
-            <RevealItem key={s.title}>
-                <article className="flex h-full flex-col overflow-hidden rounded-[2rem] bg-white">
-                  <img src={s.image} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover" />
-                  <div className="flex flex-1 flex-col p-7">
-                    <h3 className="text-xl text-forest">{s.title}</h3>
-                    <blockquote className="mt-3 text-[16px] leading-relaxed text-ink/75">“{s.quote}”</blockquote>
-                    <p className="mt-auto pt-6 text-[15px]">
-                      <span className="font-medium text-ink">{s.name}</span>
-                      <span className="text-ink/55"> · {s.role}</span>
-                    </p>
-                  </div>
-                </article>
-              </RevealItem>
+          <dl className="mt-14 grid grid-cols-3 border-t border-ink/10">
+            {stats.map((s) =>
+            <div key={s.label} className="border-l border-ink/10 py-6 pl-4 first:border-l-0 first:pl-0 sm:pl-6">
+                <dt className="text-xs text-ink/50 sm:text-sm">{s.label}</dt>
+                <dd className="mt-1 text-3xl font-medium tabular-nums tracking-tight text-ink sm:text-4xl">{s.value}</dd>
+              </div>
             )}
-          </RevealGroup>
+          </dl>
         </div>
+
+        <figure className="mx-auto max-w-6xl px-5 sm:px-8">
+          <img
+            src={images.queue}
+            alt="Community members queuing at an outreach registration desk"
+            className="aspect-[4/3] w-full rounded-lg object-cover sm:aspect-[21/9]" />
+
+          <figcaption className="mt-3 flex justify-between text-sm text-ink/50">
+            <span>Registration queue, Kuje, FCT Abuja</span>
+            <span>November 2025</span>
+          </figcaption>
+        </figure>
       </section>
 
       {/* Upcoming */}
-      <section id="upcoming" className="scroll-mt-20 bg-white pt-20 lg:pt-28" aria-labelledby="upcoming-title">
-        <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="upcoming-title" title="Upcoming outreaches" intro="Join us on the day - every outreach needs clinicians, field workers and follow-up officers." />
-          <RevealGroup as="ul" className="mt-12 divide-y divide-forest/10 border-y border-forest/10">
-            {upcomingOutreaches.map((u) =>
-            <RevealItem as="li" key={u.id} className="flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:gap-8">
-                <div className="flex items-center gap-5 sm:w-auto">
-                  <span className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl bg-forest text-white">
-                    <span className="text-2xl font-medium leading-none">{u.day}</span>
-                    <span className="mt-1 text-xs text-white/75">
-                      {u.month} · {u.weekday}
+      <section id="upcoming" className="scroll-mt-20 bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <SectionHead
+            index="01"
+            title="Coming up"
+            aside="Every outreach needs clinicians, field workers and people to make follow-up calls. Pick a date." />
+
+
+          <div className="mt-12 border-t border-ink/10">
+            <div className="hidden grid-cols-12 gap-4 border-b border-ink/10 px-2 py-3 text-xs text-ink/45 md:grid">
+              <span className="col-span-2">Date</span>
+              <span className="col-span-3">Community</span>
+              <span className="col-span-4">Focus</span>
+              <span className="col-span-2">Volunteers</span>
+            </div>
+            <ul>
+              {upcomingOutreaches.map((u) =>
+              <li key={u.id}>
+                  <Link
+                  href={volunteerHref(u.id)}
+                  className="group grid grid-cols-[4.5rem_1fr_auto] items-center gap-4 border-b border-ink/10 py-6 transition-colors hover:bg-mint/50 md:grid-cols-12 md:px-2">
+
+                    <span className="md:col-span-2">
+                      <span className="block text-2xl font-medium tabular-nums tracking-tight text-ink">
+                        {u.day} {u.month}
+                      </span>
+                      <span className="block text-sm text-ink/50">{u.weekday}</span>
                     </span>
-                  </span>
-                  <div className="sm:hidden">
-                    <h3 className="text-xl text-forest">{u.community}</h3>
-                    <p className="text-sm text-ink/60">{u.state}</p>
-                  </div>
-                </div>
-                <div className="hidden min-w-[180px] sm:block">
-                  <h3 className="text-xl text-forest">{u.community}</h3>
-                  <p className="text-sm text-ink/60">{u.state}</p>
-                </div>
-                <div className="flex-1">
-                  <p className="text-[16px] text-ink/80">{u.focus}</p>
-                  <p className="mt-1 inline-flex rounded-full bg-sun/20 px-2.5 py-0.5 text-sm font-medium text-forest">
-                    {u.volunteersNeeded} volunteers needed
-                  </p>
-                </div>
-                <ButtonLink to={`/get-involved?outreach=${u.id}#volunteer`} className="w-full sm:w-auto">
-                  Volunteer for this outreach
-                </ButtonLink>
-              </RevealItem>
-            )}
-          </RevealGroup>
+                    <span className="md:col-span-3">
+                      <span className="block text-lg font-medium text-ink">{u.community}</span>
+                      <span className="block text-sm text-ink/50">{u.state}</span>
+                      <span className="mt-1 block text-sm text-ink/65 md:hidden">
+                        {u.focus} · {u.volunteersNeeded} volunteers needed
+                      </span>
+                    </span>
+                    <span className="hidden text-ink/70 md:col-span-4 md:block">{u.focus}</span>
+                    <span className="hidden tabular-nums text-ink/70 md:col-span-2 md:block">{u.volunteersNeeded} needed</span>
+                    <span className="flex items-center justify-end gap-1.5 text-sm font-medium text-leaf md:col-span-1">
+                      <span className="hidden lg:inline">Join</span>
+                      <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </div>
         </div>
       </section>
 
-      <CtaBand
-        title="Bring an outreach to your community."
-        text="Know a community that needs care? Partner with us to host an outreach - we’ll handle the clinicians, drugs and follow-up."
-        primaryLabel="Partner with us"
-        primaryTo="/get-involved#partner" />
+      {/* Log */}
+      <section id="past" className="scroll-mt-20 border-t border-ink/10 bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <SectionHead
+            index="02"
+            title="Outreach log"
+            aside="Every outreach we’ve run, newest first. What we did, who we reached, and what happened after." />
 
+
+          <ol className="mt-16 space-y-20 lg:space-y-28">
+            {pastOutreaches.map((o) =>
+            <li key={o.id} className="grid gap-5 lg:grid-cols-12 lg:gap-10">
+                <div className="lg:col-span-3">
+                  <div className="flex gap-3 text-sm text-ink/50 lg:sticky lg:top-28 lg:block">
+                    <p className="tabular-nums">{o.date}</p>
+                    <p className="lg:mt-1">{o.state}</p>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-9">
+                  <h3 className="text-2xl font-medium tracking-[-0.02em] text-ink sm:text-3xl">{o.community}</h3>
+                  <p className="mt-3 max-w-2xl text-lg leading-relaxed text-ink/60">{o.summary}</p>
+
+                  <button
+                  type="button"
+                  onClick={() => setSelected(o)}
+                  aria-label={`Read the full story of the ${o.community} outreach`}
+                  className="group mt-8 block w-full overflow-hidden rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-4">
+
+                    <img
+                    src={o.image}
+                    alt=""
+                    loading="lazy"
+                    className="aspect-[2/1] w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.02]" />
+
+                  </button>
+
+                  <dl className="mt-6 grid grid-cols-2 gap-y-5 border-t border-ink/10 pt-5 sm:grid-cols-4">
+                    <div>
+                      <dt className="text-xs text-ink/45">People reached</dt>
+                      <dd className="mt-1 text-xl font-medium tabular-nums text-ink">{o.peopleReached}</dd>
+                    </div>
+                    <div>
+                      <dt className="text-xs text-ink/45">Referrals</dt>
+                      <dd className="mt-1 text-xl font-medium tabular-nums text-ink">{o.referrals}</dd>
+                    </div>
+                    <div className="col-span-2">
+                      <dt className="text-xs text-ink/45">What we did</dt>
+                      <dd className="mt-1 text-[15px] leading-relaxed text-ink/70">{o.services.join(', ')}</dd>
+                    </div>
+                  </dl>
+
+                  <p className="mt-6 flex gap-3 text-[16px] leading-relaxed text-ink/75">
+                    <span className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-sun" aria-hidden="true" />
+                    {o.highlight}
+                  </p>
+
+                  <button
+                  type="button"
+                  onClick={() => setSelected(o)}
+                  className="mt-5 inline-flex items-center gap-1 text-sm font-medium text-leaf hover:text-forest">
+
+                    Read the full story <ArrowUpRightIcon className="h-4 w-4" />
+                  </button>
+                </div>
+              </li>
+            )}
+          </ol>
+        </div>
+      </section>
+
+      {/* A day */}
+      <section className="border-t border-ink/10 bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <SectionHead
+            index="03"
+            title="How a day runs"
+            aside="Most outreaches stop at the afternoon. The last column is the part we built TAZhealth for." />
+
+
+          <ol className="mt-12 grid border-t border-ink/10 sm:grid-cols-2 lg:grid-cols-5">
+            {day.map((d, i) =>
+            <li
+              key={d.title}
+              className="border-b border-ink/10 py-6 sm:pr-6 lg:border-b-0 lg:border-l lg:px-5 lg:py-8 lg:first:border-l-0 lg:first:pl-0">
+
+                <p className="font-mono text-xs text-ink/40">0{i + 1}</p>
+                <p className={`mt-6 text-sm ${i === day.length - 1 ? 'text-sun' : 'text-leaf'}`}>{d.when}</p>
+                <h3 className="mt-1 font-medium text-ink">{d.title}</h3>
+                <p className="mt-2 text-[15px] leading-relaxed text-ink/60">{d.text}</p>
+              </li>
+            )}
+          </ol>
+
+          <Link href="/taz-ai" className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-leaf hover:text-forest">
+            How follow-up works on TAZ AI <ArrowUpRightIcon className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+
+      {/* Voices */}
+      <section className="border-t border-ink/10 bg-white py-24 lg:py-32">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <SectionHead index="04" title="From the field" />
+          <div className="mt-12 grid gap-10 border-t border-ink/10 pt-10 md:grid-cols-3 md:gap-0">
+            {fieldStories.map((s) =>
+            <figure key={s.title} className="flex flex-col md:border-l md:border-ink/10 md:px-6 md:first:border-l-0 md:first:pl-0">
+                <blockquote className="text-[17px] leading-relaxed text-ink/80">“{s.quote}”</blockquote>
+                <figcaption className="mt-6 flex items-center gap-3 md:mt-auto md:pt-8">
+                  <img src={s.image} alt="" loading="lazy" className="h-10 w-10 rounded-full object-cover" />
+                  <span className="text-sm">
+                    <span className="block font-medium text-ink">{s.name}</span>
+                    <span className="block text-ink/50">{s.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Close */}
+      <section className="border-t border-ink/10 bg-white py-24 lg:py-32">
+        <div className="mx-auto grid max-w-6xl gap-10 px-5 sm:px-8 lg:grid-cols-12 lg:items-end">
+          <h2 className="text-3xl font-medium leading-[1.1] tracking-[-0.03em] text-ink sm:text-5xl lg:col-span-8">
+            Know a community that needs care? Host an outreach with us.
+          </h2>
+          <div className="lg:col-span-4">
+            <p className="text-[16px] leading-relaxed text-ink/60">
+              We bring the clinicians, the medicine and the follow-up. You bring the community.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <ButtonLink to="/get-involved#partner">Partner with us</ButtonLink>
+              <ButtonLink href={site.whatsapp} external variant="secondary">
+                <WhatsAppIcon className="h-4 w-4" /> WhatsApp
+              </ButtonLink>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <OutreachModal outreach={selected} onClose={close} />
     </>);

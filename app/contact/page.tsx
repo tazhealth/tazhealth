@@ -20,7 +20,7 @@ const details = [
 export default function Contact() {
   return (
     <>
-      <section className="relative overflow-hidden bg-mint pb-12 pt-28 lg:pb-16 lg:pt-36">
+      <section className="relative overflow-hidden bg-mint pb-12 pt-32 lg:pb-16 lg:pt-40">
         <div className="adire pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <motion.h1

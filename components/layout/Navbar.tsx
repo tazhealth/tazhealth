@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react';
 import { Logo } from './Logo';
+import { OutreachBanner } from './OutreachBanner';
 import { ButtonLink } from '../ui/ButtonLink';
 import { EcgLine } from '../ui/EcgLine';
 import { WhatsAppIcon } from '../ui/SocialIcon';
@@ -53,6 +54,7 @@ export function Navbar() {
           scrolled ? 'bg-white/95 shadow-nav backdrop-blur' : 'bg-transparent'
         )}>
 
+        <OutreachBanner collapsed={scrolled} />
         <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
           <Link href="/" aria-label="TAZhealth home" className="rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf">
             <Logo tone={onDark ? 'light' : 'default'} />

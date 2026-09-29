@@ -10,7 +10,7 @@ export function Logo({ tone = 'default', className }: LogoProps) {
   const outline = tone === 'light' ? '#FFFFFF' : '#1A1A1A';
   return (
     <span className={cn('inline-flex items-center gap-2', className)}>
-      <svg viewBox="0 0 48 44" className="h-9 w-auto shrink-0" aria-hidden="true" fill="none">
+      <svg viewBox="0 0 48 44" className="h-11 w-auto shrink-0" aria-hidden="true" fill="none">
         <path
           d="M24 39C11 30.5 4 23 4 14.8 4 9 8.4 5 13.6 5c4 0 7.6 2.4 10.4 6 2.8-3.6 6.4-6 10.4-6C39.6 5 44 9 44 14.8 44 23 37 30.5 24 39Z"
           stroke={outline}
@@ -28,10 +28,7 @@ export function Logo({ tone = 'default', className }: LogoProps) {
         
         <path d="M29.5 8.5c1-4.5 5.5-7 10.5-6.5-.5 5-4.8 8-10.5 6.5Z" fill="#3A9A3F" />
       </svg>
-      <span className="text-[21px] font-semibold leading-none tracking-tight">
-        <span className="text-leaf">TAZ</span>
-        <span className={tone === 'light' ? 'text-white' : 'text-ink'}>HEALTH</span>
-      </span>
+      <span className="sr-only">TAZhealth</span>
     </span>);
 
 }

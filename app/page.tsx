@@ -131,8 +131,8 @@ export default function Home() {
                 Health tips, stories from the field and updates on how we follow up with every patient.
               </p>
             </Reveal>
-            <ButtonLink to="/blog" className="w-fit shrink-0">
-              More stories <ArrowRightIcon className="h-4 w-4" />
+            <ButtonLink to="/blog" className="h-9 w-fit shrink-0 gap-1.5 px-4 text-[13px]">
+              More stories <ArrowRightIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </ButtonLink>
           </div>
           <RevealGroup className="mt-10 grid gap-10 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-8">

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { HomeHero } from '@/components/home/HomeHero';
+import { TestimonialSlider } from '@/components/home/TestimonialSlider';
 // TAZ AI moving to its own site; re-enable when ready.
 // import { TazAiShowcase } from '@/components/home/TazAiShowcase';
 import { PartnersStrip } from '@/components/home/PartnersStrip';
@@ -12,7 +13,6 @@ import { GalleryGrid } from '@/components/ui/GalleryGrid';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { gallery, images } from '@/data/images';
 import { outreachImpact } from '@/data/impact';
-import { testimonials } from '@/data/people';
 import { cn } from '@/utils/cn';
 
 const steps = [
@@ -40,7 +40,6 @@ const steps = [
 
 
 export default function Home() {
-  const [featured, ...others] = testimonials;
 
   return (
     <>
@@ -91,29 +90,8 @@ export default function Home() {
 
       {/* Voices */}
       <section className="bg-white py-16 sm:py-20 lg:py-28" aria-label="In their words">
-        <div className="mx-auto max-w-4xl px-5 sm:px-8">
-          <Reveal className="text-center">
-            <p className="text-5xl leading-none text-sun" aria-hidden="true">“</p>
-            <blockquote className="mx-auto mt-2 max-w-3xl text-balance text-2xl leading-snug text-forest sm:text-[28px]">
-              {featured.quote}
-            </blockquote>
-            <p className="mt-6 font-medium text-ink">{featured.name}</p>
-            <p className="text-sm text-ink/60">{featured.role}</p>
-          </Reveal>
-
-          <RevealGroup className="mt-14 grid gap-4 md:grid-cols-2">
-            {others.map((t) =>
-            <RevealItem key={t.name}>
-                <figure className="h-full rounded-3xl bg-white p-7 ring-1 ring-ink/10">
-                  <blockquote className="text-[16px] leading-relaxed text-ink/80">“{t.quote}”</blockquote>
-                  <figcaption className="mt-4 text-sm">
-                    <span className="font-medium text-ink">{t.name}</span>
-                    <span className="text-ink/55"> · {t.role}</span>
-                  </figcaption>
-                </figure>
-              </RevealItem>
-            )}
-          </RevealGroup>
+        <div className="px-5 sm:px-8">
+          <TestimonialSlider />
         </div>
       </section>
 
@@ -142,7 +120,7 @@ export default function Home() {
       <PartnersStrip />
 
       {/* Blog */}
-      <section className="border-t border-ink/10 bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="blog-title">
+      <section className="bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="blog-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <Reveal className="max-w-xl">

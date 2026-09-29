@@ -5,7 +5,7 @@ import { partners } from '../../data/site';
 export function PartnersStrip() {
   const loop = [...partners, ...partners];
   return (
-    <section className="border-y border-forest/10 bg-white py-12" aria-labelledby="partners-title">
+    <section className="bg-white py-12" aria-labelledby="partners-title">
       <h2 id="partners-title" className="text-balance px-5 text-center text-[15px] font-medium text-ink/60">
         Supported by partners who believe care should continue
       </h2>

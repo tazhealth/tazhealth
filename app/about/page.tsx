@@ -4,13 +4,32 @@ import { RootsList, RootsPath } from '@/components/about/RootsPath';
 import { PhotoMarquee } from '@/components/about/PhotoMarquee';
 import { ScrollRevealText } from '@/components/about/ScrollRevealText';
 import { team } from '@/data/people';
+import { images } from '@/data/images';
+import { pastOutreaches } from '@/data/outreaches';
 import { aboutFaqs } from '@/data/faqs';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 
 const values = [
-{ title: 'Equity', text: 'Closing the healthcare access gap.' },
-{ title: 'Community', text: 'Solutions built with the people.' },
-{ title: 'Impact', text: 'Change that truly improves health.' }];
+{
+  title: 'Equity',
+  text: 'Closing the healthcare access gap.',
+  image: images.orphanage,
+  alt: 'TAZhealth volunteers with children at the Yemisi Alogi Orphanage outreach'
+},
+{
+  title: 'Community',
+  text: 'Solutions built with the people.',
+  image: images.education,
+  alt: 'Volunteer giving a health talk to community members in Odogbolu'
+},
+{
+  title: 'Impact',
+  text: 'Change that truly improves health.',
+  image: images.consult,
+  alt: 'Free medical consultation at a TAZhealth outreach'
+}];
+
+const peopleReached = pastOutreaches.reduce((n, o) => n + o.peopleReached, 0);
 
 const letter = [
 '“Our first outreach was one morning at an orphanage in Abeokuta: twenty malaria tests, a health talk and a pile of mosquito nets.”',
@@ -90,26 +109,78 @@ export default function About() {
         </div>
       </section>
 
-      {/* Who we are and core values */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="values-title">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8">
-          <Reveal className="mx-auto max-w-2xl text-center">
-            <h2 id="values-title" className="text-2xl font-semibold text-ink sm:text-3xl">
-              Who we are
+      {/* Who we are */}
+      <section className="overflow-hidden bg-white py-20 lg:py-28" aria-labelledby="who-title">
+        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-5">
+            <p className="text-sm font-medium text-leaf">Who we are</p>
+            <h2 id="who-title" className="mt-3 text-balance text-[30px] font-semibold leading-[1.1] tracking-[-0.025em] text-ink sm:text-4xl">
+              Care, education and a push for fairer healthcare.
             </h2>
-            <p className="mt-4 text-[16px] leading-relaxed text-ink/65 sm:text-lg">
+            <p className="mt-5 text-[16px] leading-relaxed text-ink/65 sm:text-[17px]">
               Through medical outreach programs, we deliver essential healthcare services while integrating health
-              education to empower people to prioritize their health. Alongside this, our advocacy efforts aim to drive
-              systemic changes that reduce disparities in healthcare access.
+              education to empower people to prioritize their health.
+            </p>
+            <p className="mt-4 text-[16px] leading-relaxed text-ink/65 sm:text-[17px]">
+              Alongside this, our advocacy efforts aim to drive systemic changes that reduce disparities in healthcare
+              access.
             </p>
           </Reveal>
-          <p className="mt-14 text-center text-sm font-medium text-leaf">Our core values</p>
-          <RevealGroup as="ul" className="mt-6 grid gap-4 sm:grid-cols-3 sm:gap-6">
+
+          <Reveal delay={0.1} className="lg:col-span-7">
+            <div className="relative grid grid-cols-5 grid-rows-2 gap-3 sm:gap-4">
+              <img
+                src={images.worldHeartDay}
+                alt="World Heart Day outreach at Ilishan Market"
+                loading="lazy"
+                className="col-span-3 row-span-2 h-full min-h-[320px] w-full rounded-2xl object-cover sm:min-h-[440px]" />
+
+              <img
+                src={images.bmi}
+                alt="Volunteer taking a BMI measurement at an outreach"
+                loading="lazy"
+                className="col-span-2 aspect-square h-full w-full rounded-2xl object-cover" />
+
+              <img
+                src={images.healthEducation}
+                alt="Health education session at a TAZhealth outreach"
+                loading="lazy"
+                className="col-span-2 aspect-square h-full w-full rounded-2xl object-cover" />
+
+              <div className="absolute -bottom-5 left-4 rounded-2xl bg-white px-5 py-4 shadow-card ring-1 ring-ink/5 sm:left-6">
+                <p className="text-2xl font-semibold tabular-nums tracking-tight text-forest sm:text-3xl">
+                  {peopleReached.toLocaleString()}
+                </p>
+                <p className="text-xs text-ink/60 sm:text-sm">people reached across {pastOutreaches.length} outreaches</p>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Core values */}
+        <div className="mx-auto mt-24 max-w-6xl px-5 sm:px-8 lg:mt-32">
+          <Reveal className="text-center">
+            <p className="text-sm font-medium text-leaf">Our core values</p>
+            <h2 className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">What guides every outreach</h2>
+          </Reveal>
+          <RevealGroup as="ul" className="mt-10 grid gap-5 sm:grid-cols-3 sm:gap-6">
             {values.map((v, i) =>
-            <RevealItem as="li" key={v.title} className="rounded-2xl bg-mint p-6 sm:p-7">
-                <p className="font-mono text-xs text-forest/60">0{i + 1}</p>
-                <h3 className="mt-3 text-xl font-semibold text-forest">{v.title}</h3>
-                <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{v.text}</p>
+            <RevealItem as="li" key={v.title} className="group relative overflow-hidden rounded-2xl">
+                <img
+                src={v.image}
+                alt={v.alt}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform sm:aspect-[4/5] duration-700 ease-smooth group-hover:scale-[1.04]" />
+
+                <div
+                className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent"
+                aria-hidden="true" />
+
+                <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
+                  <p className="font-mono text-xs text-white/60">0{i + 1}</p>
+                  <h3 className="mt-2 text-2xl font-semibold">{v.title}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-white/80">{v.text}</p>
+                </div>
               </RevealItem>
             )}
           </RevealGroup>

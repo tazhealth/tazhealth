@@ -17,7 +17,7 @@ export function SectionHeading({ title, intro, align = 'left', tone = 'default',
       <h2
         id={id}
         className={cn(
-          'text-[32px] leading-[1.1] sm:text-4xl lg:text-[46px]',
+          'text-[26px] leading-[1.1] sm:text-3xl lg:text-[38px]',
           tone === 'light' ? 'text-white' : 'text-forest'
         )}>
         

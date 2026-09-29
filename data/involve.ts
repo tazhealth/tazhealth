@@ -31,7 +31,7 @@ export const volunteerRoles: VolunteerRole[] = [
 {
   id: 'field',
   title: 'Field workers',
-  text: 'Run registration, crowd flow and logistics — and register patients on TAZ AI.',
+  text: 'Run registration, crowd flow and logistics - and register patients on TAZ AI.',
   commitment: 'Outreach days',
   icon: ClipboardListIcon
 },
@@ -45,7 +45,7 @@ export const volunteerRoles: VolunteerRole[] = [
 {
   id: 'general',
   title: 'General volunteers',
-  text: 'Photography, social media, fundraising, design — skills that keep the mission moving.',
+  text: 'Photography, social media, fundraising, design - skills that keep the mission moving.',
   commitment: 'Flexible',
   icon: HeartHandshakeIcon
 }];

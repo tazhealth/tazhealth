@@ -30,7 +30,7 @@ export function CareGapChart() {
       <Reveal className="rounded-[2rem] border border-forest/10 bg-white p-6 sm:p-8">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h3 className="text-lg font-medium text-ink">A typical outreach</h3>
-          <p className="text-sm text-ink/55">Screened on Day 0 — then silence</p>
+          <p className="text-sm text-ink/55">Screened on Day 0 - then silence</p>
         </div>
         <svg viewBox={`0 0 ${W} 120`} className="mt-4 h-20 w-full sm:h-24" fill="none" aria-hidden="true">
           <path d={withoutSolid} stroke="#1A1A1A" strokeOpacity="0.55" strokeWidth="3" strokeLinejoin="round" strokeLinecap="round" />

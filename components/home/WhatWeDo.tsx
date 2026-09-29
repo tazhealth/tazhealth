@@ -33,9 +33,9 @@ export function WhatWeDo() {
                 
               </div>
               <div className="p-7 sm:p-9">
-                <h3 className="text-2xl text-forest sm:text-3xl">Medical outreaches</h3>
+                <h3 className="text-xl text-forest sm:text-2xl">Medical outreaches</h3>
                 <p className="mt-3 max-w-lg text-[16px] leading-relaxed text-ink/70">
-                  Free screening, consultations, medication and referrals — delivered in the communities that need them
+                  Free screening, consultations, medication and referrals - delivered in the communities that need them
                   most, by volunteer doctors, nurses and field workers.
                 </p>
                 <span className="mt-5 inline-flex items-center gap-2 font-medium text-leaf group-hover:text-forest">
@@ -50,9 +50,9 @@ export function WhatWeDo() {
               <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-sun/20 text-forest">
                 <MegaphoneIcon className="h-6 w-6" aria-hidden="true" />
               </span>
-              <h3 className="mt-6 text-2xl text-forest">Advocacy</h3>
+              <h3 className="mt-6 text-xl text-forest">Advocacy</h3>
               <p className="mt-3 text-[16px] leading-relaxed text-ink/70">
-                We share what we see in the field with health authorities and partners — pushing for primary care that
+                We share what we see in the field with health authorities and partners - pushing for primary care that
                 reaches everyone.
               </p>
               <span className="mt-auto inline-flex items-center gap-2 pt-5 font-medium text-leaf group-hover:text-forest">
@@ -69,9 +69,9 @@ export function WhatWeDo() {
               <div className="max-w-[15rem] self-end rounded-2xl rounded-br-md bg-white px-4 py-3 text-sm text-ink shadow-card">
                 Abeg no forget take your medicine today. Stay well o!
               </div>
-              <h3 className="mt-6 text-2xl">Digital health · TAZ AI</h3>
+              <h3 className="mt-6 text-xl">Digital health · TAZ AI</h3>
               <p className="mt-3 text-[16px] leading-relaxed text-white/75">
-                Offline registration, instant risk triage and automatic SMS follow-up — so every outreach becomes a care
+                Offline registration, instant risk triage and automatic SMS follow-up - so every outreach becomes a care
                 journey.
               </p>
               <span className="mt-auto inline-flex items-center gap-2 pt-5 font-medium text-sun">

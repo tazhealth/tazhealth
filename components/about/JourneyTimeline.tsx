@@ -30,7 +30,7 @@ export function JourneyTimeline() {
               
               <Reveal className={cn('pl-12 lg:pl-0', right ? 'lg:col-start-2' : 'lg:text-right')}>
                 <p className={cn('text-sm font-medium', isNext ? 'text-sun' : 'text-leaf')}>{m.date}</p>
-                <h3 className="mt-1 text-xl text-forest sm:text-2xl">{m.title}</h3>
+                <h3 className="mt-1 text-xl text-forest sm:text-xl">{m.title}</h3>
                 <p className={cn('mt-2 max-w-md text-[16px] leading-relaxed text-ink/70', !right && 'lg:ml-auto')}>{m.text}</p>
               </Reveal>
             </li>);

@@ -21,7 +21,7 @@ export function PageHero({ title, description, image, imageAlt, actions, aside }
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
         <div>
           <motion.h1
-            className="text-[40px] leading-[1.04] text-forest sm:text-5xl lg:text-[64px]"
+            className="text-[32px] leading-[1.04] text-forest sm:text-4xl lg:text-[52px]"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE }}>

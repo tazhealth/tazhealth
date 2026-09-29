@@ -26,7 +26,7 @@ export function TestimonialsSection() {
           <RevealItem className="lg:col-span-7">
             <figure className="flex h-full flex-col rounded-[2rem] bg-forest p-8 text-white sm:p-12">
               <QuoteIcon className="h-10 w-10 text-sun" aria-hidden="true" />
-              <blockquote className="mt-6 text-2xl leading-snug sm:text-[32px] sm:leading-[1.25]">“{featured.quote}”</blockquote>
+              <blockquote className="mt-6 text-xl leading-snug sm:text-[26px] sm:leading-[1.25]">“{featured.quote}”</blockquote>
               <figcaption className="mt-auto flex items-center gap-4 pt-10">
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-sun font-medium text-forest">
                   {initials(featured.name)}

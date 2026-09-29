@@ -19,7 +19,7 @@ export function FeaturesBento() {
           <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-leaf">
             <WifiOffIcon className="h-6 w-6" aria-hidden="true" />
           </span>
-          <h3 className="mt-6 text-2xl text-forest">Works offline</h3>
+          <h3 className="mt-6 text-xl text-forest">Works offline</h3>
           <p className="mt-2 max-w-md text-[16px] leading-relaxed text-ink/70">
             No network at the outreach site? No problem. Every record is saved on the phone and syncs automatically when
             signal returns.
@@ -48,9 +48,9 @@ export function FeaturesBento() {
 
       <RevealItem className="sm:col-span-2 lg:row-span-2">
         <div className={`flex h-full flex-col rounded-[2rem] bg-forest p-7 text-white sm:p-8 ${hover}`}>
-          <h3 className="text-2xl">SMS in five Nigerian languages</h3>
+          <h3 className="text-xl">SMS in five Nigerian languages</h3>
           <p className="mt-2 max-w-md text-[16px] leading-relaxed text-white/75">
-            Written with native speakers and clinicians — so a reminder feels like it came from someone who knows you.
+            Written with native speakers and clinicians - so a reminder feels like it came from someone who knows you.
           </p>
           <ul className="mt-8 flex-1 space-y-2">
             {smsLanguages.map((l) =>

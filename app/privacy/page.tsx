@@ -10,7 +10,7 @@ export default function Privacy() {
       <section className="bg-mint pb-12 pt-28 lg:pb-16 lg:pt-36">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <motion.h1
-            className="text-[40px] leading-[1.05] text-forest sm:text-5xl lg:text-6xl"
+            className="text-[32px] leading-[1.05] text-forest sm:text-4xl lg:text-5xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE }}>
@@ -43,7 +43,7 @@ export default function Privacy() {
           <article className="max-w-2xl">
             {privacySections.map((s) =>
             <section key={s.id} id={s.id} className="scroll-mt-28 border-b border-forest/10 py-8 first:pt-0 last:border-b-0">
-                <h2 className="text-2xl text-forest sm:text-[28px]">{s.title}</h2>
+                <h2 className="text-xl text-forest sm:text-[22px]">{s.title}</h2>
                 <div className="mt-4 space-y-4">
                   {s.body.map((p, i) =>
                 <p key={i} className="text-[17px] leading-[1.75] text-ink/80">

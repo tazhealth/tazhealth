@@ -16,13 +16,13 @@ export function ImpactSection() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid gap-6 lg:grid-cols-2 lg:items-end">
           <Reveal>
-            <h2 id="impact-title" className="text-[32px] leading-[1.1] text-forest sm:text-4xl lg:text-[46px]">
-              What showing up — and coming back — looks like.
+            <h2 id="impact-title" className="text-[26px] leading-[1.1] text-forest sm:text-3xl lg:text-[38px]">
+              What showing up - and coming back - looks like.
             </h2>
           </Reveal>
           <Reveal delay={0.05}>
             <p className="text-lg leading-relaxed text-ink/70 lg:max-w-md lg:justify-self-end">
-              Every number here is a person we screened, treated or referred — and then checked on again.
+              Every number here is a person we screened, treated or referred - and then checked on again.
             </p>
           </Reveal>
         </div>
@@ -30,7 +30,7 @@ export function ImpactSection() {
         <div className="mt-12 grid gap-4 lg:grid-cols-12">
           <Reveal className="relative overflow-hidden rounded-[2rem] bg-mint p-8 sm:p-12 lg:col-span-7">
             <div className="adire pointer-events-none absolute -right-10 -top-10 h-64 w-64 rounded-full opacity-[0.12]" aria-hidden="true" />
-            <p className="relative inline-flex items-baseline rounded-full border-2 border-leaf px-7 py-2 text-7xl font-medium tracking-tight text-forest sm:text-8xl lg:text-[120px] lg:leading-none">
+            <p className="relative inline-flex items-baseline rounded-full border-2 border-leaf px-7 py-2 text-6xl font-medium tracking-tight text-forest sm:text-8xl lg:text-[92px] lg:leading-none">
               <CountUp to={people.value} />
               <span className="text-sun">+</span>
             </p>
@@ -49,7 +49,7 @@ export function ImpactSection() {
 
           <div className="grid gap-4 lg:col-span-5">
             <Reveal className="rounded-[2rem] bg-forest p-8 text-white sm:p-10" delay={0.08}>
-              <p className="text-6xl font-medium tracking-tight text-sun">
+              <p className="text-5xl font-medium tracking-tight text-sun">
                 <CountUp to={communities.value} />
               </p>
               <p className="mt-2 text-lg text-white/85">{communities.label}</p>
@@ -64,7 +64,7 @@ export function ImpactSection() {
             <Reveal className="rounded-[2rem] border border-forest/10 p-8 sm:p-10" delay={0.14}>
               <div className="flex items-end justify-between gap-6">
                 <div>
-                  <p className="text-6xl font-medium tracking-tight text-forest">
+                  <p className="text-5xl font-medium tracking-tight text-forest">
                     <CountUp to={outreaches.value} />
                   </p>
                   <p className="mt-2 max-w-[16rem] text-lg text-ink/75">{outreaches.label}</p>

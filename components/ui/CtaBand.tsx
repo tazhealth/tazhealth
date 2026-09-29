@@ -27,7 +27,7 @@ export function CtaBand({ title, text, primaryLabel = 'Get involved', primaryTo 
         <div className="adire-light pointer-events-none absolute inset-0 opacity-[0.06]" aria-hidden="true" />
         <div className="relative grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:items-center lg:gap-16">
           <div>
-            <h2 className="text-[34px] leading-[1.08] text-white sm:text-5xl">{title}</h2>
+            <h2 className="text-[28px] leading-[1.08] text-white sm:text-4xl">{title}</h2>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/75">{text}</p>
             <div className="mt-8 flex flex-wrap gap-3">
               <ButtonLink to={primaryTo} variant="light" size="lg">

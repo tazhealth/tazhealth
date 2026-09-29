@@ -1,4 +1,4 @@
-// Placeholder photography — replace with real TAZhealth outreach photos.
+// Placeholder photography - replace with real TAZhealth outreach photos.
 export const images = {
   hero: "/80155168-169e-4434-8330-37e98d1557d7.jpg",
   volunteers: "/8d94384f-dfbc-4b52-b965-b89dc5bfb159.jpg",

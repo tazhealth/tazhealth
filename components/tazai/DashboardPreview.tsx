@@ -87,7 +87,7 @@ export function DashboardPreview() {
               {kpis.map((k) =>
               <div key={k.label} className="rounded-xl bg-white p-3 ring-1 ring-ink/5">
                   <p className="text-[10px] text-ink/55 sm:text-[11px]">{k.label}</p>
-                  <p className={`mt-1 text-xl font-medium sm:text-2xl ${k.tone ?? 'text-ink'}`}>{k.value}</p>
+                  <p className={`mt-1 text-xl font-medium sm:text-xl ${k.tone ?? 'text-ink'}`}>{k.value}</p>
                 </div>
               )}
             </div>

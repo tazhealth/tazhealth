@@ -36,11 +36,11 @@ export function VolunteerSection() {
       <form onSubmit={handleSubmit} noValidate className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
         <div>
           <Reveal>
-            <h2 id="volunteer-title" className="text-[32px] leading-[1.1] text-forest sm:text-4xl lg:text-[46px]">
+            <h2 id="volunteer-title" className="text-[26px] leading-[1.1] text-forest sm:text-3xl lg:text-[38px]">
               Volunteer with us.
             </h2>
             <p className="mt-4 max-w-lg text-lg leading-relaxed text-ink/70">
-              Pick the role that fits you. No medical background needed for most — just reliability and heart.
+              Pick the role that fits you. No medical background needed for most - just reliability and heart.
             </p>
           </Reveal>
 
@@ -102,7 +102,7 @@ export function VolunteerSection() {
 
 
           <div className="rounded-[2rem] bg-mint p-6 sm:p-8 lg:sticky lg:top-28">
-              <h3 className="text-2xl text-forest">Your details</h3>
+              <h3 className="text-xl text-forest">Your details</h3>
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 <TextField id="volName" label="Full name" className="sm:col-span-2" value={values.volName} onChange={(v) => setField('volName', v)} error={errors.volName} autoComplete="name" />
                 <TextField id="volEmail" type="email" label="Email" value={values.volEmail} onChange={(v) => setField('volEmail', v)} error={errors.volEmail} autoComplete="email" />

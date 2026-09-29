@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Hanken_Grotesk } from "next/font/google";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken-grotesk",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
 });
@@ -12,12 +12,12 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "TAZhealth: Continuous Community Care",
   description:
-    "Bringing continuous care to underserved Nigerian communities — long after the outreach tent comes down.",
+    "Bringing continuous care to underserved Nigerian communities - long after the outreach tent comes down.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" data-scroll-behavior="smooth" className={`${inter.variable} antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth" className={`${hankenGrotesk.variable} antialiased`}>
       <body className="bg-white font-sans text-ink">
         <SiteLayout>{children}</SiteLayout>
       </body>

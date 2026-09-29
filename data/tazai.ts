@@ -78,7 +78,7 @@ export const builtForNigeria: IconItem[] = [
 { icon: SmartphoneIcon, title: 'Low-end Android phones', text: 'Light enough for the affordable phones health workers already carry.' },
 { icon: GaugeIcon, title: 'Low data use', text: 'Syncs compact records, not heavy files, so data bundles last.' },
 { icon: WifiOffIcon, title: 'Works offline', text: 'Every screen works without network. Sync happens when it can.' },
-{ icon: MessageSquareTextIcon, title: 'No app for patients', text: 'Patients only need SMS — any phone, any network.' }];
+{ icon: MessageSquareTextIcon, title: 'No app for patients', text: 'Patients only need SMS - any phone, any network.' }];
 
 
 export const audiences: IconItem[] = [

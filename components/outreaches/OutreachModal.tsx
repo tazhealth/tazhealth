@@ -65,7 +65,7 @@ export function OutreachModal({ outreach, onClose }: OutreachModalProps) {
                   <MapPinIcon className="h-4 w-4" aria-hidden="true" /> {outreach.state}
                 </span>
               </div>
-              <h2 id="outreach-modal-title" className="mt-3 text-3xl text-forest sm:text-4xl">
+              <h2 id="outreach-modal-title" className="mt-3 text-2xl text-forest sm:text-3xl">
                 {outreach.community}
               </h2>
               <p className="mt-3 text-lg leading-relaxed text-ink/75">{outreach.summary}</p>
@@ -73,11 +73,11 @@ export function OutreachModal({ outreach, onClose }: OutreachModalProps) {
               <dl className="mt-8 grid grid-cols-2 gap-3">
                 <div className="rounded-2xl bg-forest p-5 text-white">
                   <dt className="text-sm text-white/70">People reached</dt>
-                  <dd className="mt-1 text-4xl font-medium text-sun">{outreach.peopleReached}</dd>
+                  <dd className="mt-1 text-3xl font-medium text-sun">{outreach.peopleReached}</dd>
                 </div>
                 <div className="rounded-2xl bg-mint p-5">
                   <dt className="text-sm text-ink/60">Referrals made</dt>
-                  <dd className="mt-1 text-4xl font-medium text-forest">{outreach.referrals}</dd>
+                  <dd className="mt-1 text-3xl font-medium text-forest">{outreach.referrals}</dd>
                 </div>
               </dl>
 

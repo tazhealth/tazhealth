@@ -15,7 +15,7 @@ export function TazAiFeature() {
         <div className="relative grid items-center gap-12 px-6 pt-12 sm:px-12 lg:grid-cols-[1.1fr_0.9fr] lg:px-16 lg:pt-0">
           <div className="lg:py-20">
             <p className="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-sm font-medium text-sun">TAZ AI</p>
-            <h2 id="taz-feature" className="mt-5 text-[34px] leading-[1.08] text-white sm:text-5xl">
+            <h2 id="taz-feature" className="mt-5 text-[28px] leading-[1.08] text-white sm:text-4xl">
               Every outreach, turned into an ongoing care journey.
             </h2>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-white/75">

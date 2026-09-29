@@ -22,7 +22,7 @@ const journey = [
 { icon: ActivityIcon, title: 'Screening', text: 'Blood pressure, blood sugar, malaria and BMI checks for every adult.' },
 { icon: StethoscopeIcon, title: 'Consultation', text: 'One-to-one time with a volunteer doctor or nurse.' },
 { icon: PillIcon, title: 'Treatment', text: 'Free essential medication and clear instructions to take home.' },
-{ icon: SendIcon, title: 'Referral', text: 'Serious cases linked to the nearest PHC or hospital — and tracked.' },
+{ icon: SendIcon, title: 'Referral', text: 'Serious cases linked to the nearest PHC or hospital - and tracked.' },
 { icon: BookOpenIcon, title: 'Health education', text: 'Practical talks on diet, hypertension, maternal and child health.' }];
 
 
@@ -41,7 +41,7 @@ export default function Outreaches() {
             Bringing care to <span className="text-leaf">where people are.</span>
           </>
         }
-        description="We set up under canopies, in church halls and village squares — wherever the community gathers — and we keep in touch after we leave."
+        description="We set up under canopies, in church halls and village squares - wherever the community gathers - and we keep in touch after we leave."
         image={images.queue}
         imageAlt="Community members waiting at an outreach registration desk"
         actions={
@@ -77,7 +77,7 @@ export default function Outreaches() {
             key={s.label}
             className={`py-10 lg:py-14 ${i % 2 === 1 ? 'pl-6 lg:pl-10' : 'pr-6'} ${i > 0 ? 'lg:border-l lg:border-white/15 lg:pl-10' : ''} ${i >= 2 ? 'border-t border-white/15 lg:border-t-0' : ''}`}>
 
-              <p className="text-5xl font-medium tracking-tight text-sun sm:text-6xl">
+              <p className="text-4xl font-medium tracking-tight text-sun sm:text-5xl">
                 <CountUp to={s.value} suffix={s.suffix} />
               </p>
               <p className="mt-1 text-[15px] text-white/75">{s.label}</p>
@@ -105,7 +105,7 @@ export default function Outreaches() {
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-6">
-                    <h3 className="text-2xl text-forest">{o.community}</h3>
+                    <h3 className="text-xl text-forest">{o.community}</h3>
                     <p className="text-sm text-ink/55">{o.state}</p>
                     <p className="mt-3 text-[15px] leading-relaxed text-ink/75">{o.summary}</p>
                     <div className="mt-auto flex items-center justify-between pt-6">
@@ -127,7 +127,7 @@ export default function Outreaches() {
       {/* What happens at an outreach */}
       <section className="relative overflow-hidden bg-mint py-20 lg:py-28" aria-labelledby="journey-title">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="journey-title" align="center" title="What happens at an outreach" intro="Five stations, one continuous journey — and it doesn’t end at the last one." />
+          <SectionHeading id="journey-title" align="center" title="What happens at an outreach" intro="Five stations, one continuous journey - and it doesn’t end at the last one." />
           <div className="relative mt-14">
             <EcgLine className="absolute inset-x-0 top-12 hidden h-12 lg:block" />
             <RevealGroup as="ol" className="relative grid gap-4 sm:grid-cols-2 lg:grid-cols-5" stagger={0.09}>
@@ -192,13 +192,13 @@ export default function Outreaches() {
       {/* Upcoming */}
       <section id="upcoming" className="scroll-mt-20 bg-white pt-20 lg:pt-28" aria-labelledby="upcoming-title">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <SectionHeading id="upcoming-title" title="Upcoming outreaches" intro="Join us on the day — every outreach needs clinicians, field workers and follow-up officers." />
+          <SectionHeading id="upcoming-title" title="Upcoming outreaches" intro="Join us on the day - every outreach needs clinicians, field workers and follow-up officers." />
           <RevealGroup as="ul" className="mt-12 divide-y divide-forest/10 border-y border-forest/10">
             {upcomingOutreaches.map((u) =>
             <RevealItem as="li" key={u.id} className="flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:gap-8">
                 <div className="flex items-center gap-5 sm:w-auto">
                   <span className="flex h-20 w-20 shrink-0 flex-col items-center justify-center rounded-2xl bg-forest text-white">
-                    <span className="text-3xl font-medium leading-none">{u.day}</span>
+                    <span className="text-2xl font-medium leading-none">{u.day}</span>
                     <span className="mt-1 text-xs text-white/75">
                       {u.month} · {u.weekday}
                     </span>
@@ -209,7 +209,7 @@ export default function Outreaches() {
                   </div>
                 </div>
                 <div className="hidden min-w-[180px] sm:block">
-                  <h3 className="text-2xl text-forest">{u.community}</h3>
+                  <h3 className="text-xl text-forest">{u.community}</h3>
                   <p className="text-sm text-ink/60">{u.state}</p>
                 </div>
                 <div className="flex-1">
@@ -229,7 +229,7 @@ export default function Outreaches() {
 
       <CtaBand
         title="Bring an outreach to your community."
-        text="Know a community that needs care? Partner with us to host an outreach — we’ll handle the clinicians, drugs and follow-up."
+        text="Know a community that needs care? Partner with us to host an outreach - we’ll handle the clinicians, drugs and follow-up."
         primaryLabel="Partner with us"
         primaryTo="/get-involved#partner" />
 

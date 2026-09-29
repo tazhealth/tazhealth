@@ -1,6 +1,6 @@
 import type { Stat } from '../types/content';
 
-// Placeholder figures — update with verified TAZhealth numbers.
+// Placeholder figures - update with verified TAZhealth numbers.
 export const homeImpact: Stat[] = [
 { value: 500, suffix: '+', label: 'people reached with direct healthcare services' },
 { value: 6, label: 'communities served across Oyo, Ogun, Lagos and the FCT' },

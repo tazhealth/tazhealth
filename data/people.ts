@@ -34,7 +34,7 @@ export const fieldStories: FieldStory[] = [
   image: images.phone,
   title: 'Following up in Pidgin',
   quote:
-  'When I call and speak Pidgin, people relax. They tell me the truth — whether they bought the drugs, whether they went to the clinic.',
+  'When I call and speak Pidgin, people relax. They tell me the truth - whether they bought the drugs, whether they went to the clinic.',
   name: 'Blessing E.',
   role: 'Follow-up officer, volunteer'
 },
@@ -97,7 +97,7 @@ export const milestones: Milestone[] = [
 {
   date: 'Aug 2025',
   title: 'Paper follow-up pilot',
-  text: 'Volunteers called every family from paper registers. It worked — but it could never scale.'
+  text: 'Volunteers called every family from paper registers. It worked - but it could never scale.'
 },
 {
   date: 'Nov 2025',

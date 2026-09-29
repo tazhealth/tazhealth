@@ -24,7 +24,7 @@ export function FormSuccess({ title, text, onReset, resetLabel = 'Send another' 
       <span className="flex h-14 w-14 items-center justify-center rounded-full bg-leaf text-white">
         <CheckIcon className="h-7 w-7" />
       </span>
-      <h3 className="mt-5 text-2xl text-forest">{title}</h3>
+      <h3 className="mt-5 text-xl text-forest">{title}</h3>
       <p className="mt-2 max-w-sm text-[16px] leading-relaxed text-ink/70">{text}</p>
       <button type="button" onClick={onReset} className="mt-6 text-[15px] font-medium text-leaf underline-offset-4 hover:text-forest hover:underline">
         {resetLabel}

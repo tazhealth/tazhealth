@@ -7,7 +7,7 @@ export const tazAiFaqs: Faq[] = [
 },
 {
   q: 'Does TAZ AI work without internet?',
-  a: 'Yes. Registrations and triage work fully offline on the device. Data syncs securely once the phone finds a connection — even hours later.'
+  a: 'Yes. Registrations and triage work fully offline on the device. Data syncs securely once the phone finds a connection - even hours later.'
 },
 {
   q: 'Does TAZ AI replace doctors or nurses?',

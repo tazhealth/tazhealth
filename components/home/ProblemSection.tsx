@@ -15,18 +15,18 @@ export function ProblemSection() {
       <div className="adire-light pointer-events-none absolute inset-0 opacity-[0.04]" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
         <Reveal className="lg:sticky lg:top-32 lg:self-start">
-          <h2 id="problem-title" className="text-[34px] leading-[1.08] sm:text-5xl lg:text-[54px]">
+          <h2 id="problem-title" className="text-[28px] leading-[1.08] sm:text-4xl lg:text-[44px]">
             Care stops when the outreach stops.
           </h2>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-white/75">
-            A free outreach can find dangerously high blood pressure in the morning. By evening the team has gone — and
+            A free outreach can find dangerously high blood pressure in the morning. By evening the team has gone - and
             without follow-up, most patients never get the treatment or referral they were told they need.
           </p>
         </Reveal>
 
         <div className="space-y-4">
           <Reveal className="rounded-[2rem] bg-white/[0.06] p-7 ring-1 ring-white/10 sm:p-10">
-            <p className="text-6xl font-medium tracking-tight text-sun sm:text-7xl lg:text-8xl">
+            <p className="text-5xl font-medium tracking-tight text-sun sm:text-6xl lg:text-8xl">
               <CountUp to={90} prefix="80–" suffix="%" />
             </p>
             <p className="mt-3 max-w-sm text-lg text-white/85">of patients are lost to follow-up after a typical outreach.</p>
@@ -48,7 +48,7 @@ export function ProblemSection() {
           </Reveal>
 
           <Reveal className="grid items-center gap-6 rounded-[2rem] bg-white/[0.06] p-7 ring-1 ring-white/10 sm:grid-cols-[auto_1fr] sm:p-10" delay={0.1}>
-            <p className="text-6xl font-medium tracking-tight text-sun">
+            <p className="text-5xl font-medium tracking-tight text-sun">
               <CountUp to={60} suffix="%" />
             </p>
             <div>
@@ -67,7 +67,7 @@ export function ProblemSection() {
 
           <p className="px-2 text-xs leading-relaxed text-white/50">
             Sources: TAZhealth outreach follow-up records (2025); national primary healthcare access estimates. Figures
-            are indicative — full references available on request.
+            are indicative - full references available on request.
           </p>
         </div>
       </div>

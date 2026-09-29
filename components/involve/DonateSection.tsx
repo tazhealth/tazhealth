@@ -72,7 +72,7 @@ export function DonateSection() {
           <div className="relative overflow-hidden rounded-[2rem] bg-forest p-6 text-white sm:p-8 lg:sticky lg:top-28">
               <div className="adire-light pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden="true" />
               <div className="relative">
-                <h3 className="text-2xl">Make a gift</h3>
+                <h3 className="text-xl">Make a gift</h3>
                 <div role="radiogroup" aria-label="Donation frequency" className="mt-6 grid grid-cols-2 rounded-full bg-white/10 p-1">
                   {(['once', 'monthly'] as const).map((f) =>
                 <button

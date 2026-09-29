@@ -61,7 +61,7 @@ export function PartnerSection() {
 
 
           <form onSubmit={handleSubmit} noValidate className="rounded-[2rem] bg-white p-6 sm:p-8">
-              <h3 className="text-2xl text-forest">Partnership enquiry</h3>
+              <h3 className="text-xl text-forest">Partnership enquiry</h3>
               <div className="mt-6 grid gap-5 sm:grid-cols-2">
                 <TextField id="ptOrg" label="Organisation" className="sm:col-span-2" value={values.ptOrg} onChange={(v) => setField('ptOrg', v)} error={errors.ptOrg} autoComplete="organization" />
                 <TextField id="ptName" label="Your name" value={values.ptName} onChange={(v) => setField('ptName', v)} error={errors.ptName} autoComplete="name" />

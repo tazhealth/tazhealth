@@ -8,7 +8,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-hanken-grotesk);
 
   --color-leaf: #3a9a3f;
   --color-forest: #1f5e2a;

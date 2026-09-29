@@ -13,7 +13,7 @@ export const privacySections: {id: string;title: string;body: string[];}[] = [
   id: 'what-we-collect',
   title: 'Information we collect',
   body: [
-  'Website visitors: information you submit through our forms — such as your name, email, phone number and message — and basic, anonymous usage data to help us improve the site.',
+  'Website visitors: information you submit through our forms - such as your name, email, phone number and message - and basic, anonymous usage data to help us improve the site.',
   'Outreach patients: with your consent, your name, age, phone number, community, and health readings such as blood pressure and blood sugar, recorded by our health workers.',
   'Volunteers, partners and donors: contact details, role preferences and, for donors, transaction records handled by our payment partner. We never store full card details.']
 
@@ -31,7 +31,7 @@ export const privacySections: {id: string;title: string;body: string[];}[] = [
   id: 'consent',
   title: 'Consent and your choices',
   body: [
-  'We ask for consent before registering any patient on TAZ AI or sending messages. You can withdraw consent at any time — reply STOP to any SMS, or contact us directly.',
+  'We ask for consent before registering any patient on TAZ AI or sending messages. You can withdraw consent at any time - reply STOP to any SMS, or contact us directly.',
   'You can unsubscribe from our newsletter using the link in any email.']
 
 },

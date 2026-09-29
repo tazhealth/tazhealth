@@ -26,7 +26,7 @@ export function TazHero() {
             TAZ AI · by TAZhealth
           </motion.p>
           <motion.h1
-            className="mt-6 text-[42px] leading-[1.03] sm:text-6xl lg:text-[70px]"
+            className="mt-6 text-[34px] leading-[1.03] sm:text-5xl lg:text-[56px]"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE, delay: 0.05 }}>
@@ -39,7 +39,7 @@ export function TazHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE, delay: 0.15 }}>
             
-            TAZ AI registers patients offline, flags who’s at risk in seconds, and follows up by SMS — so the care you
+            TAZ AI registers patients offline, flags who’s at risk in seconds, and follows up by SMS - so the care you
             start on outreach day doesn’t stop when you leave.
           </motion.p>
           <motion.div

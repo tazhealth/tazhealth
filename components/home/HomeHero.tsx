@@ -21,7 +21,7 @@ export function HomeHero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 pb-6 pt-6 sm:px-8 lg:grid-cols-[1.12fr_0.88fr] lg:gap-10 lg:pb-10 lg:pt-10">
         <div>
-          <h1 className="text-[44px] leading-[1.02] text-forest sm:text-6xl lg:text-[76px] lg:leading-[0.98]">
+          <h1 className="text-[36px] leading-[1.02] text-forest sm:text-5xl lg:text-[60px] lg:leading-[0.98]">
             <span className="sr-only">Outreach shouldn’t end when the team leaves.</span>
             <span aria-hidden="true">
               {words.map((w, i) =>
@@ -63,7 +63,7 @@ export function HomeHero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE, delay: 0.45 }}>
             
-            We bring free medical outreaches to underserved Nigerian communities — then keep caring through SMS
+            We bring free medical outreaches to underserved Nigerian communities - then keep caring through SMS
             follow-up, referrals and clinician alerts, long after the tents come down.
           </motion.p>
 

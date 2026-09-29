@@ -24,7 +24,7 @@ export default function Contact() {
         <div className="adire pointer-events-none absolute inset-0 opacity-[0.07]" aria-hidden="true" />
         <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
           <motion.h1
-            className="text-[44px] leading-[1.02] text-forest sm:text-6xl lg:text-[76px]"
+            className="text-[36px] leading-[1.02] text-forest sm:text-5xl lg:text-[60px]"
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55, ease: EASE }}>
@@ -47,7 +47,7 @@ export default function Contact() {
       <section className="bg-white py-16 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 sm:px-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-16">
           <Reveal>
-            <h2 className="text-3xl text-forest">Send us a message</h2>
+            <h2 className="text-2xl text-forest">Send us a message</h2>
             <div className="mt-8">
               <ContactForm />
             </div>
@@ -55,7 +55,7 @@ export default function Contact() {
 
           <Reveal delay={0.1} className="space-y-8">
             <div>
-              <h2 className="text-3xl text-forest">Reach us directly</h2>
+              <h2 className="text-2xl text-forest">Reach us directly</h2>
               <ul className="mt-6 divide-y divide-forest/10 border-y border-forest/10">
                 {details.map((d) => {
                   const Icon = d.icon;

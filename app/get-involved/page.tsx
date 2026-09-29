@@ -25,7 +25,7 @@ const paths = [
 {
   href: '#partner',
   title: 'Partner',
-  text: 'NGOs, hospitals, companies and government — let’s make continuity the standard.',
+  text: 'NGOs, hospitals, companies and government - let’s make continuity the standard.',
   image: images.consult,
   tone: 'bg-forest text-white',
   sub: 'text-white/75',
@@ -51,7 +51,7 @@ export default function GetInvolved() {
             Be part of the <span className="text-leaf">continuity of care.</span>
           </>
         }
-        description="Outreach day lasts a few hours. Follow-up lasts months. Whatever you can give — time, partnership or funds — keeps the heartbeat going."
+        description="Outreach day lasts a few hours. Follow-up lasts months. Whatever you can give - time, partnership or funds - keeps the heartbeat going."
         image={images.volunteers}
         imageAlt="Smiling TAZhealth volunteers in green t-shirts" />
 
@@ -71,7 +71,7 @@ export default function GetInvolved() {
                   <img src={p.image} alt="" className="h-full w-full object-cover transition-transform duration-300 ease-smooth group-hover:scale-105" />
                 </div>
                 <div className="flex flex-1 flex-col p-7 sm:p-8">
-                  <h2 className="text-3xl sm:text-4xl">{p.title}</h2>
+                  <h2 className="text-2xl sm:text-3xl">{p.title}</h2>
                   <p className={cn('mt-3 text-[16px] leading-relaxed', p.sub)}>{p.text}</p>
                   <span className={cn('mt-auto inline-flex items-center gap-2 pt-6 font-medium', p.cta)}>
                     Start here <ArrowDownIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" />
@@ -91,7 +91,7 @@ export default function GetInvolved() {
 
       <section className="bg-mint py-20 lg:py-28" aria-labelledby="gi-faq">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-          <SectionHeading id="gi-faq" title="Good questions." intro="Still unsure? Message us on WhatsApp — a real person will reply." className="lg:sticky lg:top-28 lg:self-start" />
+          <SectionHeading id="gi-faq" title="Good questions." intro="Still unsure? Message us on WhatsApp - a real person will reply." className="lg:sticky lg:top-28 lg:self-start" />
           <Reveal>
             <FaqAccordion items={getInvolvedFaqs} />
           </Reveal>

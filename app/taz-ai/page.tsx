@@ -18,7 +18,7 @@ import { tazAiFaqs } from '@/data/faqs';
 const demoSteps = [
 'A 30-minute walkthrough with our team',
 'A pilot plan shaped around your next outreach',
-'Training for your volunteers — in a single afternoon'];
+'Training for your volunteers - in a single afternoon'];
 
 
 export default function TazAi() {
@@ -32,7 +32,7 @@ export default function TazAi() {
           <SectionHeading
             id="gap-title"
             title="Care stops when the outreach stops. TAZ AI keeps it going."
-            intro="Outreaches find people who urgently need care — then lose touch with most of them. TAZ AI gives every patient a follow-up plan before the team packs up." />
+            intro="Outreaches find people who urgently need care - then lose touch with most of them. TAZ AI gives every patient a follow-up plan before the team packs up." />
 
           <CareGapChart />
         </div>
@@ -65,7 +65,7 @@ export default function TazAi() {
           <SectionHeading
             id="sms-title"
             title="Messages that sound like home."
-            intro="Warm, short and clear — in English, Pidgin, Yoruba, Hausa or Igbo. Patients can reply, and every reply updates their care plan." />
+            intro="Warm, short and clear - in English, Pidgin, Yoruba, Hausa or Igbo. Patients can reply, and every reply updates their care plan." />
 
           <div className="flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start sm:gap-6">
             <div className="text-center">
@@ -92,7 +92,7 @@ export default function TazAi() {
             <SectionHeading
               id="nigeria-title"
               tone="light"
-              title="Built for Nigeria — not adapted to it."
+              title="Built for Nigeria - not adapted to it."
               intro="Patchy network, expensive data, basic phones. We designed for the real conditions of community health work from day one." />
 
             <Reveal className="mt-10 flex items-center gap-6" delay={0.1}>
@@ -151,7 +151,7 @@ export default function TazAi() {
             id="dashboard-title"
             align="center"
             title="See your whole community at a glance."
-            intro="Reach, risk and follow-up outcomes for every outreach — ready for your team meeting or your next funder report." />
+            intro="Reach, risk and follow-up outcomes for every outreach - ready for your team meeting or your next funder report." />
 
           <Reveal className="mt-12 lg:mt-16">
             <DashboardPreview />
@@ -166,7 +166,7 @@ export default function TazAi() {
             <SectionHeading
               id="privacy-title"
               title="Health data is personal. We treat it that way."
-              intro="Privacy and consent aren’t settings in TAZ AI — they’re how it was built." />
+              intro="Privacy and consent aren’t settings in TAZ AI - they’re how it was built." />
 
             <Reveal className="mt-8 max-w-sm rounded-3xl bg-mint p-5" delay={0.1}>
               <div className="flex items-center gap-3">
@@ -214,7 +214,7 @@ export default function TazAi() {
         <div className="relative mx-auto grid max-w-7xl gap-10 overflow-hidden rounded-[2rem] bg-forest p-6 sm:p-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14 lg:rounded-[2.5rem] lg:p-14">
           <div className="adire-light pointer-events-none absolute inset-0 opacity-[0.05]" aria-hidden="true" />
           <div className="relative text-white">
-            <h2 id="demo-title" className="text-[34px] leading-[1.08] sm:text-5xl">
+            <h2 id="demo-title" className="text-[28px] leading-[1.08] sm:text-4xl">
               Bring TAZ AI to your outreach program.
             </h2>
             <p className="mt-5 max-w-md text-lg leading-relaxed text-white/75">

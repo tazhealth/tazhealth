@@ -1,9 +1,11 @@
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
-import { JourneyTimeline } from '@/components/about/JourneyTimeline';
+import { RootsList, RootsPath } from '@/components/about/RootsPath';
 import { PhotoMarquee } from '@/components/about/PhotoMarquee';
 import { ScrollRevealText } from '@/components/about/ScrollRevealText';
 import { team } from '@/data/people';
+import { aboutFaqs } from '@/data/faqs';
+import { FaqAccordion } from '@/components/ui/FaqAccordion';
 
 const letter = [
 '“We screened 52 people in Ogbomosho. A month later, we could reach fewer than ten of them.”',
@@ -84,15 +86,18 @@ export default function About() {
 
       {/* Journey */}
       <section className="bg-white py-20 lg:py-28" aria-labelledby="journey-title">
-        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal className="text-center">
             <h2 id="journey-title" className="text-2xl font-semibold text-ink sm:text-3xl">
               How we got here
             </h2>
             <p className="mt-3 text-ink/60">From one outreach to a care platform.</p>
           </Reveal>
-          <div className="mt-14">
-            <JourneyTimeline />
+          <div className="mt-14 hidden lg:mt-20 lg:block">
+            <RootsPath />
+          </div>
+          <div className="mx-auto mt-12 max-w-md lg:hidden">
+            <RootsList />
           </div>
         </div>
       </section>
@@ -124,24 +129,26 @@ export default function About() {
         </div>
       </section>
 
-      {/* Closing */}
-      <section className="bg-white py-20 lg:py-28">
-        <Reveal className="mx-auto max-w-xl px-5 text-center sm:px-8">
-          <h2 className="text-2xl font-semibold text-ink sm:text-3xl">
-            Come to an outreach. <span className="text-leaf">Stay for the follow-up.</span>
-          </h2>
-          <p className="mt-4 text-ink/65">
-            Doctors, nurses, students, or anyone with a few hours and a phone. There’s a place for you.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
-            <ButtonLink to="/get-involved#volunteer" size="lg">
-              Volunteer with us
-            </ButtonLink>
-            <ButtonLink to="/outreaches#upcoming" size="lg" variant="secondary">
-              See upcoming outreaches
-            </ButtonLink>
+      {/* FAQ */}
+      <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32" aria-labelledby="about-faq">
+        <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
+          <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
+            <p className="font-mono text-xs text-ink/40">FAQ</p>
+            <h2 id="about-faq" className="mt-2 text-2xl font-medium tracking-[-0.025em] text-ink sm:mt-3 sm:text-4xl">
+              Questions, answered.
+            </h2>
+            <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-ink/60 sm:mt-4 sm:text-[16px]">
+              Anything else you want to know? Message us and a real person will reply.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              <ButtonLink to="/get-involved#volunteer">Volunteer with us</ButtonLink>
+              <ButtonLink to="/contact" variant="secondary">Contact us</ButtonLink>
+            </div>
           </div>
-        </Reveal>
+          <div className="lg:col-span-8">
+            <FaqAccordion items={aboutFaqs} />
+          </div>
+        </div>
       </section>
     </>);
 

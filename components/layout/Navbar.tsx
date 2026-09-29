@@ -88,7 +88,7 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <ButtonLink to="/get-involved#partner" className="hidden h-11 px-5 sm:inline-flex">
+            <ButtonLink to="/partner" className="hidden h-11 px-5 sm:inline-flex">
               Partner with us
             </ButtonLink>
             <button
@@ -169,7 +169,7 @@ export function Navbar() {
               </nav>
               <div className="mt-auto space-y-3 px-5 pb-8 pt-6">
                 <EcgLine className="mb-4 h-8" />
-                <ButtonLink to="/get-involved#partner" size="lg" className="w-full">
+                <ButtonLink to="/partner" size="lg" className="w-full">
                   Partner with us
                 </ButtonLink>
                 <ButtonLink href={site.whatsapp} external variant="secondary" size="lg" className="w-full">

@@ -14,8 +14,8 @@ const capabilities = [
 
 
 const threads = [
-{ label: 'English · after the outreach', language: 'English', messages: englishThread, delay: 300, offset: '' },
-{ label: 'Pidgin · medication reminder', language: 'Pidgin', messages: pidginThread, delay: 900, offset: 'sm:mt-16' }];
+{ language: 'English', messages: englishThread, delay: 300, offset: '' },
+{ language: 'Pidgin', messages: pidginThread, delay: 900, offset: 'sm:mt-16' }];
 
 
 export function TazAiShowcase() {
@@ -54,10 +54,6 @@ export function TazAiShowcase() {
           <div className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 sm:mx-0 sm:justify-center sm:overflow-visible sm:px-0 sm:pb-0">
             {threads.map((t) =>
             <figure key={t.language} className={cn('shrink-0 snap-center', t.offset)}>
-                <figcaption className="mb-4 flex items-center justify-center gap-2 text-sm text-white/65">
-                  <span className="h-1.5 w-1.5 rounded-full bg-sun" aria-hidden="true" />
-                  {t.label}
-                </figcaption>
                 <PhoneMockup className="w-[248px] sm:w-[250px]">
                   <SmsThread language={t.language} messages={t.messages} startDelay={t.delay} />
                 </PhoneMockup>

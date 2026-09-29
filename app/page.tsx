@@ -5,6 +5,8 @@ import { TazAiShowcase } from '@/components/home/TazAiShowcase';
 import { PartnersStrip } from '@/components/home/PartnersStrip';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { CountUp } from '@/components/ui/CountUp';
+import { ArticleCard } from '@/components/blog/ArticleCard';
+import { articles } from '@/data/articles';
 import { GalleryGrid } from '@/components/ui/GalleryGrid';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { gallery, images } from '@/data/images';
@@ -138,24 +140,30 @@ export default function Home() {
 
       <PartnersStrip />
 
-      {/* Closing */}
-      <section className="bg-white py-16 sm:py-20 lg:py-28">
-        <Reveal className="mx-auto max-w-xl px-5 text-center sm:px-8">
-          <h2 className="text-balance text-2xl font-semibold text-ink sm:text-3xl">
-            Help us keep the <span className="text-leaf">heartbeat going.</span>
-          </h2>
-          <p className="mt-4 text-ink/65">
-            Give a Saturday at an outreach, make follow-up calls from home, or bring us to your community.
-          </p>
-          <div className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
-            <ButtonLink to="/get-involved#volunteer" size="lg">
-              Volunteer with us
-            </ButtonLink>
-            <ButtonLink to="/get-involved#partner" size="lg" variant="secondary">
-              Partner with us
+      {/* Blog */}
+      <section className="border-t border-ink/10 bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="blog-title">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+            <Reveal className="max-w-xl">
+              <h2 id="blog-title" className="text-2xl font-semibold text-ink sm:text-3xl">
+                Blogs & Articles
+              </h2>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink/60 sm:text-base">
+                Health tips, stories from the field and updates on how we follow up with every patient.
+              </p>
+            </Reveal>
+            <ButtonLink to="/blog" className="w-fit shrink-0">
+              More stories <ArrowRightIcon className="h-4 w-4" />
             </ButtonLink>
           </div>
-        </Reveal>
+          <RevealGroup className="mt-10 grid gap-10 sm:grid-cols-2 lg:mt-12 lg:grid-cols-3 lg:gap-8">
+            {articles.slice(0, 3).map((a) =>
+            <RevealItem key={a.slug}>
+                <ArticleCard article={a} />
+              </RevealItem>
+            )}
+          </RevealGroup>
+        </div>
       </section>
     </>);
 

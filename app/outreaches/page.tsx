@@ -78,10 +78,6 @@ export default function Outreaches() {
             alt="Community members seated and waiting at the Odogbolu outreach"
             className="aspect-[4/3] w-full rounded-lg object-cover sm:aspect-[21/9]" />
 
-          <figcaption className="mt-2.5 flex justify-between gap-4 text-xs text-ink/50 sm:mt-3 sm:text-sm">
-            <span>Beneficiaries waiting, Odogbolu, Ogun State</span>
-            <span>TAZhealth outreach</span>
-          </figcaption>
         </figure>
       </section>
 
@@ -211,7 +207,7 @@ export default function Outreaches() {
               We bring the clinicians, the medicine and the follow-up. You bring the community.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink to="/get-involved#partner">Partner with us</ButtonLink>
+              <ButtonLink to="/partner">Partner with us</ButtonLink>
               <ButtonLink href={site.whatsapp} external variant="secondary">
                 <WhatsAppIcon className="h-4 w-4" /> WhatsApp
               </ButtonLink>

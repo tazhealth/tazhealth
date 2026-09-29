@@ -69,7 +69,6 @@ export default function TazAi() {
 
           <div className="flex flex-col items-center justify-center gap-10 sm:flex-row sm:items-start sm:gap-6">
             <div className="text-center">
-              <p className="mb-4 text-sm font-medium text-forest">English · after the outreach</p>
               <PhoneMockup>
                 <SmsThread language="English" messages={englishThread} startDelay={300} />
               </PhoneMockup>

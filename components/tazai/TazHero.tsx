@@ -63,7 +63,7 @@ export function TazHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45, ease: EASE, delay: 0.25 }}>
 
-          <ButtonLink to="/get-involved#partner" variant="secondary" size="lg" className="bg-leaf/15 ring-leaf/30">
+          <ButtonLink to="/partner" variant="secondary" size="lg" className="bg-leaf/15 ring-leaf/30">
             Partner with us
           </ButtonLink>
           <ButtonLink href="#demo" size="lg">

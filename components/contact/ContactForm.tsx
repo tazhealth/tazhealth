@@ -1,18 +1,18 @@
 'use client';
 
 import React from 'react';
-import { ChoiceChips, TextAreaField, TextField } from '../forms/Field';
-import { FormPanel, FormSection, SubmitButton } from '../forms/FormPanel';
+import { useSearchParams } from 'next/navigation';
+import { TextAreaField, TextField } from '../forms/Field';
+import { SubmitButton } from '../forms/FormPanel';
 import { FormSuccess } from '../forms/FormSuccess';
 import { isEmail, useSimpleForm } from '../../hooks/useSimpleForm';
 
-const subjects = ['General', 'Volunteering', 'Partnership', 'TAZ AI demo', 'Donations', 'Press'];
-
 export function ContactForm() {
+  const topic = useSearchParams().get('topic');
+  const prefill = topic === 'partner' ? 'Hi TAZhealth, I’d like to talk about partnering with you. Our organisation is ' : '';
   const { values, errors, status, setField, handleSubmit, reset } = useSimpleForm(
-    { cSubject: '', cName: '', cEmail: '', cPhone: '', cMessage: '' },
+    { cName: '', cEmail: '', cMessage: prefill },
     (v) => ({
-      cSubject: v.cSubject ? undefined : 'Please choose what this is about.',
       cName: v.cName.trim() ? undefined : 'Please tell us your name.',
       cEmail: isEmail(v.cEmail) ? undefined : 'Please enter a valid email.',
       cMessage: v.cMessage.trim().length >= 10 ? undefined : 'Please write a short message (at least 10 characters).'
@@ -31,43 +31,13 @@ export function ContactForm() {
   }
 
   return (
-    <FormPanel
-      label="Contact form"
-      onSubmit={handleSubmit}
-      footer={
-      <>
-          <p className="text-sm text-ink/50">We usually reply within one working day.</p>
-          <SubmitButton busy={status === 'submitting'}>Send message</SubmitButton>
-        </>
-      }>
-
-      <FormSection title="Send us a message">
-        <div className="space-y-5">
-          <ChoiceChips
-            id="cSubject"
-            name="cSubject"
-            label="What’s it about?"
-            options={subjects}
-            value={values.cSubject}
-            onChange={(v) => setField('cSubject', v)}
-            error={errors.cSubject} />
-
-          <div className="grid gap-5 sm:grid-cols-2">
-            <TextField id="cName" label="Name" value={values.cName} onChange={(v) => setField('cName', v)} error={errors.cName} autoComplete="name" />
-            <TextField id="cEmail" type="email" label="Email" value={values.cEmail} onChange={(v) => setField('cEmail', v)} error={errors.cEmail} autoComplete="email" placeholder="you@email.com" />
-          </div>
-          <TextField id="cPhone" type="tel" label="Phone" optional value={values.cPhone} onChange={(v) => setField('cPhone', v)} autoComplete="tel" placeholder="+234 800 000 0000" />
-          <TextAreaField
-            id="cMessage"
-            label="Message"
-            rows={4}
-            value={values.cMessage}
-            onChange={(v) => setField('cMessage', v)}
-            error={errors.cMessage}
-            placeholder="How can we help?" />
-
-        </div>
-      </FormSection>
-    </FormPanel>);
+    <form onSubmit={handleSubmit} noValidate aria-label="Contact form" className="space-y-5">
+      <TextField id="cName" label="Name *" value={values.cName} onChange={(v) => setField('cName', v)} error={errors.cName} autoComplete="name" placeholder="Your name" />
+      <TextField id="cEmail" type="email" label="Email *" value={values.cEmail} onChange={(v) => setField('cEmail', v)} error={errors.cEmail} autoComplete="email" placeholder="Your email" />
+      <TextAreaField id="cMessage" label="Message *" rows={5} value={values.cMessage} onChange={(v) => setField('cMessage', v)} error={errors.cMessage} placeholder="What’s on your mind?" />
+      <SubmitButton busy={status === 'submitting'} className="h-12 w-full text-[15px]">
+        Send message
+      </SubmitButton>
+    </form>);
 
 }

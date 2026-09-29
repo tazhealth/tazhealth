@@ -48,3 +48,24 @@ export const getInvolvedFaqs: Faq[] = [
   q: 'Can my organisation sponsor a specific outreach?',
   a: 'Yes. Partners can sponsor an outreach in a community they care about, and receive a full report on people reached, referrals and follow-up outcomes.'
 }];
+export const aboutFaqs: Faq[] = [
+{
+  q: 'What does TAZhealth actually do?',
+  a: 'We run free medical outreaches in underserved Nigerian communities: screening, consultations, medicine and referrals. Then we keep following up with every person we met, by SMS, phone calls and tracked referrals.'
+},
+{
+  q: 'Where do you run outreaches?',
+  a: 'So far in communities across Ogun, Oyo, Lagos and the FCT, including church halls, markets, village squares and orphanage homes. We go where people already gather.'
+},
+{
+  q: 'Who runs TAZhealth?',
+  a: 'A small core team of doctors, public health students and builders, supported by dozens of volunteers at every outreach.'
+},
+{
+  q: 'What is TAZ AI?',
+  a: 'Our own tool for follow-up. It registers patients offline, flags who is at risk, and sends SMS check-ins in English, Pidgin, Yoruba, Hausa and Igbo so care continues after the outreach day.'
+},
+{
+  q: 'How can I get involved?',
+  a: 'Volunteer at an outreach, make follow-up calls from home, partner with us as an organisation, or donate to fund medicine, screening kits and SMS follow-up.'
+}];

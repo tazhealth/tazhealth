@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import { ArrowDownIcon, ArrowUpRightIcon } from 'lucide-react';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 import { VolunteerSection } from '@/components/involve/VolunteerSection';
-import { PartnerSection } from '@/components/involve/PartnerSection';
 import { DonateSection } from '@/components/involve/DonateSection';
 import { images } from '@/data/images';
 import { getInvolvedFaqs } from '@/data/faqs';
@@ -18,11 +17,11 @@ const ways = [
   image: images.volunteers
 },
 {
-  href: '#partner',
+  href: '/partner',
   index: '02',
   title: 'Partner',
   text: 'NGOs, clinics, companies and government. Let’s make follow-up the standard.',
-  meta: 'Reply within two working days',
+  meta: 'See how partnering works',
   image: images.consult
 },
 {
@@ -78,13 +77,12 @@ export default function GetInvolved() {
       <Suspense fallback={null}>
         <VolunteerSection />
       </Suspense>
-      <PartnerSection />
       <DonateSection />
 
       <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32" aria-labelledby="gi-faq">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
-            <p className="font-mono text-xs text-ink/40">04</p>
+            <p className="font-mono text-xs text-ink/40">03</p>
             <h2 id="gi-faq" className="mt-2 text-2xl sm:mt-3 sm:text-3xl font-medium tracking-[-0.025em] text-ink sm:text-4xl">
               Questions
             </h2>

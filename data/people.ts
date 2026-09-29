@@ -97,7 +97,7 @@ export const milestones: Milestone[] = [
 {
   date: 'Aug 2025',
   title: 'Paper follow-up pilot',
-  text: 'Volunteers called every family from paper registers. It worked - but it could never scale.'
+  text: 'Volunteers called every family from paper registers. It worked, but it could never scale.'
 },
 {
   date: 'Nov 2025',

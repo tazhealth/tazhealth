@@ -42,7 +42,7 @@ export function DonateSection() {
       <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
           <SideIntro
-            index="03"
+            index="02"
             id="donate-title"
             title="Donate"
             text="Every naira goes to the three things that keep care going after the outreach.">

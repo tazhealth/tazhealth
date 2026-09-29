@@ -6,7 +6,7 @@ export function PartnersStrip() {
   const loop = [...partners, ...partners];
   return (
     <section className="border-y border-forest/10 bg-white py-12" aria-labelledby="partners-title">
-      <h2 id="partners-title" className="px-5 text-center text-[15px] font-medium text-ink/60">
+      <h2 id="partners-title" className="text-balance px-5 text-center text-[15px] font-medium text-ink/60">
         Supported by partners who believe care should continue
       </h2>
       <div className="mt-8 overflow-hidden">

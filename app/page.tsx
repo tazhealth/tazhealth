@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { HomeHero } from '@/components/home/HomeHero';
+import { TazAiShowcase } from '@/components/home/TazAiShowcase';
 import { PartnersStrip } from '@/components/home/PartnersStrip';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { CountUp } from '@/components/ui/CountUp';
@@ -9,7 +10,6 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { gallery, images } from '@/data/images';
 import { outreachImpact } from '@/data/impact';
 import { testimonials } from '@/data/people';
-import { pidginThread } from '@/data/sms';
 import { cn } from '@/utils/cn';
 
 const steps = [
@@ -44,7 +44,7 @@ export default function Home() {
       <HomeHero />
 
       {/* How we care */}
-      <section className="bg-white pb-20 pt-28 lg:pb-28 lg:pt-36" aria-labelledby="how-title">
+      <section className="bg-white pb-16 pt-20 sm:pb-20 sm:pt-28 lg:pb-28 lg:pt-36" aria-labelledby="how-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 id="how-title" className="text-balance text-2xl font-semibold leading-tight text-ink sm:text-3xl">
@@ -55,9 +55,11 @@ export default function Home() {
             </p>
           </Reveal>
 
-          <RevealGroup as="ol" className="mt-14 grid gap-10 md:grid-cols-3 md:gap-6">
+          <RevealGroup
+            as="ol"
+            className="no-scrollbar -mx-5 mt-10 flex snap-x snap-mandatory scroll-px-5 gap-4 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:mt-14 sm:scroll-px-8 sm:px-8 md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
             {steps.map((s, i) =>
-            <RevealItem as="li" key={s.title}>
+            <RevealItem as="li" key={s.title} className="w-[80%] shrink-0 snap-start sm:w-[55%] md:w-auto">
                 <img src={s.image} alt={s.alt} loading="lazy" className="aspect-[4/3] w-full rounded-3xl object-cover" />
                 <p className="mt-5 text-sm font-medium text-leaf">
                   {i + 1}. {s.when}
@@ -85,7 +87,7 @@ export default function Home() {
       </section>
 
       {/* Voices */}
-      <section className="bg-white py-20 lg:py-28" aria-label="In their words">
+      <section className="bg-white py-16 sm:py-20 lg:py-28" aria-label="In their words">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <Reveal className="text-center">
             <p className="text-5xl leading-none text-sun" aria-hidden="true">“</p>
@@ -99,7 +101,7 @@ export default function Home() {
           <RevealGroup className="mt-14 grid gap-4 md:grid-cols-2">
             {others.map((t) =>
             <RevealItem key={t.name}>
-                <figure className="h-full rounded-3xl bg-mint p-7">
+                <figure className="h-full rounded-3xl bg-white p-7 ring-1 ring-ink/10">
                   <blockquote className="text-[16px] leading-relaxed text-ink/80">“{t.quote}”</blockquote>
                   <figcaption className="mt-4 text-sm">
                     <span className="font-medium text-ink">{t.name}</span>
@@ -112,46 +114,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TAZ AI */}
-      <section className="bg-mint py-20 lg:py-28" aria-labelledby="taz-title">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-2 lg:gap-16">
-          <Reveal>
-            <p className="text-sm font-medium text-leaf">Meet TAZ AI</p>
-            <h2 id="taz-title" className="mt-3 text-balance text-2xl font-semibold leading-tight text-ink sm:text-3xl">
-              The tool that remembers every patient.
-            </h2>
-            <p className="mt-4 max-w-md text-lg leading-relaxed text-ink/65">
-              We built TAZ AI so volunteers can register people offline, spot who’s at risk, and follow up by SMS in
-              English, Pidgin, Yoruba, Hausa or Igbo.
-            </p>
-            <div className="mt-8">
-              <ButtonLink to="/taz-ai" size="lg">
-                See how it works <ArrowRightIcon className="h-4 w-4" />
-              </ButtonLink>
-            </div>
-          </Reveal>
-
-          <Reveal delay={0.1} className="mx-auto w-full max-w-sm rounded-[2rem] bg-white p-5 shadow-card">
-            <p className="border-b border-ink/5 pb-3 text-center text-sm font-medium text-ink">TAZhealth · Pidgin</p>
-            <ul className="mt-4 space-y-3 text-[15px]">
-              {pidginThread.map((m, i) =>
-              <li
-                key={i}
-                className={cn(
-                  'w-fit max-w-[85%] rounded-2xl px-4 py-2.5',
-                  m.from === 'taz' ? 'rounded-bl-md bg-mint text-ink' : 'ml-auto rounded-br-md bg-leaf text-white'
-                )}>
-
-                  {m.text.replace('TAZhealth: ', '')}
-                </li>
-              )}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
+      <TazAiShowcase />
 
       {/* Gallery */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="gallery-title">
+      <section className="bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="gallery-title">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <Reveal>
@@ -173,7 +139,7 @@ export default function Home() {
       <PartnersStrip />
 
       {/* Closing */}
-      <section className="bg-white py-20 lg:py-28">
+      <section className="bg-white py-16 sm:py-20 lg:py-28">
         <Reveal className="mx-auto max-w-xl px-5 text-center sm:px-8">
           <h2 className="text-balance text-2xl font-semibold text-ink sm:text-3xl">
             Help us keep the <span className="text-leaf">heartbeat going.</span>

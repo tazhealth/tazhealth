@@ -144,12 +144,12 @@ export function ChoiceChips({ id, name, label, error, optional, hint, className,
   return (
     <fieldset className={className} aria-describedby={error ? `${id}-error` : undefined}>
       <Label id={id} label={label} optional={optional} as="legend" />
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 sm:gap-2">
         {options.map((o, i) =>
         <label
           key={o}
           className={cn(
-            'flex h-9 cursor-pointer items-center gap-1.5 rounded-full border px-3.5 text-sm transition-colors duration-150',
+            'flex h-8 cursor-pointer items-center gap-1.5 rounded-full border px-3 text-[13px] transition-colors sm:h-9 sm:px-3.5 sm:text-sm duration-150',
             'has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-leaf/15',
             value === o ?
             'border-forest bg-forest text-white' :

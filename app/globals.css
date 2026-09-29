@@ -20,9 +20,9 @@
   --color-risk-medium: #f2a93b;
   --color-risk-low: #3a9a3f;
 
-  --shadow-lift: 0 14px 28px -12px rgba(31, 94, 42, 0.55);
+  --shadow-lift: 0 8px 18px -10px rgba(16, 24, 16, 0.3);
   --shadow-card: 0 24px 48px -24px rgba(26, 26, 26, 0.28);
-  --shadow-phone: 0 40px 80px -30px rgba(22, 63, 30, 0.6);
+  --shadow-phone: 0 30px 60px -30px rgba(16, 24, 16, 0.4);
   --shadow-nav: 0 8px 24px -16px rgba(26, 26, 26, 0.3);
 
   --ease-smooth: cubic-bezier(0.23, 1, 0.32, 1);

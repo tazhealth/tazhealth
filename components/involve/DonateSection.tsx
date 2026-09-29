@@ -38,8 +38,8 @@ export function DonateSection() {
   };
 
   return (
-    <section id="donate" className="scroll-mt-20 border-t border-ink/10 bg-white py-24 lg:py-32" aria-labelledby="donate-title">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-10">
+    <section id="donate" className="scroll-mt-20 border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32" aria-labelledby="donate-title">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-5">
           <SideIntro
             index="03"
@@ -47,11 +47,11 @@ export function DonateSection() {
             title="Donate"
             text="Every naira goes to the three things that keep care going after the outreach.">
 
-            <ul className="mt-10 border-t border-ink/10">
+            <ul className="mt-7 border-t border-ink/10 sm:mt-10">
               {donationUses.map((d) => {
                 const [price, what] = d.example.split(' · ');
                 return (
-                  <li key={d.title} className="grid grid-cols-[1fr_auto] gap-x-4 border-b border-ink/10 py-4">
+                  <li key={d.title} className="grid grid-cols-[1fr_auto] gap-x-4 border-b border-ink/10 py-3 sm:py-4">
                     <p className="text-[15px] font-medium text-ink">{d.title}</p>
                     <p className="text-[15px] font-medium tabular-nums text-ink">{price}</p>
                     <p className="col-span-2 mt-0.5 text-sm text-ink/55">{what}</p>

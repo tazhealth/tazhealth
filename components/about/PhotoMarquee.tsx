@@ -15,7 +15,7 @@ export function PhotoMarquee() {
 
   return (
     <div
-      className="group relative overflow-hidden py-8 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+      className="group relative overflow-hidden py-8"
       aria-label="Photos from our outreaches">
 
       <ul className="marquee flex w-max gap-6 pr-6 [animation-duration:70s] group-hover:[animation-play-state:paused]">

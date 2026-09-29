@@ -29,7 +29,10 @@ export function GalleryGrid({ images }: {images: GalleryImage[];}) {
               i % 3 === 0 ? 'aspect-[4/5]' : i % 3 === 1 ? 'aspect-square' : 'aspect-[4/3]'}`
               } />
             
-              <span className="absolute inset-x-2 bottom-2 flex items-center justify-between rounded-xl bg-white/95 px-3 py-2 text-left text-xs font-medium text-forest opacity-100 transition-opacity duration-200 sm:inset-x-3 sm:bottom-3 sm:text-sm lg:opacity-0 lg:group-hover:opacity-100">
+              <span className="absolute bottom-2 right-2 flex h-7 w-7 items-center justify-center rounded-full bg-white/90 text-forest sm:hidden" aria-hidden="true">
+                <ExpandIcon className="h-3.5 w-3.5" />
+              </span>
+              <span className="absolute inset-x-2 bottom-2 hidden items-center justify-between rounded-xl bg-white/95 px-3 py-2 text-left text-xs font-medium text-forest opacity-100 transition-opacity duration-200 sm:inset-x-3 sm:bottom-3 sm:flex sm:text-sm lg:opacity-0 lg:group-hover:opacity-100">
                 {img.caption}
                 <ExpandIcon className="ml-2 h-4 w-4 shrink-0" aria-hidden="true" />
               </span>

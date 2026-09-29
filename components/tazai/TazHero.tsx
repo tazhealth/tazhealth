@@ -11,18 +11,7 @@ const facts = ['Works offline', 'SMS in 5 languages', 'No app for patients'];
 
 export function TazHero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#F6F7E6] via-mint to-[#E3F2E3] pt-32 lg:pt-40">
-      {/* Concentric arcs rising from behind the dashboard */}
-      <div className="pointer-events-none absolute inset-x-0 top-[38%] flex justify-center" aria-hidden="true">
-        {[1500, 1150, 820].map((size) =>
-        <div
-          key={size}
-          className="absolute rounded-full bg-leaf/[0.07]"
-          style={{ width: size, height: size }} />
-
-        )}
-      </div>
-
+    <section className="relative overflow-hidden bg-white pt-32 lg:pt-40">
       {/* Sun-yellow swoop behind the mockup */}
       <svg
         className="pointer-events-none absolute left-1/2 top-[34%] h-[900px] w-[1600px] -translate-x-1/2 sm:top-[30%]"
@@ -102,10 +91,7 @@ export function TazHero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: EASE, delay: 0.3 }}>
 
-        <div className="relative max-h-[420px] overflow-hidden sm:max-h-[520px] lg:max-h-[560px]">
-          <DashboardPreview frame="browser" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent" aria-hidden="true" />
-        </div>
+        <DashboardPreview frame="browser" />
 
         <motion.div
           className="absolute -left-2 top-[72%] hidden items-center gap-2.5 rounded-2xl bg-white p-3 text-left shadow-card lg:flex"

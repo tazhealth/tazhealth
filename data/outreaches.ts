@@ -8,13 +8,13 @@ export const pastOutreaches: Outreach[] = [
   state: 'Ogun State',
   date: 'June 2026',
   image: images.hero,
-  summary: 'Hypertension and diabetes screening for 118 adults - and our first full TAZ AI follow-up cohort.',
+  summary: 'Hypertension and diabetes screening for 118 adults, and our first full TAZ AI follow-up cohort.',
   peopleReached: 118,
   referrals: 17,
   services: ['BP screening', 'Glucose testing', 'Consultations', 'Free medication', 'SMS follow-up'],
   highlight: '41 patients flagged for follow-up; 36 reached by SMS or phone within a week.',
   story:
-  'Ilaro was the first outreach where every patient was registered on TAZ AI. By the time the team left, clinicians already had a call list of high-risk patients - and the first Yoruba SMS check-ins went out the next morning.'
+  'Ilaro was the first outreach where every patient was registered on TAZ AI. By the time the team left, clinicians already had a call list of high-risk patients, and the first Yoruba SMS check-ins went out the next morning.'
 },
 {
   id: 'akinyele-2026',
@@ -36,7 +36,7 @@ export const pastOutreaches: Outreach[] = [
   state: 'FCT Abuja',
   date: 'November 2025',
   image: images.queue,
-  summary: 'Our largest turnout yet - registration queues formed before sunrise.',
+  summary: 'Our largest turnout yet. Registration queues formed before sunrise.',
   peopleReached: 104,
   referrals: 15,
   services: ['Registration on TAZ AI', 'BP screening', 'Malaria testing', 'Consultations'],
@@ -56,7 +56,7 @@ export const pastOutreaches: Outreach[] = [
   services: ['Child wellness', 'Malaria testing', 'Nutrition counselling', 'Free medication'],
   highlight: 'Paper-based follow-up pilot: volunteers called every family within 10 days.',
   story:
-  'We tested follow-up with paper registers and volunteer phone calls. It worked - families answered - but it showed us we needed a tool to do this at scale.'
+  'We tested follow-up with paper registers and volunteer phone calls. It worked, and families answered. But it showed us we needed a tool to do this at scale.'
 },
 {
   id: 'ijebu-2025',
@@ -78,7 +78,7 @@ export const pastOutreaches: Outreach[] = [
   state: 'Oyo State',
   date: 'February 2025',
   image: images.consult,
-  summary: 'Our very first outreach - and the one that showed us what happens when care stops.',
+  summary: 'Our very first outreach, and the one that showed us what happens when care stops.',
   peopleReached: 52,
   referrals: 11,
   services: ['BP screening', 'Consultations', 'Free medication'],

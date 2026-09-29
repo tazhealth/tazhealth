@@ -2,12 +2,14 @@ import { ButtonLink } from '@/components/ui/ButtonLink';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { JourneyTimeline } from '@/components/about/JourneyTimeline';
 import { PhotoMarquee } from '@/components/about/PhotoMarquee';
+import { ScrollRevealText } from '@/components/about/ScrollRevealText';
 import { team } from '@/data/people';
 
-const lessons = [
-'Screening is the start, not the finish. A high reading means nothing if nobody checks what happened next.',
-'Trust is built by coming back. People opened up when they saw us return, and when our messages spoke their language.',
-'Tools have to fit the field. No network, cheap phones, busy volunteers. Whatever we build must work there first.'];
+const letter = [
+'“We screened 52 people in Ogbomosho. A month later, we could reach fewer than ten of them.”',
+'TAZhealth began with a borrowed canopy, a few young doctors and a table of donated drugs. When we called to follow up, most phones rang out. Prescriptions hadn’t been filled. Referrals hadn’t happened.',
+'We had helped for one afternoon, and then care simply stopped. That year taught us three things. Screening is the start, not the finish. Trust is built by coming back. And tools have to fit the field.',
+'So we stopped counting how many people we saw, and started asking how many we stayed with. That question is why we exist.'];
 
 
 const founder = team[0];
@@ -16,7 +18,7 @@ export default function About() {
   return (
     <>
       {/* Opening */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#F6F7E6] to-mint pb-20 pt-32 lg:pb-28 lg:pt-40">
+      <section className="relative overflow-hidden bg-white pb-20 pt-32 lg:pb-28 lg:pt-40">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="text-sm font-medium text-leaf">About us</p>
@@ -36,49 +38,29 @@ export default function About() {
       </section>
 
       {/* The letter */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="letter-title">
-        <Reveal className="mx-auto max-w-2xl px-5 sm:px-8">
-          <p id="letter-title" className="text-sm font-medium text-leaf">
+      <section className="bg-white py-28 lg:py-40" aria-labelledby="letter-title">
+        <div className="mx-auto max-w-2xl px-5 sm:px-8">
+          <p
+            id="letter-title"
+            className="inline-flex items-center gap-2 rounded-full bg-ink/[0.04] px-3 py-1 text-[13px] text-ink/60 ring-1 ring-ink/10">
+            
+            <span className="h-1.5 w-1.5 rounded-full bg-leaf" aria-hidden="true" />
             A note from our founder
           </p>
-          <p className="mt-5 text-2xl leading-snug text-forest sm:text-[28px]">
-            “We screened 52 people in Ogbomosho. A month later, we could reach fewer than ten of them.”
-          </p>
 
-          <div className="mt-8 space-y-5 text-[17px] leading-[1.8] text-ink/75">
-            <p>
-              TAZhealth began with a borrowed canopy, a few young doctors and a table of donated drugs. That first day,
-              we found blood pressure readings that should have sent people straight to a clinic.
-            </p>
-            <p>
-              When we called to follow up, most phones rang out. Prescriptions hadn’t been filled. Referrals hadn’t
-              happened. We had helped for one afternoon, and then care simply stopped.
-            </p>
-            <p>That year taught us three things we still hold on to:</p>
-          </div>
+          <ScrollRevealText
+            paragraphs={letter}
+            className="mt-8 space-y-8 text-[22px] font-medium leading-[1.4] tracking-[-0.015em] text-ink sm:text-[28px]" />
+          
 
-          <ol className="mt-6 space-y-4">
-            {lessons.map((l, i) =>
-            <li key={i} className="flex gap-4 rounded-2xl bg-mint px-5 py-4">
-                <span className="text-lg font-semibold text-leaf">{i + 1}</span>
-                <p className="text-[16px] leading-relaxed text-ink/80">{l}</p>
-              </li>
-            )}
-          </ol>
-
-          <p className="mt-8 text-[17px] leading-[1.8] text-ink/75">
-            So we stopped measuring ourselves by how many people we saw, and started asking how many we stayed with.
-            That question is why we exist.
-          </p>
-
-          <div className="mt-10 flex items-center gap-4 border-t border-forest/10 pt-8">
-            <img src={founder.image} alt="" className="h-14 w-14 rounded-full object-cover" />
+          <div className="mt-14 flex items-center gap-4">
+            <img src={founder.image} alt="" className="h-12 w-12 rounded-full object-cover" />
             <div>
               <p className="font-medium text-ink">{founder.name}</p>
-              <p className="text-sm text-ink/60">{founder.role}</p>
+              <p className="text-sm text-ink/55">{founder.role}</p>
             </div>
           </div>
-        </Reveal>
+        </div>
       </section>
 
       {/* Why and hope */}
@@ -116,7 +98,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="bg-mint py-20 lg:py-28" aria-labelledby="team-title">
+      <section className="border-t border-ink/10 bg-white py-20 lg:py-28" aria-labelledby="team-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal className="text-center">
             <h2 id="team-title" className="text-2xl font-semibold text-ink sm:text-3xl">

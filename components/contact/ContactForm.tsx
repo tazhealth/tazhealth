@@ -60,7 +60,7 @@ export function ContactForm() {
           <TextAreaField
             id="cMessage"
             label="Message"
-            rows={5}
+            rows={4}
             value={values.cMessage}
             onChange={(v) => setField('cMessage', v)}
             error={errors.cMessage}

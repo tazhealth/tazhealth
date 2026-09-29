@@ -32,8 +32,8 @@ export function VolunteerSection() {
   );
 
   return (
-    <section id="volunteer" className="scroll-mt-20 border-t border-ink/10 bg-white py-24 lg:py-32" aria-labelledby="volunteer-title">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-10">
+    <section id="volunteer" className="scroll-mt-20 border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32" aria-labelledby="volunteer-title">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <SideIntro
             index="01"
@@ -96,7 +96,7 @@ export function VolunteerSection() {
               <FormSection title="Choose a role" description="You can change this later.">
                 <fieldset aria-describedby={errors.volRole ? 'volRole-error' : undefined}>
                   <legend className="sr-only">Volunteer role</legend>
-                  <div className="grid gap-3 sm:grid-cols-2">
+                  <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                     {volunteerRoles.map((r, i) => {
                     const Icon = r.icon;
                     const checked = values.volRole === r.id;
@@ -104,7 +104,7 @@ export function VolunteerSection() {
                       <label
                         key={r.id}
                         className={cn(
-                          'relative flex cursor-pointer flex-col rounded-xl border p-4 transition-[border-color,background-color,box-shadow] duration-150 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-leaf/15',
+                          'relative flex cursor-pointer flex-col rounded-xl border p-3 sm:p-4 transition-[border-color,background-color,box-shadow] duration-150 has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-leaf/15',
                           checked ?
                           'border-forest bg-mint/50 ring-1 ring-forest' :
                           errors.volRole ?
@@ -130,9 +130,9 @@ export function VolunteerSection() {
                             aria-hidden="true" />
 
                           </span>
-                          <span className="mt-3 text-[15px] font-medium text-ink">{r.title}</span>
-                          <span className="mt-1 text-[13px] leading-relaxed text-ink/55">{r.text}</span>
-                          <span className="mt-3 text-xs font-medium text-leaf">{r.commitment}</span>
+                          <span className="mt-2.5 text-sm font-medium leading-snug text-ink sm:mt-3 sm:text-[15px]">{r.title}</span>
+                          <span className="mt-1 hidden text-[13px] leading-relaxed text-ink/55 sm:block">{r.text}</span>
+                          <span className="mt-1.5 text-[11px] font-medium text-leaf sm:mt-3 sm:text-xs">{r.commitment}</span>
                         </label>);
 
                   })}

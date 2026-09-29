@@ -15,7 +15,7 @@ export function FormPanel({ onSubmit, footer, children, label }: FormPanelProps)
   return (
     <form onSubmit={onSubmit} noValidate aria-label={label} className={panelClass}>
       {children}
-      <div className="flex flex-col gap-4 border-t border-ink/[0.08] bg-ink/[0.02] px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
+      <div className="flex flex-col gap-4 border-t border-ink/[0.08] bg-ink/[0.02] px-4 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-7">
         {footer}
       </div>
     </form>);
@@ -24,10 +24,10 @@ export function FormPanel({ onSubmit, footer, children, label }: FormPanelProps)
 
 export function FormSection({ title, description, children }: {title: string;description?: string;children: React.ReactNode;}) {
   return (
-    <div className="border-t border-ink/[0.08] px-5 py-6 first:border-t-0 sm:px-7 sm:py-7">
+    <div className="border-t border-ink/[0.08] px-4 py-5 first:border-t-0 sm:px-7 sm:py-7">
       <h3 className="text-[15px] font-medium text-ink">{title}</h3>
       {description && <p className="mt-0.5 text-sm text-ink/50">{description}</p>}
-      <div className="mt-5">{children}</div>
+      <div className="mt-4 sm:mt-5">{children}</div>
     </div>);
 
 }

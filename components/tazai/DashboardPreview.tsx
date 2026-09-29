@@ -142,7 +142,7 @@ export function DashboardPreview({ frame = 'laptop' }: {frame?: 'laptop' | 'brow
 
   if (browser) {
     return (
-      <div className="mx-auto w-full max-w-5xl rounded-[1.75rem] bg-white/70 p-2 shadow-card ring-1 ring-forest/10 backdrop-blur sm:p-3">
+      <div className="mx-auto w-full max-w-5xl rounded-[1.75rem] bg-[#F4F5F3] p-2 shadow-card ring-1 ring-ink/10 sm:p-3">
         <div className="mb-2 flex items-center justify-between gap-4 rounded-2xl bg-white px-4 py-3 ring-1 ring-ink/5 sm:mb-3 sm:px-5" aria-hidden="true">
           <p className="text-base font-semibold text-forest">
             <span className="text-leaf">TAZ</span> AI

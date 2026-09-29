@@ -22,8 +22,8 @@ export function PartnerSection() {
   );
 
   return (
-    <section id="partner" className="scroll-mt-20 border-t border-ink/10 bg-white py-24 lg:py-32" aria-labelledby="partner-title">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-10">
+    <section id="partner" className="scroll-mt-20 border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32" aria-labelledby="partner-title">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <SideIntro
             index="02"
@@ -31,13 +31,13 @@ export function PartnerSection() {
             title="Partner"
             text="Together we can make follow-up the standard for every outreach in Nigeria.">
 
-            <div className="mt-10">
+            <div className="mt-7 sm:mt-10">
               <p className="text-sm text-ink/45">Who we work with</p>
               <ul className="mt-3 border-t border-ink/10">
                 {partnerTypes.map((p) =>
-                <li key={p.title} className="border-b border-ink/10 py-3.5">
-                    <p className="text-[15px] font-medium text-ink">{p.title}</p>
-                    <p className="mt-0.5 text-sm text-ink/55">{p.text}</p>
+                <li key={p.title} className="border-b border-ink/10 py-3 sm:py-3.5">
+                    <p className="text-sm font-medium text-ink sm:text-[15px]">{p.title}</p>
+                    <p className="mt-0.5 text-[13px] text-ink/55 sm:text-sm">{p.text}</p>
                   </li>
                 )}
               </ul>

@@ -72,7 +72,7 @@ export function HomeHero() {
         <div className="overflow-hidden rounded-[2rem] shadow-card ring-8 ring-white">
           <img
             src={images.hero}
-            alt="A TAZhealth health worker checking an elderly woman’s blood pressure at a village outreach"
+            alt="A TAZhealth health worker checking an elderly woman’s blood pressure at a TAZhealth outreach"
             className="aspect-[5/4] w-full object-cover sm:aspect-[16/8]" />
 
         </div>

@@ -18,21 +18,21 @@ const steps = [
   title: 'We show up',
   text: 'Blood pressure, blood sugar and malaria checks, time with a doctor, and free medicine. Under a canopy, in the middle of the community.',
   image: images.glucose,
-  alt: 'Finger-prick blood sugar test at an outreach'
+  alt: 'Volunteer preparing a blood glucose test at an outreach'
 },
 {
   when: 'Before we leave',
   title: 'We make a plan',
   text: 'Everyone leaves with a follow-up plan. Their details are saved on TAZ AI, even when there’s no network at the site.',
   image: images.phone,
-  alt: 'Health worker registering a patient on a phone'
+  alt: 'Volunteer taking patient records at a market outreach'
 },
 {
   when: 'Weeks later',
   title: 'We check in',
   text: 'Reminders by SMS in their own language, calls from volunteers, and referrals we follow until care actually happens.',
   image: images.consult,
-  alt: 'Doctor consulting an elderly man'
+  alt: 'Free medical consultation at an outreach'
 }];
 
 

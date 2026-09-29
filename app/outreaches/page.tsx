@@ -74,12 +74,12 @@ export default function Outreaches() {
         <figure className="mx-auto max-w-6xl px-5 sm:px-8">
           <img
             src={images.queue}
-            alt="Community members queuing at an outreach registration desk"
+            alt="Community members seated and waiting at the Odogbolu outreach"
             className="aspect-[4/3] w-full rounded-lg object-cover sm:aspect-[21/9]" />
 
           <figcaption className="mt-2.5 flex justify-between gap-4 text-xs text-ink/50 sm:mt-3 sm:text-sm">
-            <span>Registration queue, Kuje, FCT Abuja</span>
-            <span>November 2025</span>
+            <span>Beneficiaries waiting, Odogbolu, Ogun State</span>
+            <span>TAZhealth outreach</span>
           </figcaption>
         </figure>
       </section>

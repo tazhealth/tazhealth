@@ -3,7 +3,7 @@ import { gallery, images } from '../../data/images';
 import { cn } from '../../utils/cn';
 
 const photos = [
-{ src: images.aboutHero, alt: 'TAZhealth volunteers carrying medical supplies along a village path', caption: 'Where it started · Ogbomosho' },
+{ src: images.aboutHero, alt: 'TAZhealth volunteer at the Odogbolu community health outreach banner', caption: 'Odogbolu community outreach' },
 ...gallery];
 
 

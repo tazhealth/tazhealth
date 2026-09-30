@@ -7,12 +7,16 @@ import { navLinks, site, socials } from '../../data/site';
 type FooterLink = {label: string;href: string;external?: boolean;};
 
 const columns: {title: string;links: FooterLink[];}[] = [
-{ title: 'Explore', links: navLinks.map((l) => ({ label: l.label, href: l.to })) },
+{
+  title: 'Explore',
+  links: [...navLinks.filter((l) => l.to !== '/partner').map((l) => ({ label: l.label, href: l.to })), { label: 'Blog', href: '/blog' }]
+},
 {
   title: 'Get involved',
   links: [
   { label: 'Volunteer', href: '/contact?topic=volunteer' },
   { label: 'Partner with us', href: '/partner' },
+  { label: 'Join our chat room', href: site.chatRoom, external: true },
   { label: 'Donate', href: '/contact?topic=donate' },
   { label: 'Upcoming outreaches', href: '/outreaches#upcoming' }]
 

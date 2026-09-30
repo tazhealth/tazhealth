@@ -9,7 +9,8 @@ export const site = {
   phoneHref: 'tel:+2348000000000',
   whatsappDisplay: '+234 800 000 0000',
   whatsapp: 'https://wa.me/2348000000000?text=Hello%20TAZhealth%2C%20I%27d%20like%20to%20get%20involved.',
-  address: 'Ibadan, Oyo State, Nigeria'
+  address: 'Ibadan, Oyo State, Nigeria',
+  chatRoom: 'https://whatsapp.com/channel/0029VbCaEK79cDDjLlKAiX29'
 };
 
 export const navLinks = [
@@ -17,7 +18,7 @@ export const navLinks = [
 { label: 'About', to: '/about' },
 { label: 'Outreaches', to: '/outreaches' },
 // { label: 'TAZ AI', to: '/taz-ai' }, // moving to its own site
-{ label: 'Blog', to: '/blog' },
+{ label: 'Partner', to: '/partner' },
 { label: 'Contact', to: '/contact' }];
 
 

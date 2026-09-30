@@ -40,6 +40,15 @@ function LinkedIn({ className }: IconProps) {
 
 }
 
+function TikTok({ className }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 3.5v11.2a3.8 3.8 0 1 1-3.8-3.8" />
+      <path d="M14 3.5c.3 2.6 2.2 4.5 4.8 4.7" />
+    </svg>);
+
+}
+
 function Facebook({ className }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -56,6 +65,8 @@ export function SocialIcon({ name, className }: {name: SocialKey;className?: str
       return <XLogo className={className} />;
     case 'linkedin':
       return <LinkedIn className={className} />;
+    case 'tiktok':
+      return <TikTok className={className} />;
     case 'facebook':
       return <Facebook className={className} />;
   }

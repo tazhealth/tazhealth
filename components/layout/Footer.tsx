@@ -22,7 +22,7 @@ const columns: {title: string;links: FooterLink[];}[] = [
   links: [
   { label: site.email, href: `mailto:${site.email}` },
   { label: site.phone, href: site.phoneHref },
-  { label: 'WhatsApp us', href: site.whatsapp, external: true }]
+  { label: 'WhatsApp', href: site.whatsapp, external: true }]
 
 }];
 

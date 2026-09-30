@@ -49,8 +49,8 @@ export function HomeHero() {
         </motion.h1>
 
         <motion.p {...rise(0.15)} className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink/65 sm:text-lg">
-          We bring free medical outreaches to underserved Nigerian communities. Then we keep checking on every person
-          we met, by SMS, by phone and through referrals.
+          We are a nonprofit public health initiative expanding healthcare access in underserved Nigerian communities
+          through medical outreach, health education and advocacy for systemic change.
         </motion.p>
 
         <motion.div {...rise(0.25)} className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">

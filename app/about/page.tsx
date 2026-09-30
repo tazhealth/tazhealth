@@ -164,7 +164,7 @@ export default function About() {
             <h2 className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">What guides every outreach</h2>
           </Reveal>
           <RevealGroup as="ul" className="mt-10 grid gap-5 sm:grid-cols-3 sm:gap-6">
-            {values.map((v, i) =>
+            {values.map((v) =>
             <RevealItem as="li" key={v.title} className="group relative overflow-hidden rounded-2xl">
                 <img
                 src={v.image}
@@ -177,8 +177,7 @@ export default function About() {
                 aria-hidden="true" />
 
                 <div className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-7">
-                  <p className="font-mono text-xs text-white/60">0{i + 1}</p>
-                  <h3 className="mt-2 text-2xl font-semibold">{v.title}</h3>
+                  <h3 className="text-2xl font-semibold">{v.title}</h3>
                   <p className="mt-1.5 text-[15px] leading-relaxed text-white/80">{v.text}</p>
                 </div>
               </RevealItem>

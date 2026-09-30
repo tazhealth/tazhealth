@@ -1,10 +1,10 @@
-export type SocialKey = 'instagram' | 'x' | 'linkedin' | 'facebook';
+export type SocialKey = 'instagram' | 'x' | 'linkedin' | 'tiktok' | 'facebook';
 
 export const site = {
   name: 'TAZhealth',
   mission:
   'To improve health outcomes by ensuring equitable healthcare access and equipping individuals with the resources and knowledge needed to make informed health decisions.',
-  email: 'hello@tazhealth.org',
+  email: 'tazhealth.ng@gmail.com',
   phone: '+234 800 000 0000',
   phoneHref: 'tel:+2348000000000',
   whatsappDisplay: '+234 800 000 0000',
@@ -22,10 +22,11 @@ export const navLinks = [
 
 
 export const socials: {key: SocialKey;label: string;href: string;}[] = [
-{ key: 'instagram', label: 'Instagram', href: 'https://instagram.com' },
-{ key: 'x', label: 'X (Twitter)', href: 'https://x.com' },
-{ key: 'linkedin', label: 'LinkedIn', href: 'https://linkedin.com' },
-{ key: 'facebook', label: 'Facebook', href: 'https://facebook.com' }];
+{ key: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/tazhealth/' },
+{ key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/tazhealth/' },
+{ key: 'x', label: 'X (Twitter)', href: 'https://x.com/tazhealth' },
+{ key: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@tazhealth2' },
+{ key: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61587515452205' }];
 
 
 export const partners = [

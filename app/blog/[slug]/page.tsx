@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ArrowLeftIcon } from 'lucide-react';
 import { ArticleCard } from '@/components/blog/ArticleCard';
 import { articles } from '@/data/articles';
 
@@ -27,10 +25,7 @@ export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
     <>
       <article className="bg-white pb-16 pt-28 sm:pt-32 lg:pt-40">
         <div className="mx-auto max-w-2xl px-5 sm:px-8">
-          <Link href="/blog" className="inline-flex items-center gap-1.5 text-sm text-ink/55 hover:text-forest">
-            <ArrowLeftIcon className="h-4 w-4" /> All articles
-          </Link>
-          <p className="mt-8 flex items-center gap-3 text-sm">
+          <p className="flex items-center gap-3 text-sm">
             <span className="font-medium text-leaf">{article.category}</span>
             <span className="text-ink/45">{article.date}</span>
           </p>

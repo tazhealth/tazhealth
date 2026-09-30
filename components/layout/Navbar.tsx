@@ -88,7 +88,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <ButtonLink href={site.chatRoom} external className="hidden h-11 px-5 sm:inline-flex">
-              <WhatsAppIcon className="h-4 w-4" /> Join chat room
+              <WhatsAppIcon className="h-4 w-4" /> Join community
             </ButtonLink>
             <button
               type="button"
@@ -165,7 +165,7 @@ export function Navbar() {
             <div className="mt-auto px-5 pb-8 pt-10 sm:px-8">
               <div className="grid grid-cols-2 gap-2.5">
                 <ButtonLink href={site.chatRoom} external className="w-full">
-                  <WhatsAppIcon className="h-4 w-4" /> Join chat room
+                  <WhatsAppIcon className="h-4 w-4" /> Join community
                 </ButtonLink>
                 <ButtonLink href={site.whatsapp} external variant="secondary" className="w-full">
                   <WhatsAppIcon className="h-4 w-4" /> WhatsApp

@@ -16,7 +16,7 @@ const columns: {title: string;links: FooterLink[];}[] = [
   links: [
   { label: 'Volunteer', href: '/contact?topic=volunteer' },
   { label: 'Partner with us', href: '/partner' },
-  { label: 'Join our chat room', href: site.chatRoom, external: true },
+  { label: 'Join our community', href: site.chatRoom, external: true },
   { label: 'Donate', href: '/contact?topic=donate' },
   { label: 'Upcoming outreaches', href: '/outreaches#upcoming' }]
 

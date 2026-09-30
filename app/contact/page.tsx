@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 import { ContactForm } from '@/components/contact/ContactForm';
+import { MapPinIcon } from 'lucide-react';
 import { site } from '@/data/site';
 
 export default function Contact() {
@@ -21,6 +22,15 @@ export default function Contact() {
               Chat with us
             </a>
           </p>
+          <a
+            href={site.mapsHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-start gap-1.5 text-sm text-ink/50 transition-colors hover:text-forest">
+
+            <MapPinIcon className="mt-0.5 h-4 w-4 shrink-0 text-leaf" aria-hidden="true" />
+            {site.address}
+          </a>
         </div>
 
         <Suspense fallback={null}>

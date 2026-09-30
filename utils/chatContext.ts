@@ -83,6 +83,7 @@ ${articles.map((a) => `- "${a.title}" (/blog/${a.slug}): ${a.excerpt}`).join('\n
 
 # Contact
 Email: ${site.email}
+Office address: ${site.address}, Nigeria
 WhatsApp channel for updates: ${site.chatRoom}
 Social media: Instagram, LinkedIn, X, TikTok and Facebook, all @tazhealth (TikTok is @tazhealth2).
 `.trim();

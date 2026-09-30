@@ -61,6 +61,6 @@ export const privacySections: {id: string;title: string;body: string[];}[] = [
   id: 'contact',
   title: 'Contact us',
   body: [
-  'For privacy questions or requests, email tazhealth.ng@gmail.com or write to us at our office in Ibadan, Oyo State, Nigeria.']
+  'For privacy questions or requests, email tazhealth.ng@gmail.com or write to us at Plot 2 Citiscape Villa, Asokoro Extension, Abuja, Nigeria.']
 
 }];

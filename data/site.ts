@@ -9,7 +9,8 @@ export const site = {
   phoneHref: 'tel:+2348000000000',
   whatsappDisplay: '+234 800 000 0000',
   whatsapp: 'https://wa.me/2348000000000?text=Hello%20TAZhealth%2C%20I%27d%20like%20to%20get%20involved.',
-  address: 'Ibadan, Oyo State, Nigeria',
+  address: 'Plot 2 Citiscape Villa, Asokoro Extension, Abuja',
+  mapsHref: 'https://www.google.com/maps/search/?api=1&query=Plot+2+Citiscape+Villa%2C+Asokoro+Extension%2C+Abuja',
   chatRoom: 'https://whatsapp.com/channel/0029VbCaEK79cDDjLlKAiX29'
 };
 

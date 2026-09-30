@@ -32,10 +32,10 @@ const values = [
 const peopleReached = pastOutreaches.reduce((n, o) => n + o.peopleReached, 0);
 
 const letter = [
-'“Our first outreach was one morning at an orphanage in Abeokuta: twenty malaria tests, a health talk and a pile of mosquito nets.”',
-'TAZhealth began with a borrowed canopy, a few young doctors and a table of donated drugs. When we called to follow up, most phones rang out. Prescriptions hadn’t been filled. Referrals hadn’t happened.',
-'We had helped for one afternoon, and then care simply stopped. That year taught us three things. Screening is the start, not the finish. Trust is built by coming back. And tools have to fit the field.',
-'So we stopped counting how many people we saw, and started asking how many we stayed with. That question is why we exist.'];
+'“Access to quality healthcare should not be determined by where someone lives or what they can afford.”',
+'That conviction is why we started TAZhealth. Across underserved Nigerian communities, people face real barriers to care, and preventable conditions go unnoticed. So we take healthcare to them: screenings, consultations, medication, referrals and health education, while advocating for the systemic changes that widen access.',
+'Since April 2025, we have reached over 1,000 people. In our first year, our work was recognised by UN Academic Impact and the Millennium Campus Network, and the UN SDSN named us among the Top 150 Innovators in Nigeria advancing the SDGs.',
+'Next, we are building technology and AI-driven systems to extend our reach beyond each outreach, towards a healthier Nigeria where everyone has a fair chance at the care they need.'];
 
 
 const founder = team[0];

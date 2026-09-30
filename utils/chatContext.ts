@@ -37,6 +37,9 @@ Through medical outreach programs, we deliver essential healthcare services whil
 Mission: ${site.mission}
 Vision: To create a healthier society by driving impactful public health initiatives and ensuring equitable healthcare access, especially for those facing barriers to care.
 Core values: Equity (closing the healthcare access gap), Community (solutions built with the people), Impact (change that truly improves health).
+Founded April 2025 on the conviction that access to quality healthcare should not be determined by where someone lives or what they can afford.
+Recognition in our first year: our work was recognised through United Nations Academic Impact (UNAI) and the Millennium Campus Network (MCN), and the UN Sustainable Development Solutions Network (SDSN) named TAZhealth among the Top 150 Innovators across Nigeria advancing the UN Sustainable Development Goals.
+Looking ahead: we are developing technology and AI-driven systems to extend our impact beyond individual outreach programmes.
 
 # Team
 ${team.map((m) => `- ${m.name}, ${m.role}: ${m.bio}`).join('\n')}

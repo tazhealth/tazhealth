@@ -169,3 +169,13 @@ h4 {
     opacity: 0;
   }
 }
+
+/* iOS Safari zooms into any field under 16px on focus. Keep form controls at a true 16px on phones. */
+@media (max-width: 639px) {
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    font-size-adjust: none !important;
+  }
+}

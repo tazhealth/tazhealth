@@ -10,6 +10,14 @@ import { ChatWidget } from './ChatWidget';
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
 
+  // Stop iOS Safari's auto-zoom when a form field is focused. iOS still allows pinch-zoom with
+  // maximum-scale set, so this is limited to Apple touch devices to keep pinch-zoom on Android.
+  useEffect(() => {
+    const ios = /iPad|iPhone|iPod/.test(navigator.userAgent) || navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="viewport"]');
+    if (ios && meta && !meta.content.includes('maximum-scale')) meta.content += ', maximum-scale=1';
+  }, []);
+
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {

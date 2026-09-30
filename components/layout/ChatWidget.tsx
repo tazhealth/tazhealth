@@ -23,15 +23,35 @@ export function ChatWidget() {
   const [messages, setMessages] = useState<Message[]>([{ from: 'bot', ...welcome }]);
   const [input, setInput] = useState('');
   const [typing, setTyping] = useState(false);
+  // On phones the panel is full screen and follows the visible area, so the keyboard never covers the input.
+  const [viewport, setViewport] = useState<{height: number;top: number;} | null>(null);
   const listRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (!open) return;
-    inputRef.current?.focus();
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
     window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
+
+    const mobile = window.matchMedia('(max-width: 639px)').matches;
+    if (!mobile) {
+      inputRef.current?.focus();
+      return () => window.removeEventListener('keydown', onKey);
+    }
+
+    document.body.style.overflow = 'hidden';
+    const vv = window.visualViewport;
+    const sync = () => setViewport({ height: vv?.height ?? window.innerHeight, top: vv?.offsetTop ?? 0 });
+    sync();
+    vv?.addEventListener('resize', sync);
+    vv?.addEventListener('scroll', sync);
+    return () => {
+      window.removeEventListener('keydown', onKey);
+      document.body.style.overflow = '';
+      vv?.removeEventListener('resize', sync);
+      vv?.removeEventListener('scroll', sync);
+      setViewport(null);
+    };
   }, [open]);
 
   useEffect(() => {
@@ -75,15 +95,15 @@ export function ChatWidget() {
         <motion.div
           role="dialog"
           aria-label="Chat with TAZhealth"
-          className="fixed inset-x-3 bottom-20 z-[60] flex h-[min(560px,calc(100dvh-7rem))] flex-col overflow-hidden rounded-2xl bg-white shadow-card ring-1 ring-ink/10 sm:inset-x-auto sm:bottom-24 sm:right-6 sm:w-[380px]"
+          className="fixed inset-x-0 top-0 z-[80] flex h-[100dvh] flex-col overflow-hidden bg-white sm:inset-x-auto sm:bottom-24 sm:right-6 sm:top-auto sm:z-[60] sm:h-[min(560px,calc(100dvh-7rem))] sm:w-[380px] sm:rounded-2xl sm:shadow-card sm:ring-1 sm:ring-ink/10"
           initial={{ opacity: 0, y: 16, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 16, scale: 0.98 }}
           transition={{ duration: 0.25, ease: EASE }}
-          style={{ transformOrigin: 'bottom right' }}>
+          style={{ transformOrigin: 'bottom right', ...(viewport && { height: viewport.height, top: viewport.top }) }}>
 
             {/* Header */}
-            <div className="flex items-center justify-between bg-forest px-4 py-3.5 text-white">
+            <div className="flex shrink-0 items-center justify-between bg-forest px-4 pb-3.5 pt-[max(0.875rem,env(safe-area-inset-top))] text-white sm:pt-3.5">
               <div className="flex items-center gap-3">
                 <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-white">
                   <img src="/chat-avatar.png" alt="" className="h-7 w-7 object-contain" />
@@ -105,7 +125,7 @@ export function ChatWidget() {
             </div>
 
             {/* Messages */}
-            <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto bg-[#F7F8F6] px-4 py-4" aria-live="polite">
+            <div ref={listRef} className="flex-1 space-y-3 overflow-y-auto overscroll-contain bg-[#F7F8F6] px-4 py-4" aria-live="polite">
               {messages.map((m, i) =>
             m.from === 'bot' ?
             <div key={i} className="flex items-end gap-2">
@@ -189,7 +209,7 @@ export function ChatWidget() {
               e.preventDefault();
               send(input);
             }}
-            className="flex items-center gap-2 border-t border-ink/10 bg-white p-3">
+            className="flex shrink-0 items-center gap-2 border-t border-ink/10 bg-white px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 sm:pb-3">
 
               <label htmlFor="chat-input" className="sr-only">
                 Type your message
@@ -201,7 +221,8 @@ export function ChatWidget() {
               onChange={(e) => setInput(e.target.value)}
               placeholder="Type your question…"
               autoComplete="off"
-              className="h-11 flex-1 rounded-full bg-[#F2F4F1] px-4 text-[16px] text-ink placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-leaf/40 sm:text-[14px]" />
+              enterKeyHint="send"
+              className="h-11 min-w-0 flex-1 rounded-full bg-[#F2F4F1] px-4 text-[16px] text-ink [font-size-adjust:none] placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-leaf/40" />
 
               <button
               type="submit"
@@ -221,7 +242,7 @@ export function ChatWidget() {
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? 'Close chat' : 'Chat with TAZhealth'}
         aria-expanded={open}
-        className="group fixed bottom-4 right-4 z-[60] flex items-center gap-2 sm:bottom-6 sm:right-6"
+        className={`group fixed bottom-4 right-4 z-[60] items-center gap-2 sm:bottom-6 sm:right-6 ${open ? 'hidden sm:flex' : 'flex'}`}
         initial={{ opacity: 0, scale: 0.96, y: 12 }}
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 0.3, ease: EASE, delay: 0.8 }}>

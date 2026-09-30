@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { MotionConfig } from 'framer-motion';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { WhatsAppButton } from './WhatsAppButton';
+import { ChatWidget } from './ChatWidget';
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -35,7 +35,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
           {children}
         </main>
         <Footer />
-        <WhatsAppButton />
+        <ChatWidget />
       </div>
     </MotionConfig>
   );

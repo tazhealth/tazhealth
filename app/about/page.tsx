@@ -231,7 +231,7 @@ export default function About() {
             </Link>
           </Reveal>
           <RevealGroup as="ul" className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-10">
-            {team.map((m) =>
+            {team.slice(0, 4).map((m) =>
             <RevealItem as="li" key={m.name} className="w-full text-center sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
                 <img
                 src={m.image}

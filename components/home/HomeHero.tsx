@@ -50,8 +50,8 @@ export function HomeHero() {
         </motion.h1>
 
         <motion.p {...rise(0.15)} className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-ink/65 sm:text-lg">
-          We are a nonprofit public health initiative expanding healthcare access in underserved Nigerian communities
-          through medical outreach, health education and advocacy for systemic change.
+          We’re a nonprofit public health initiative expanding healthcare access in underserved Nigerian communities
+          by providing medical outreach, continued follow-up, and advocacy for systemic change.
         </motion.p>
 
         <motion.div {...rise(0.25)} className="mx-auto mt-7 grid max-w-sm grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:max-w-none sm:justify-center sm:gap-3">

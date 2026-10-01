@@ -85,6 +85,14 @@ export const team: TeamMember[] = [
   bio: 'Oversees TAZhealth’s outreaches, planning, coordinating and executing each one.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
+},
+{
+  name: 'Fagbenro Winifred Olajumoke',
+  role: 'Chief Monitoring and Evaluation Officer',
+  image: '/team/fagbenro-winifred-olajumoke.jpg',
+  bio: 'Ensures all planned activities are carried out and keeps every team member accountable.',
+  linkedin: 'https://linkedin.com',
+  x: 'https://x.com'
 }];
 
 

@@ -1,7 +1,7 @@
 import { articles } from '../data/articles';
 import { aboutFaqs, getInvolvedFaqs } from '../data/faqs';
 import { donationUses, partnerTypes, volunteerRoles } from '../data/involve';
-import { pastOutreaches } from '../data/outreaches';
+import { pastOutreaches, upcomingOutreaches } from '../data/outreaches';
 import { milestones, team } from '../data/people';
 import { partners, site } from '../data/site';
 
@@ -59,6 +59,16 @@ Reached: ${o.peopleReached} ${o.reachedLabel}. TAZhealth contributed ${naira(o.c
   ).
   join('\n\n')}
 
+# Upcoming outreaches
+${upcomingOutreaches.length ?
+  upcomingOutreaches.
+  map(
+    (u) =>
+    `- ${u.weekday} ${u.day} ${u.month}, ${u.community}, ${u.state}${u.focus ? `: ${u.focus}` : ''}${u.volunteersNeeded ? `, ${u.volunteersNeeded} volunteers needed` : ''}${u.note ? ` (${u.note})` : ''}`
+  ).
+  join('\n') :
+  'None scheduled yet.'}
+
 # Timeline
 ${milestones.map((m) => `- ${m.date}: ${m.title}. ${m.text}`).join('\n')}
 
@@ -94,7 +104,7 @@ export function systemPrompt() {
 
 How to answer:
 - Answer only from the TAZhealth information below. If the answer isn't there, say you don't know and suggest emailing ${site.email}. Never invent dates, numbers, names, prices or events.
-- Upcoming outreach dates are not in your information. For "when is the next outreach", point people to the upcoming outreaches page.
+- For upcoming outreaches, share only what is listed under "Upcoming outreaches" (including anything still unconfirmed) and link to the upcoming outreaches page.
 - Keep replies short and warm: usually 2–4 sentences. Use plain text only, no bold, headings or bullet symbols.
 - When a page would help, add a link on its own line in the form [Label](path). Use only these paths, exactly as written:
 ${Object.entries(allowedLinks).map(([href, label]) => `  ${href} — ${label}`).join('\n')}

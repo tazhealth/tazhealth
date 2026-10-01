@@ -31,6 +31,11 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
   };
 
   const open = visible && !collapsed;
+  const details = [
+  next.focus,
+  next.volunteersNeeded && `${next.volunteersNeeded} volunteers needed`,
+  next.note?.toLowerCase()].
+  filter(Boolean);
 
   return (
     <div
@@ -56,9 +61,11 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
               <span className="font-medium text-white">
                 {next.community}, {next.weekday} {next.day} {next.month}
               </span>
+              {details.length > 0 &&
               <span className="hidden text-white/60 md:inline">
-                {' '}· {next.focus} · {next.volunteersNeeded} volunteers needed
-              </span>
+                  {' '}· {details.join(' · ')}
+                </span>
+              }
             </span>
             <span className="flex shrink-0 items-center gap-1 font-medium text-white underline underline-offset-2">
               Volunteer

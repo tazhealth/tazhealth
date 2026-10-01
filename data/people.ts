@@ -110,9 +110,9 @@ export const milestones: Milestone[] = [
   text: 'Free checks, consultations and medication for 121 students, staff and beneficiaries at Babcock University.'
 },
 {
-  date: 'Dec 2025',
+  date: 'Dec 2026',
   title: '1,018 people reached',
-  text: 'Two outreaches in one day, 500 people in Sagamu and 120 in Isheri Osun, Lagos, took us past a thousand across seven outreaches.'
+  text: 'Two outreaches, 500 people in Sagamu and 120 in Isheri Osun, Lagos, took us past a thousand across seven outreaches.'
 },
 {
   date: 'Next',

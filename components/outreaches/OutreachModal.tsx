@@ -125,7 +125,9 @@ export function OutreachModal({ outreach, onClose }: OutreachModalProps) {
                       <p className="text-[15px] text-ink/75">
                         Next up: <span className="font-medium text-ink">{next.community}</span>, {next.weekday} {next.day}{' '}
                         {next.month}
-                        <span className="block text-sm text-ink/50">{next.volunteersNeeded} volunteers needed</span>
+                        <span className="block text-sm text-ink/50">
+                          {next.volunteersNeeded ? `${next.volunteersNeeded} volunteers needed` : next.note ?? 'Volunteers welcome'}
+                        </span>
                       </p>
                       <ButtonLink to={`/contact?topic=volunteer&outreach=${next.id}`} onClick={onClose} className="h-10 px-5">
                         Volunteer

@@ -33,8 +33,10 @@ export type UpcomingOutreach = {
   weekday: string;
   community: string;
   state: string;
-  focus: string;
-  volunteersNeeded: number;
+  focus?: string;
+  volunteersNeeded?: number;
+  /** Anything still unconfirmed, e.g. "Proposed date · venue to be confirmed". */
+  note?: string;
 };
 
 export type Testimonial = {

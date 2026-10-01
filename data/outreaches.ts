@@ -150,32 +150,11 @@ export const pastOutreaches: Outreach[] = [
 
 export const upcomingOutreaches: UpcomingOutreach[] = [
 {
-  id: 'iseyin-oct',
-  day: '18',
-  month: 'Oct',
-  weekday: 'Sat',
-  community: 'Iseyin',
-  state: 'Oyo State',
-  focus: 'Hypertension & diabetes screening',
-  volunteersNeeded: 12
-},
-{
-  id: 'epe-nov',
-  day: '15',
-  month: 'Nov',
-  weekday: 'Sat',
-  community: 'Epe',
-  state: 'Lagos State',
-  focus: 'Maternal & child health',
-  volunteersNeeded: 18
-},
-{
-  id: 'kuje-dec',
-  day: '06',
+  id: 'abeokuta-dec-2026',
+  day: '13',
   month: 'Dec',
-  weekday: 'Sat',
-  community: 'Kuje',
-  state: 'FCT Abuja',
-  focus: 'Return visit & recheck day',
-  volunteersNeeded: 10
+  weekday: 'Sun',
+  community: 'Abeokuta',
+  state: 'Ogun State',
+  note: 'Proposed date · venue to be confirmed'
 }];

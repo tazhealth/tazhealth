@@ -114,11 +114,11 @@ export default function Outreaches() {
                       <span className="block text-[15px] font-medium text-ink sm:text-lg">{u.community}</span>
                       <span className="block text-xs text-ink/50 sm:text-sm">{u.state}</span>
                       <span className="mt-1 block text-[13px] leading-snug text-ink/65 md:hidden">
-                        {u.focus} · {u.volunteersNeeded} volunteers needed
+                        {[u.focus ?? u.note, u.volunteersNeeded && `${u.volunteersNeeded} volunteers needed`].filter(Boolean).join(' · ')}
                       </span>
                     </span>
-                    <span className="hidden text-ink/70 md:col-span-4 md:block">{u.focus}</span>
-                    <span className="hidden tabular-nums text-ink/70 md:col-span-2 md:block">{u.volunteersNeeded} needed</span>
+                    <span className="hidden text-ink/70 md:col-span-4 md:block">{u.focus ?? u.note ?? 'Details coming soon'}</span>
+                    <span className="hidden tabular-nums text-ink/70 md:col-span-2 md:block">{u.volunteersNeeded ? `${u.volunteersNeeded} needed` : 'Open'}</span>
                     <span className="flex items-center justify-end gap-1.5 text-sm font-medium text-leaf md:col-span-1">
                       <span className="hidden lg:inline">Join</span>
                       <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

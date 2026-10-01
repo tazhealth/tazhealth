@@ -23,12 +23,11 @@ const day = [
 
 const volunteerHref = (id: string) => `/contact?topic=volunteer&outreach=${id}`;
 
-function SectionHead({ index, title, aside }: {index: string;title: string;aside?: string;}) {
+function SectionHead({ title, aside }: {title: string;aside?: string;}) {
   return (
     <div className="grid gap-3 sm:gap-4 lg:grid-cols-12 lg:items-end">
       <div className="lg:col-span-7">
-        <p className="font-mono text-xs text-ink/40">{index}</p>
-        <h2 className="mt-2 text-2xl font-medium tracking-[-0.025em] text-ink sm:mt-3 sm:text-4xl">{title}</h2>
+        <h2 className="text-2xl font-medium tracking-[-0.025em] text-ink sm:text-4xl">{title}</h2>
       </div>
       {aside && <p className="text-[15px] leading-relaxed text-ink/55 sm:text-[16px] lg:col-span-5">{aside}</p>}
     </div>);
@@ -85,7 +84,6 @@ export default function Outreaches() {
       <section id="upcoming" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHead
-            index="01"
             title="Coming up"
             aside="Every outreach needs clinicians, field workers and people to make follow-up calls. Pick a date." />
 
@@ -135,7 +133,6 @@ export default function Outreaches() {
       <section id="past" className="scroll-mt-20 border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHead
-            index="02"
             title="Outreach log"
             aside="Every outreach we’ve run, newest first. What we did, who we reached, and who we did it with." />
 
@@ -148,7 +145,6 @@ export default function Outreaches() {
       <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHead
-            index="03"
             title="How a day runs"
             aside="Most outreaches stop at the afternoon. The last column is the part we built TAZhealth for." />
 
@@ -159,9 +155,8 @@ export default function Outreaches() {
               key={d.title}
               className="flex gap-4 border-b border-ink/10 py-4 sm:block sm:py-6 sm:pr-6 lg:border-b-0 lg:border-l lg:px-5 lg:py-8 lg:first:border-l-0 lg:first:pl-0">
 
-                <p className="w-5 shrink-0 font-mono text-xs leading-5 text-ink/40">0{i + 1}</p>
                 <div>
-                  <p className={`text-[13px] sm:mt-6 sm:text-sm ${i === day.length - 1 ? 'text-sun' : 'text-leaf'}`}>{d.when}</p>
+                  <p className={`text-[13px] sm:text-sm ${i === day.length - 1 ? 'text-sun' : 'text-leaf'}`}>{d.when}</p>
                   <h3 className="mt-0.5 text-[15px] font-medium text-ink sm:mt-1 sm:text-base">{d.title}</h3>
                   <p className="mt-1 text-sm leading-relaxed text-ink/60 sm:mt-2 sm:text-[15px]">{d.text}</p>
                 </div>
@@ -179,7 +174,7 @@ export default function Outreaches() {
       {/* Voices */}
       <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <SectionHead index="04" title="From the field" />
+          <SectionHead title="From the field" />
           <div className="mt-8 grid gap-8 border-t border-ink/10 pt-8 sm:mt-12 sm:gap-10 sm:pt-10 md:grid-cols-3 md:gap-0">
             {fieldStories.map((s) =>
             <figure key={s.title} className="flex flex-col md:border-l md:border-ink/10 md:px-6 md:first:border-l-0 md:first:pl-0">

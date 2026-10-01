@@ -64,7 +64,8 @@ export default function About() {
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/65">
               We are a nonprofit public health initiative expanding healthcare access in underserved Nigerian
-              communities through medical outreach and advocacy for systemic change.
+              communities through medical outreach and advocacy for systemic change, and ensuring follow-up so care
+              continues long after each outreach ends.
             </p>
           </Reveal>
         </div>

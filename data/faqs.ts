@@ -55,7 +55,7 @@ export const aboutFaqs: Faq[] = [
 },
 {
   q: 'Where do you run outreaches?',
-  a: 'So far across Ogun and Lagos States: an orphanage in Abeokuta, communities in Odogbolu, Sagamu and Isheri Osun, Ilishan Market, Babcock University and its teaching hospital. We go where people already gather.'
+  a: 'So far across Ogun and Lagos States: an orphanage in Abeokuta, communities in Odogbolu, Sagamu, Isheri-Osun and Ilishan-Remo. We go where care is needed most.'
 },
 {
   q: 'Who runs TAZhealth?',

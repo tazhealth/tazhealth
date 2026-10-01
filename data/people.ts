@@ -50,7 +50,7 @@ export const team: TeamMember[] = [
   name: 'OjiChukwujife Chuka-Utazi',
   role: 'Founder & CEO',
   image: '/team/ojichukwujife-chuka-utazi.jpg',
-  bio: 'Doctor in training, 2025 UN Millennium Fellow and Top 150 Outstanding Young Nigerian. His outreaches have reached 15,000+ people.',
+  bio: 'Doctor in training, 2025 UN Millennium Fellow and Top 150 Outstanding Young Nigerian. His initiatives have reached 15,000+ people.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
 },

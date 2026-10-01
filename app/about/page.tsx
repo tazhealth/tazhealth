@@ -63,9 +63,8 @@ export default function About() {
               We’re the people who <span className="text-leaf">come back.</span>
             </h1>
             <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-ink/65">
-              We are a nonprofit public health initiative expanding healthcare access in underserved Nigerian
-              communities through medical outreach and advocacy for systemic change, and ensuring follow-up so care
-              continues long after each outreach ends.
+              We’re a nonprofit public health initiative expanding healthcare access in underserved Nigerian
+              communities by providing medical outreach, continued follow-up, and advocacy for systemic change.
             </p>
           </Reveal>
         </div>

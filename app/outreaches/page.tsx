@@ -121,7 +121,7 @@ export default function Outreaches() {
       </section>
 
       {/* Log */}
-      <section id="past" className="scroll-mt-20 border-t border-ink/10 bg-white py-12 sm:py-16 lg:py-20">
+      <section id="past" className="scroll-mt-20 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHead
             title="Outreach log"
@@ -133,7 +133,7 @@ export default function Outreaches() {
       </section>
 
       {/* A day */}
-      <section className="border-t border-ink/10 bg-white py-12 sm:py-16 lg:py-20">
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <DayTimeline />
 
@@ -145,14 +145,14 @@ export default function Outreaches() {
       </section>
 
       {/* Featured story */}
-      <section className="border-t border-ink/10 bg-white py-12 sm:py-16 lg:py-20">
+      <section className="bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <FeaturedStory outreach={featured} onRead={setSelected} />
         </div>
       </section>
 
       {/* Close */}
-      <section className="border-t border-ink/10 bg-white px-5 py-20 sm:px-8 sm:py-28">
+      <section className="bg-white px-5 py-20 sm:px-8 sm:py-28">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="mx-auto max-w-2xl text-balance text-[32px] font-semibold leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl">
             Bring care to a community you love.

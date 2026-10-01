@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { privacySections, privacyUpdated } from '@/data/privacy';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy · TAZhealth',
-  description: 'How TAZhealth collects, uses and protects your information.'
+  title: 'Privacy Policy',
+  description: 'How TAZhealth collects, uses and protects your information.',
+  alternates: { canonical: '/privacy' }
 };
 
 export default function Privacy() {

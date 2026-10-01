@@ -20,7 +20,7 @@ const threads = [
 
 export function TazAiShowcase() {
   return (
-    <section className="relative overflow-hidden bg-forest-dark py-20 text-white sm:py-24 lg:py-32" aria-labelledby="taz-title">
+    <section className="relative overflow-hidden bg-forest-dark py-14 text-white sm:py-16 lg:py-20" aria-labelledby="taz-title">
       <div className="mx-auto grid max-w-6xl gap-14 px-5 sm:px-8 lg:grid-cols-12 lg:items-center lg:gap-10">
         <Reveal className="min-w-0 lg:col-span-6">
           <p className="text-sm text-white">TAZ AI</p>

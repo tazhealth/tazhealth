@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/ButtonLink';
@@ -11,6 +12,13 @@ import { images } from '@/data/images';
 import { pastOutreaches } from '@/data/outreaches';
 import { aboutFaqs } from '@/data/faqs';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
+
+export const metadata: Metadata = {
+  title: 'About us',
+  description:
+  'Our mission, vision and values: a Nigerian nonprofit expanding equitable healthcare access through medical outreach, health education and advocacy.',
+  alternates: { canonical: '/about' }
+};
 
 const values = [
 {
@@ -47,7 +55,7 @@ export default function About() {
   return (
     <>
       {/* Opening */}
-      <section className="relative overflow-hidden bg-white pb-20 pt-32 lg:pb-28 lg:pt-40">
+      <section className="relative overflow-hidden bg-white pb-8 pt-28 lg:pb-12 lg:pt-36">
         <div className="mx-auto max-w-3xl px-5 text-center sm:px-8">
           <Reveal>
             <p className="text-sm font-medium text-leaf">About us</p>
@@ -67,7 +75,7 @@ export default function About() {
       </section>
 
       {/* The letter */}
-      <section className="bg-white py-28 lg:py-40" aria-labelledby="letter-title">
+      <section className="bg-white pb-14 pt-4 lg:pb-20 lg:pt-8" aria-labelledby="letter-title">
         <div className="mx-auto max-w-2xl px-5 sm:px-8">
           <p
             id="letter-title"
@@ -93,7 +101,7 @@ export default function About() {
       </section>
 
       {/* Mission and vision */}
-      <section className="bg-forest py-20 text-white lg:py-24">
+      <section className="bg-forest py-14 text-white lg:py-20">
         <div className="mx-auto grid max-w-5xl gap-12 px-5 sm:px-8 md:grid-cols-2 md:gap-16">
           <Reveal>
             <p className="text-sm font-medium text-white/60">Our mission</p>
@@ -113,7 +121,7 @@ export default function About() {
       </section>
 
       {/* Who we are */}
-      <section className="overflow-hidden bg-white py-20 lg:py-28" aria-labelledby="who-title">
+      <section className="overflow-hidden bg-white py-14 lg:py-20" aria-labelledby="who-title">
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-5">
             <p className="text-sm font-medium text-leaf">Who we are</p>
@@ -161,7 +169,7 @@ export default function About() {
         </div>
 
         {/* Core values */}
-        <div className="mx-auto mt-24 max-w-6xl px-5 sm:px-8 lg:mt-32">
+        <div className="mx-auto mt-16 max-w-6xl px-5 sm:px-8 lg:mt-20">
           <Reveal className="text-center">
             <p className="text-sm font-medium text-leaf">Our core values</p>
             <h2 className="mt-3 text-2xl font-semibold text-ink sm:text-3xl">What guides every outreach</h2>
@@ -190,7 +198,7 @@ export default function About() {
       </section>
 
       {/* Journey */}
-      <section className="bg-white py-20 lg:py-28" aria-labelledby="journey-title">
+      <section className="bg-white pb-14 pt-6 lg:pb-20 lg:pt-8" aria-labelledby="journey-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal className="text-center">
             <h2 id="journey-title" className="text-2xl font-semibold text-ink sm:text-3xl">
@@ -198,7 +206,7 @@ export default function About() {
             </h2>
             <p className="mt-3 text-ink/60">From one outreach to a care platform.</p>
           </Reveal>
-          <div className="mt-14 hidden lg:mt-20 lg:block">
+          <div className="mt-10 hidden lg:mt-14 lg:block">
             <RootsPath />
           </div>
           <div className="mx-auto mt-12 max-w-md lg:hidden">
@@ -208,7 +216,7 @@ export default function About() {
       </section>
 
       {/* Team */}
-      <section className="border-t border-ink/10 bg-white py-20 lg:py-28" aria-labelledby="team-title">
+      <section className="bg-white py-14 lg:py-20" aria-labelledby="team-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal className="text-center">
             <h2 id="team-title" className="text-2xl font-semibold text-ink sm:text-3xl">
@@ -241,7 +249,7 @@ export default function About() {
       </section>
 
       {/* FAQ */}
-      <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32" aria-labelledby="about-faq">
+      <section className="bg-white py-14 sm:py-16 lg:py-20" aria-labelledby="about-faq">
         <div className="mx-auto grid max-w-6xl gap-8 px-5 sm:gap-12 sm:px-8 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start">
             <p className="font-mono text-xs text-ink/40">FAQ</p>

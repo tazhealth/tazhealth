@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleCard } from '@/components/blog/ArticleCard';
 import { articles } from '@/data/articles';
+import { SITE_URL, jsonLdScript } from '@/utils/seo';
 
 export const dynamicParams = false;
 
@@ -12,7 +13,24 @@ export function generateStaticParams() {
 export async function generateMetadata(props: PageProps<'/blog/[slug]'>): Promise<Metadata> {
   const { slug } = await props.params;
   const article = articles.find((a) => a.slug === slug);
-  return article ? { title: `${article.title} · TAZhealth`, description: article.excerpt } : {};
+  if (!article) return {};
+  const url = `/blog/${article.slug}`;
+  return {
+    title: article.title,
+    description: article.excerpt,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      url,
+      title: article.title,
+      description: article.excerpt,
+      publishedTime: new Date(article.date).toISOString(),
+      authors: [article.author],
+      section: article.category,
+      images: [{ url: article.image, alt: article.title }]
+    },
+    twitter: { card: 'summary_large_image', title: article.title, description: article.excerpt, images: [article.image] }
+  };
 }
 
 export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
@@ -20,10 +38,23 @@ export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
   const article = articles.find((a) => a.slug === slug);
   if (!article) notFound();
   const more = articles.filter((a) => a.slug !== slug).slice(0, 2);
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt,
+    image: `${SITE_URL}${article.image}`,
+    datePublished: new Date(article.date).toISOString(),
+    author: { '@type': 'Organization', name: article.author, url: SITE_URL },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    mainEntityOfPage: `${SITE_URL}/blog/${article.slug}`,
+    articleSection: article.category
+  };
 
   return (
     <>
-      <article className="bg-white pb-16 pt-28 sm:pt-32 lg:pt-40">
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(jsonLd)} />
+      <article className="bg-white pb-12 pt-28 sm:pt-32 lg:pt-40">
         <div className="mx-auto max-w-2xl px-5 sm:px-8">
           <p className="flex items-center gap-3 text-sm">
             <span className="font-medium text-leaf">{article.category}</span>
@@ -53,7 +84,7 @@ export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
       </article>
 
       {more.length > 0 &&
-      <section className="border-t border-ink/10 bg-white py-16 sm:py-20">
+      <section className="border-t border-ink/10 bg-white py-12 sm:py-16">
           <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <h2 className="text-2xl font-medium text-ink">Keep reading</h2>
             <div className="mt-8 grid gap-10 sm:grid-cols-2 lg:gap-8">

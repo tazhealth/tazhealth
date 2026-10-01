@@ -5,19 +5,16 @@ export const testimonials: Testimonial[] = [
 {
   quote:
   'After the outreach, I thought that was the end. Then an SMS came in Yoruba asking about my pressure. Somebody still remembered me.',
-  name: 'Mama Folake',
   role: 'Community member'
 },
 {
   quote:
   'I’ve volunteered at outreaches for years. This is the first time I actually knew what happened to patients after we packed up.',
-  name: 'Dr. Kemi Oladipo',
-  role: 'Volunteer physician'
+  role: 'Volunteer doctor'
 },
 {
   quote: 'They came back to check on us. That is how we knew they were serious about our health.',
-  name: 'Baba Sule',
-  role: 'Community leader'
+  role: 'Community member'
 }];
 
 
@@ -110,7 +107,7 @@ export const milestones: Milestone[] = [
   text: 'Free checks, consultations and medication for 121 students, staff and beneficiaries at Babcock University.'
 },
 {
-  date: 'Dec 2026',
+  date: 'Sep 2026',
   title: '1,018 people reached',
   text: 'Two outreaches, 500 people in Sagamu and 120 in Isheri Osun, Lagos, took us past a thousand across seven outreaches.'
 },

@@ -1,7 +1,14 @@
+import type { Metadata } from 'next';
 import { Suspense } from 'react';
 import { ContactForm } from '@/components/contact/ContactForm';
 import { MapPinIcon } from 'lucide-react';
 import { site } from '@/data/site';
+
+export const metadata: Metadata = {
+  title: 'Contact us',
+  description: 'Get in touch with TAZhealth about volunteering, partnerships or donations. Based in Asokoro, Abuja, serving communities across Nigeria.',
+  alternates: { canonical: '/contact' }
+};
 
 export default function Contact() {
   return (

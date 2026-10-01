@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
 import { HomeHero } from '@/components/home/HomeHero';
@@ -14,6 +15,13 @@ import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { gallery, images } from '@/data/images';
 import { outreachImpact } from '@/data/impact';
 import { cn } from '@/utils/cn';
+
+export const metadata: Metadata = {
+  title: { absolute: 'TAZhealth | Free Medical Outreaches for Underserved Nigerian Communities' },
+  description:
+  'Free health screenings, doctor consultations, medicine and health education for underserved communities in Nigeria. Over 1,000 people reached across 7 outreaches.',
+  alternates: { canonical: '/' }
+};
 
 const steps = [
 {
@@ -46,7 +54,7 @@ export default function Home() {
       <HomeHero />
 
       {/* How we care */}
-      <section className="bg-white pb-16 pt-20 sm:pb-20 sm:pt-28 lg:pb-28 lg:pt-36" aria-labelledby="how-title">
+      <section className="bg-white pb-12 pt-16 sm:pb-14 sm:pt-20 lg:pb-20 lg:pt-24" aria-labelledby="how-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <Reveal className="mx-auto max-w-2xl text-center">
             <h2 id="how-title" className="text-balance text-2xl font-semibold leading-tight text-ink sm:text-3xl">
@@ -89,7 +97,7 @@ export default function Home() {
       </section>
 
       {/* Voices */}
-      <section className="bg-white py-16 sm:py-20 lg:py-28" aria-label="In their words">
+      <section className="bg-white pb-4 pt-12 sm:pb-6 sm:pt-14 lg:pb-8 lg:pt-16" aria-label="In their words">
         <div className="px-5 sm:px-8">
           <TestimonialSlider />
         </div>
@@ -98,7 +106,7 @@ export default function Home() {
       {/* <TazAiShowcase /> */}
 
       {/* Gallery */}
-      <section className="bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="gallery-title">
+      <section className="bg-white py-12 sm:py-14 lg:py-20" aria-labelledby="gallery-title">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
             <Reveal>
@@ -120,7 +128,7 @@ export default function Home() {
       <PartnersStrip />
 
       {/* Blog */}
-      <section className="bg-white py-16 sm:py-20 lg:py-28" aria-labelledby="blog-title">
+      <section className="bg-white py-12 sm:py-14 lg:py-20" aria-labelledby="blog-title">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <Reveal className="max-w-xl">

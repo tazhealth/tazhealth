@@ -10,8 +10,9 @@ import { site } from '@/data/site';
 import { pidginThread } from '@/data/sms';
 
 export const metadata: Metadata = {
-  title: 'Partner with us · TAZhealth',
-  description: 'Sponsor or co-host an outreach, bring TAZ AI to your programme, or receive referrals. Let’s make follow-up the standard.'
+  title: 'Partner with us',
+  description: 'Sponsor or co-host a free medical outreach with TAZhealth and bring healthcare to a community in Nigeria that needs it most.',
+  alternates: { canonical: '/partner' }
 };
 
 const CONTACT = '/contact?topic=partner';
@@ -82,7 +83,7 @@ export default function Partner() {
       </section>
 
       {/* Sponsor */}
-      <section className="mt-3 bg-mint py-16 sm:mt-5 sm:py-24">
+      <section className="mt-3 bg-mint py-12 sm:mt-5 sm:py-16">
         <Split
           eyebrow="Sponsor an outreach"
           title="Fund a day of care. See every outcome."
@@ -119,7 +120,7 @@ export default function Partner() {
       </section>
 
       {/* Co-host */}
-      <section className="bg-white px-3 py-16 sm:px-5 sm:py-24">
+      <section className="bg-white px-3 py-12 sm:px-5 sm:py-16">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-3xl bg-forest px-6 pt-12 text-center text-white sm:px-12 sm:pt-16">
           <Reveal>
             <p className="text-sm text-white/65">Co-host an outreach</p>
@@ -147,7 +148,7 @@ export default function Partner() {
       </section>
 
       {/* TAZ AI */}
-      <section className="overflow-hidden bg-[#F4F5F4] pt-16 sm:pt-24">
+      <section className="overflow-hidden bg-[#F4F5F4] pt-12 sm:pt-16">
         <Split
           eyebrow="Bring TAZ AI to your programme"
           title="Follow-up that runs itself."
@@ -187,7 +188,7 @@ export default function Partner() {
       </section>
 
       {/* Start */}
-      <section className="bg-mint py-16 sm:py-24">
+      <section className="bg-mint py-12 sm:py-16">
         <Reveal className="mx-auto max-w-xl px-5 text-center">
           <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-leaf text-white">
             <HandshakeIcon className="h-6 w-6" aria-hidden="true" />
@@ -203,7 +204,7 @@ export default function Partner() {
       </section>
 
       {/* Volunteer banner */}
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto flex max-w-5xl flex-col gap-6 rounded-3xl bg-[#F4F5F4] p-7 sm:flex-row sm:items-center sm:justify-between sm:p-12">
           <div>
             <h2 className="text-2xl font-semibold tracking-[-0.025em] text-ink sm:text-4xl">Rather volunteer?</h2>

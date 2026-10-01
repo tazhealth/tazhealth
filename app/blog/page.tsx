@@ -3,13 +3,14 @@ import { ArticleCard } from '@/components/blog/ArticleCard';
 import { articles } from '@/data/articles';
 
 export const metadata: Metadata = {
-  title: 'Blogs & Articles · TAZhealth',
-  description: 'Health tips, stories from our outreaches and updates on TAZ AI.'
+  title: 'Blog: health tips and field stories',
+  description: 'Practical health tips on blood pressure, malaria and more, plus stories from TAZhealth’s community outreaches in Nigeria.',
+  alternates: { canonical: '/blog' }
 };
 
 export default function Blog() {
   return (
-    <section className="bg-white pb-16 pt-28 sm:pb-24 sm:pt-32 lg:pb-32 lg:pt-40">
+    <section className="bg-white pb-12 pt-28 sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <p className="text-sm text-ink/50">Blog</p>
         <h1 className="mt-4 text-[34px] font-medium leading-[1.05] tracking-[-0.03em] text-ink sm:mt-6 sm:text-5xl">

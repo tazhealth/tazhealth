@@ -7,13 +7,14 @@ import { site } from '@/data/site';
 const founder = team[0];
 
 export const metadata: Metadata = {
-  title: 'Our team · TAZhealth',
-  description: 'Meet the people behind TAZhealth, working to expand healthcare access in underserved Nigerian communities.'
+  title: 'Our team',
+  description: 'Meet the people behind TAZhealth, working to expand healthcare access in underserved Nigerian communities.',
+  alternates: { canonical: '/team' }
 };
 
 export default function Team() {
   return (
-    <section className="bg-white pb-20 pt-32 sm:pt-36 lg:pb-28 lg:pt-44" aria-labelledby="team-title">
+    <section className="bg-white pb-14 pt-28 sm:pt-32 lg:pb-20 lg:pt-36" aria-labelledby="team-title">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
         <Reveal className="mx-auto max-w-2xl text-center">
           <p className="inline-flex rounded-full bg-mint px-3 py-1 text-sm font-medium text-forest">Our team</p>
@@ -32,7 +33,7 @@ export default function Team() {
         <TeamGrid members={team} />
 
         {/* Founder quote */}
-        <Reveal className="mt-20 rounded-lg bg-[#EDEDED] px-6 py-10 sm:mt-28 sm:px-12 sm:py-14">
+        <Reveal className="mt-14 rounded-lg bg-[#EDEDED] px-6 py-10 sm:mt-16 sm:px-12 sm:py-14">
           <figure>
             <blockquote className="max-w-4xl text-balance text-[24px] font-medium leading-[1.25] tracking-[-0.02em] text-ink sm:text-[36px]">
               Access to quality healthcare should not be determined by where someone lives or what they can afford.

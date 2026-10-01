@@ -147,14 +147,14 @@ export default function Outreaches() {
       </section>
 
       {/* Featured story */}
-      <section className="bg-white py-12 sm:py-16 lg:py-20">
+      <section className="bg-white pb-12 pt-4 sm:pb-16 sm:pt-6 lg:pb-20 lg:pt-0">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <FeaturedStory outreach={featured} onRead={setSelected} />
         </div>
       </section>
 
       {/* Close */}
-      <section className="bg-white px-5 py-20 sm:px-8 sm:py-28">
+      <section className="bg-white px-5 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto max-w-6xl text-center">
           <h2 className="mx-auto max-w-2xl text-balance text-[32px] font-semibold leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl">
             Bring care to a community you love.

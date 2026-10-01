@@ -66,7 +66,8 @@ export default function Team() {
             </a>
           </div>
           <div className="flex -space-x-2 sm:space-x-2" aria-hidden="true">
-            {team.map((m) =>
+            {/* Keep this row at these six faces, even as the team grows. */}
+            {team.slice(0, 6).map((m) =>
             <img key={m.name} src={m.image} alt="" className="h-12 w-12 rounded-full object-cover ring-2 ring-white sm:h-14 sm:w-14" />
             )}
           </div>

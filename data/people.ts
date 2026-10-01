@@ -4,7 +4,7 @@ import type { FieldStory, Milestone, TeamMember, Testimonial } from '../types/co
 export const testimonials: Testimonial[] = [
 {
   quote:
-  'After the outreach, I thought that was the end. Then an SMS came in Yoruba asking about my pressure. Somebody still remembered me.',
+  'After the outreach, I thought that was the end. Then an SMS came in Yoruba asking about my BP. Somebody still remembered me.',
   role: 'Community member'
 },
 {

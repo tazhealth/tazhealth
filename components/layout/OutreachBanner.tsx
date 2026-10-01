@@ -31,11 +31,6 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
   };
 
   const open = visible && !collapsed;
-  const details = [
-  next.focus,
-  next.volunteersNeeded && `${next.volunteersNeeded} volunteers needed`,
-  next.note?.toLowerCase()].
-  filter(Boolean);
 
   return (
     <div
@@ -52,20 +47,14 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
             href={`/contact?topic=volunteer&outreach=${next.id}`}
             className="group flex min-w-0 items-center gap-2.5 text-white/85 hover:text-white">
 
-            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
-              <span className="absolute inset-0 animate-ping rounded-full bg-white opacity-60" />
-              <span className="relative h-2 w-2 rounded-full bg-white" />
+            <span className="shrink-0 text-[15px] leading-none" aria-hidden="true">
+              🎉
             </span>
             <span className="truncate">
               <span className="hidden sm:inline">Next outreach: </span>
               <span className="font-medium text-white">
-                {next.community}, {next.weekday} {next.day} {next.month}
+                {next.community}, {next.day} {next.month}
               </span>
-              {details.length > 0 &&
-              <span className="hidden text-white/60 md:inline">
-                  {' '}· {details.join(' · ')}
-                </span>
-              }
             </span>
             <span className="flex shrink-0 items-center gap-1 font-medium text-white underline underline-offset-2">
               Volunteer

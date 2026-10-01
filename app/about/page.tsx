@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { ArrowRightIcon } from 'lucide-react';
 import { ButtonLink } from '@/components/ui/ButtonLink';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { RootsList, RootsPath } from '@/components/about/RootsPath';
@@ -212,6 +214,12 @@ export default function About() {
               The people behind the pulse
             </h2>
             <p className="mt-3 text-ink/60">A small core team, and dozens of volunteers at every outreach.</p>
+            <Link
+              href="/team"
+              className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-leaf transition-colors hover:text-forest">
+
+              View all <ArrowRightIcon className="h-4 w-4" />
+            </Link>
           </Reveal>
           <RevealGroup as="ul" className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
             {team.map((m) =>

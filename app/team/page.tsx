@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
+import { Reveal } from '@/components/ui/Reveal';
+import { TeamGrid } from '@/components/team/TeamGrid';
 import { team } from '@/data/people';
 
 const founder = team[0];
@@ -28,25 +29,7 @@ export default function Team() {
           </p>
         </Reveal>
 
-        <RevealGroup as="ul" className="mx-auto mt-12 grid max-w-sm grid-cols-1 gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
-          {team.map((m) =>
-          <RevealItem as="li" key={m.name}>
-              <div className="group relative overflow-hidden rounded-lg bg-[#EDEDED]">
-                <img
-                src={m.image}
-                alt={`Portrait of ${m.name}`}
-                loading="lazy"
-                className="aspect-[7/8] w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.03]" />
-
-                <div className="absolute inset-x-3 bottom-3 rounded-full border border-ink bg-white px-4 py-2 text-center">
-                  <h2 className="truncate text-base font-semibold leading-tight text-ink sm:text-[15px] lg:text-base">{m.name}</h2>
-                  <p className="mt-0.5 truncate text-[13px] leading-tight text-ink/70">{m.role}</p>
-                </div>
-              </div>
-            </RevealItem>
-          )}
-
-        </RevealGroup>
+        <TeamGrid members={team} />
 
         {/* Founder quote */}
         <Reveal className="mt-20 rounded-lg bg-[#EDEDED] px-6 py-10 sm:mt-28 sm:px-12 sm:py-14">

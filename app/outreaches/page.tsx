@@ -9,9 +9,9 @@ import { DayTimeline } from '@/components/outreaches/DayTimeline';
 import { FeaturedStory } from '@/components/outreaches/FeaturedStory';
 import { images } from '@/data/images';
 import { pastOutreaches, upcomingOutreaches } from '@/data/outreaches';
+import { site } from '@/data/site';
 import type { Outreach } from '@/types/content';
 
-const volunteerHref = (id: string) => `/contact?topic=volunteer&outreach=${id}`;
 
 function SectionHead({ title, aside }: {title: string;aside?: string;}) {
   return (
@@ -89,8 +89,10 @@ export default function Outreaches() {
             <ul>
               {upcomingOutreaches.map((u) =>
               <li key={u.id}>
-                  <Link
-                  href={volunteerHref(u.id)}
+                  <a
+                  href={site.volunteerGroup}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group grid grid-cols-[3.75rem_1fr_auto] items-center gap-3 border-b border-ink/10 py-4 sm:gap-4 sm:py-6 transition-colors hover:bg-mint/50 md:grid-cols-12 md:px-2">
 
                     <span className="md:col-span-2">
@@ -112,7 +114,7 @@ export default function Outreaches() {
                       <span className="hidden lg:inline">Join</span>
                       <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </span>
-                  </Link>
+                  </a>
                 </li>
               )}
             </ul>

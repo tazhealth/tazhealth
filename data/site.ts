@@ -11,7 +11,9 @@ export const site = {
   whatsapp: 'https://wa.me/2348000000000?text=Hello%20TAZhealth%2C%20I%27d%20like%20to%20get%20involved.',
   address: 'Plot 2 Citiscape Villa, Asokoro Extension, Abuja',
   mapsHref: 'https://www.google.com/maps/search/?api=1&query=Plot+2+Citiscape+Villa%2C+Asokoro+Extension%2C+Abuja',
-  chatRoom: 'https://whatsapp.com/channel/0029VbCaEK79cDDjLlKAiX29'
+  chatRoom: 'https://whatsapp.com/channel/0029VbCaEK79cDDjLlKAiX29',
+  // Volunteers join this WhatsApp community group for outreach and programme updates.
+  volunteerGroup: 'https://chat.whatsapp.com/KtDAhwVKTQ4C7MwmraMZtP'
 };
 
 export const navLinks = [

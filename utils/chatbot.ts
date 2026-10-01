@@ -27,7 +27,7 @@ const rules: {keywords: string[];reply: () => BotReply;}[] = [
   keywords: ['volunteer', 'join', 'help out', 'sign up'],
   reply: () => ({
     text: 'We’d love to have you! We need medical volunteers (doctors, nurses, pharmacists, lab scientists), field workers, follow-up callers and general volunteers for things like photography and social media. No medical background is needed for most roles.',
-    links: [{ label: 'Sign up to volunteer', href: '/contact?topic=volunteer' }]
+    links: [{ label: 'Join our volunteer community', href: site.volunteerGroup, external: true }]
   })
 },
 {

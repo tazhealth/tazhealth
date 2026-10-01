@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { ArrowRightIcon, XIcon } from 'lucide-react';
 import { upcomingOutreaches } from '../../data/outreaches';
+import { site } from '../../data/site';
 import { cn } from '../../utils/cn';
 
 const STORAGE_KEY = 'tazhealth-banner-dismissed';
@@ -43,8 +43,10 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
 
       <div className="overflow-hidden">
         <div className="relative mx-auto flex h-9 max-w-7xl items-center justify-center px-12 text-[13px]">
-          <Link
-            href={`/contact?topic=volunteer&outreach=${next.id}`}
+          <a
+            href={site.volunteerGroup}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex min-w-0 items-center gap-2.5 text-white/85 hover:text-white">
 
             <span className="shrink-0 text-[15px] leading-none" aria-hidden="true">
@@ -60,7 +62,7 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
               Volunteer
               <ArrowRightIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
             </span>
-          </Link>
+          </a>
           <button
             type="button"
             onClick={dismiss}

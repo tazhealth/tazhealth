@@ -6,6 +6,7 @@ import { RootsList, RootsPath } from '@/components/about/RootsPath';
 import { PhotoMarquee } from '@/components/about/PhotoMarquee';
 import { ScrollRevealText } from '@/components/about/ScrollRevealText';
 import { team } from '@/data/people';
+import { site } from '@/data/site';
 import { images } from '@/data/images';
 import { pastOutreaches } from '@/data/outreaches';
 import { aboutFaqs } from '@/data/faqs';
@@ -251,7 +252,7 @@ export default function About() {
               Anything else you want to know? Message us and a real person will reply.
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
-              <ButtonLink to="/contact?topic=volunteer">Volunteer with us</ButtonLink>
+              <ButtonLink href={site.volunteerGroup} external>Volunteer with us</ButtonLink>
               <ButtonLink to="/contact" variant="secondary">Contact us</ButtonLink>
             </div>
           </div>

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { MapPinIcon, XIcon } from 'lucide-react';
 import { ButtonLink } from '../ui/ButtonLink';
 import { upcomingOutreaches } from '../../data/outreaches';
+import { site } from '../../data/site';
 import type { Outreach } from '../../types/content';
 import { EASE } from '../../utils/motion';
 
@@ -129,7 +130,7 @@ export function OutreachModal({ outreach, onClose }: OutreachModalProps) {
                           {next.volunteersNeeded ? `${next.volunteersNeeded} volunteers needed` : next.note ?? 'Volunteers welcome'}
                         </span>
                       </p>
-                      <ButtonLink to={`/contact?topic=volunteer&outreach=${next.id}`} onClick={onClose} className="h-10 px-5">
+                      <ButtonLink href={site.volunteerGroup} external onClick={onClose} className="h-10 px-5">
                         Volunteer
                       </ButtonLink>
                     </div>

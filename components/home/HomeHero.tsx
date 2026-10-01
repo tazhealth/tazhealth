@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRightIcon } from 'lucide-react';
+import { site } from '../../data/site';
 import { ButtonLink } from '../ui/ButtonLink';
 import { images } from '../../data/images';
 import { EASE } from '../../utils/motion';
@@ -54,7 +55,7 @@ export function HomeHero() {
         </motion.p>
 
         <motion.div {...rise(0.25)} className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
-          <ButtonLink to="/contact?topic=volunteer" size="lg">
+          <ButtonLink href={site.volunteerGroup} external size="lg">
             Volunteer with us
           </ButtonLink>
           <ButtonLink to="/outreaches" size="lg" variant="secondary">

@@ -6,6 +6,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { SmsThread } from '@/components/tazai/SmsThread';
 import { images } from '@/data/images';
 import { pastOutreaches } from '@/data/outreaches';
+import { site } from '@/data/site';
 import { pidginThread } from '@/data/sms';
 
 export const metadata: Metadata = {
@@ -210,7 +211,7 @@ export default function Partner() {
               Give a Saturday at an outreach, or make follow-up calls from home.
             </p>
           </div>
-          <ButtonLink to="/contact?topic=volunteer" variant="secondary" className="w-fit shrink-0">
+          <ButtonLink href={site.volunteerGroup} external variant="secondary" className="w-fit shrink-0">
             Volunteer with us <ArrowRightIcon className="h-4 w-4" />
           </ButtonLink>
         </div>

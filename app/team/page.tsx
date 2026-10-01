@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { Reveal } from '@/components/ui/Reveal';
 import { TeamGrid } from '@/components/team/TeamGrid';
 import { team } from '@/data/people';
+import { site } from '@/data/site';
 
 const founder = team[0];
 
@@ -55,12 +55,14 @@ export default function Team() {
               Doctors, students and everyday people bringing free care to communities that need it most. There’s a place for
               you.
             </p>
-            <Link
-              href="/contact?topic=volunteer"
+            <a
+              href={site.volunteerGroup}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-6 inline-flex h-11 items-center rounded-full border border-ink bg-transparent px-5 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2">
 
               Become a volunteer
-            </Link>
+            </a>
           </div>
           <div className="flex -space-x-2 sm:space-x-2" aria-hidden="true">
             {team.map((m) =>

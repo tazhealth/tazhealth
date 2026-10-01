@@ -14,11 +14,11 @@ export const allowedLinks: Record<string, string> = {
   '/outreaches#past': 'Past outreach log',
   '/partner': 'Partner with TAZhealth',
   '/contact': 'Contact page',
-  '/contact?topic=volunteer': 'Volunteer sign-up',
   '/contact?topic=donate': 'Donate',
   '/blog': 'Blog',
   ...Object.fromEntries(articles.map((a) => [`/blog/${a.slug}`, `Article: ${a.title}`])),
   [site.chatRoom]: 'TAZhealth WhatsApp channel',
+  [site.volunteerGroup]: 'Volunteer: join our WhatsApp community group for outreach updates',
   [`mailto:${site.email}`]: 'Email TAZhealth'
 };
 

@@ -54,12 +54,14 @@ export function HomeHero() {
           through medical outreach, health education and advocacy for systemic change.
         </motion.p>
 
-        <motion.div {...rise(0.25)} className="mt-7 flex flex-wrap justify-center gap-2.5 sm:mt-8 sm:gap-3">
-          <ButtonLink href={site.volunteerGroup} external size="lg">
+        <motion.div {...rise(0.25)} className="mx-auto mt-7 grid max-w-sm grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:max-w-none sm:justify-center sm:gap-3">
+          <ButtonLink href={site.volunteerGroup} external size="lg" className="px-3 sm:px-7">
             Volunteer with us
           </ButtonLink>
-          <ButtonLink to="/outreaches" size="lg" variant="secondary">
-            See how we follow up <ArrowRightIcon className="h-4 w-4" />
+          <ButtonLink to="/outreaches" size="lg" variant="secondary" className="px-3 sm:px-7">
+            <span className="sm:hidden">How we follow up</span>
+            <span className="hidden sm:inline">See how we follow up</span>
+            <ArrowRightIcon className="hidden h-4 w-4 sm:block" />
           </ButtonLink>
         </motion.div>
       </div>

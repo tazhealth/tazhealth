@@ -28,7 +28,7 @@ export default function Team() {
           </p>
         </Reveal>
 
-        <RevealGroup as="ul" className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:mt-16 lg:grid-cols-4">
+        <RevealGroup as="ul" className="mx-auto mt-12 grid max-w-sm grid-cols-1 gap-6 sm:max-w-none sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
           {team.map((m) =>
           <RevealItem as="li" key={m.name}>
               <div className="group relative overflow-hidden rounded-lg bg-[#EDEDED]">
@@ -38,12 +38,11 @@ export default function Team() {
                 loading="lazy"
                 className="aspect-[7/8] w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.03]" />
 
-                <div className="absolute inset-x-2 bottom-2 rounded-2xl border sm:rounded-full border-ink bg-white px-3 py-1.5 text-center sm:inset-x-3 sm:bottom-3 sm:py-2">
-                  <h2 className="text-[13px] font-semibold leading-tight text-ink sm:text-base">{m.name}</h2>
-                  <p className="mt-0.5 text-[11px] leading-tight text-ink/70 sm:text-[13px]">{m.role}</p>
+                <div className="absolute inset-x-3 bottom-3 rounded-full border border-ink bg-white px-4 py-2 text-center">
+                  <h2 className="truncate text-base font-semibold leading-tight text-ink sm:text-[15px] lg:text-base">{m.name}</h2>
+                  <p className="mt-0.5 truncate text-[13px] leading-tight text-ink/70">{m.role}</p>
                 </div>
               </div>
-              <p className="mt-3 text-[13px] leading-relaxed text-ink/60 sm:mt-4 sm:text-[15px]">{m.bio}</p>
             </RevealItem>
           )}
 

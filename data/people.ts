@@ -77,6 +77,14 @@ export const team: TeamMember[] = [
   bio: 'Oversees TAZhealth’s media, from our online platforms and health advocacy content to publicity for every outreach.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
+},
+{
+  name: 'Adelaja Jesunifemi Deborah',
+  role: 'Outreach Coordinator',
+  image: '/team/adelaja-jesunifemi-deborah.jpg',
+  bio: 'Oversees TAZhealth’s outreaches, planning, coordinating and executing each one.',
+  linkedin: 'https://linkedin.com',
+  x: 'https://x.com'
 }];
 
 

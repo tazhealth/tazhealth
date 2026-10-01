@@ -230,9 +230,9 @@ export default function About() {
               View all <ArrowRightIcon className="h-4 w-4" />
             </Link>
           </Reveal>
-          <RevealGroup as="ul" className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <RevealGroup as="ul" className="mt-12 flex flex-wrap justify-center gap-x-6 gap-y-10">
             {team.map((m) =>
-            <RevealItem as="li" key={m.name} className="text-center">
+            <RevealItem as="li" key={m.name} className="w-full text-center sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)]">
                 <img
                 src={m.image}
                 alt={`Portrait of ${m.name}`}

@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { PlusIcon } from 'lucide-react';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { team } from '@/data/people';
+
+const founder = team[0];
 
 export const metadata: Metadata = {
   title: 'Our team · TAZhealth',
@@ -30,33 +31,61 @@ export default function Team() {
         <RevealGroup as="ul" className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 sm:gap-y-12 lg:mt-16 lg:grid-cols-4">
           {team.map((m) =>
           <RevealItem as="li" key={m.name}>
-              <img
-              src={m.image}
-              alt={`Portrait of ${m.name}`}
-              loading="lazy"
-              className="aspect-square w-full rounded-2xl bg-mint object-cover" />
+              <div className="group relative overflow-hidden rounded-lg bg-[#EDEDED]">
+                <img
+                src={m.image}
+                alt={`Portrait of ${m.name}`}
+                loading="lazy"
+                className="aspect-[7/8] w-full object-cover transition-transform duration-500 ease-smooth group-hover:scale-[1.03]" />
 
-              <h2 className="mt-4 text-[15px] font-semibold leading-snug text-ink sm:mt-5 sm:text-lg">{m.name}</h2>
-              <p className="mt-0.5 text-[13px] font-medium text-forest sm:text-[15px]">{m.role}</p>
-              <p className="mt-2 text-[13px] leading-relaxed text-ink/65 sm:text-[15px]">{m.bio}</p>
+                <div className="absolute inset-x-2 bottom-2 rounded-2xl border sm:rounded-full border-ink bg-white px-3 py-1.5 text-center sm:inset-x-3 sm:bottom-3 sm:py-2">
+                  <h2 className="text-[13px] font-semibold leading-tight text-ink sm:text-base">{m.name}</h2>
+                  <p className="mt-0.5 text-[11px] leading-tight text-ink/70 sm:text-[13px]">{m.role}</p>
+                </div>
+              </div>
+              <p className="mt-3 text-[13px] leading-relaxed text-ink/60 sm:mt-4 sm:text-[15px]">{m.bio}</p>
             </RevealItem>
           )}
 
-          <RevealItem as="li">
+        </RevealGroup>
+
+        {/* Founder quote */}
+        <Reveal className="mt-20 rounded-lg bg-[#EDEDED] px-6 py-10 sm:mt-28 sm:px-12 sm:py-14">
+          <figure>
+            <blockquote className="max-w-4xl text-balance text-[24px] font-medium leading-[1.25] tracking-[-0.02em] text-ink sm:text-[36px]">
+              Access to quality healthcare should not be determined by where someone lives or what they can afford.
+            </blockquote>
+            <figcaption className="mt-7 flex items-center gap-3.5">
+              <img src={founder.image} alt="" className="h-12 w-12 rounded-full object-cover ring-2 ring-white sm:h-14 sm:w-14" />
+              <span>
+                <span className="block text-[15px] font-semibold text-ink sm:text-base">{founder.name}</span>
+                <span className="block text-sm text-ink/60">{founder.role}, TAZhealth</span>
+              </span>
+            </figcaption>
+          </figure>
+        </Reveal>
+
+        {/* Volunteer */}
+        <Reveal className="mt-6 flex flex-col gap-8 rounded-lg bg-[#EDEDED] px-6 py-10 sm:mt-8 sm:flex-row sm:items-end sm:justify-between sm:px-12 sm:py-14">
+          <div>
+            <h2 className="text-[28px] font-semibold leading-tight tracking-[-0.025em] text-ink sm:text-4xl">Want to join the team?</h2>
+            <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink/65 sm:text-base">
+              Doctors, students and everyday people bringing free care to communities that need it most. There’s a place for
+              you.
+            </p>
             <Link
               href="/contact?topic=volunteer"
-              className="group flex aspect-square w-full flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-ink/15 text-center transition-colors hover:border-leaf hover:bg-mint/40">
+              className="mt-6 inline-flex h-11 items-center rounded-full border border-ink bg-transparent px-5 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2">
 
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-forest sm:h-14 sm:w-14 text-white transition-transform duration-200 group-hover:scale-105">
-                <PlusIcon className="h-6 w-6" aria-hidden="true" />
-              </span>
-              <span className="px-3 sm:px-6">
-                <span className="block text-[15px] font-semibold text-ink sm:text-lg">Join the team</span>
-                <span className="mt-1 block text-[13px] text-ink/60 sm:text-[15px]">Volunteer at our next outreach</span>
-              </span>
+              Become a volunteer
             </Link>
-          </RevealItem>
-        </RevealGroup>
+          </div>
+          <div className="flex -space-x-2 sm:space-x-2" aria-hidden="true">
+            {team.map((m) =>
+            <img key={m.name} src={m.image} alt="" className="h-12 w-12 rounded-full object-cover ring-2 ring-white sm:h-14 sm:w-14" />
+            )}
+          </div>
+        </Reveal>
       </div>
     </section>);
 

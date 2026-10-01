@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 import { MotionConfig } from 'framer-motion';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
-import { VolunteerCta } from './VolunteerCta';
 import { ChatWidget } from './ChatWidget';
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -43,10 +42,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
         <main id="main" className="flex-1">
           {children}
         </main>
-        {pathname !== '/contact' && <VolunteerCta />}
-        <div className="border-t border-white/10 bg-black">
-          <Footer />
-        </div>
+        <Footer />
         <ChatWidget />
       </div>
     </MotionConfig>

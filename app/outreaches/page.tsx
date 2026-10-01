@@ -3,23 +3,13 @@
 import { useCallback, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRightIcon } from 'lucide-react';
-import { ButtonLink } from '@/components/ui/ButtonLink';
-import { WhatsAppIcon } from '@/components/ui/SocialIcon';
 import { OutreachModal } from '@/components/outreaches/OutreachModal';
 import { OutreachStack } from '@/components/outreaches/OutreachStack';
+import { DayTimeline } from '@/components/outreaches/DayTimeline';
+import { FeaturedStory } from '@/components/outreaches/FeaturedStory';
 import { images } from '@/data/images';
 import { pastOutreaches, upcomingOutreaches } from '@/data/outreaches';
-import { fieldStories } from '@/data/people';
-import { site } from '@/data/site';
 import type { Outreach } from '@/types/content';
-
-const day = [
-{ when: 'Morning', title: 'Registration and screening', text: 'Blood pressure, blood sugar, malaria and BMI for every adult.' },
-{ when: 'Late morning', title: 'Time with a doctor', text: 'A proper one-to-one with a volunteer doctor or nurse.' },
-{ when: 'Midday', title: 'Medicine and referrals', text: 'Free essential drugs, and a referral for anyone who needs more care.' },
-{ when: 'Afternoon', title: 'A health talk', text: 'Plain talk on diet, blood pressure, and mother and child health.' },
-{ when: 'The weeks after', title: 'Follow-up', text: 'SMS check-ins and calls start the next morning, until care actually happens.' }];
-
 
 const volunteerHref = (id: string) => `/contact?topic=volunteer&outreach=${id}`;
 
@@ -38,6 +28,7 @@ export default function Outreaches() {
   const [selected, setSelected] = useState<Outreach | null>(null);
   const close = useCallback(() => setSelected(null), []);
   const totalPeople = pastOutreaches.reduce((s, o) => s + o.peopleReached, 0);
+  const featured = pastOutreaches.reduce((a, o) => o.peopleReached > a.peopleReached ? o : a);
   const totalVolunteers = pastOutreaches.reduce((s, o) => s + o.volunteers, 0);
   const stats = [
   { label: 'Outreaches held', value: pastOutreaches.length },
@@ -81,7 +72,7 @@ export default function Outreaches() {
       </section>
 
       {/* Upcoming */}
-      <section id="upcoming" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-32">
+      <section id="upcoming" className="scroll-mt-20 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHead
             title="Coming up"
@@ -130,7 +121,7 @@ export default function Outreaches() {
       </section>
 
       {/* Log */}
-      <section id="past" className="scroll-mt-20 border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
+      <section id="past" className="scroll-mt-20 border-t border-ink/10 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHead
             title="Outreach log"
@@ -142,27 +133,9 @@ export default function Outreaches() {
       </section>
 
       {/* A day */}
-      <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
+      <section className="border-t border-ink/10 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <SectionHead
-            title="How a day runs"
-            aside="Most outreaches stop at the afternoon. The last column is the part we built TAZhealth for." />
-
-
-          <ol className="mt-8 grid border-t border-ink/10 sm:mt-12 sm:grid-cols-2 lg:grid-cols-5">
-            {day.map((d, i) =>
-            <li
-              key={d.title}
-              className="flex gap-4 border-b border-ink/10 py-4 sm:block sm:py-6 sm:pr-6 lg:border-b-0 lg:border-l lg:px-5 lg:py-8 lg:first:border-l-0 lg:first:pl-0">
-
-                <div>
-                  <p className={`text-[13px] sm:text-sm ${i === day.length - 1 ? 'text-sun' : 'text-leaf'}`}>{d.when}</p>
-                  <h3 className="mt-0.5 text-[15px] font-medium text-ink sm:mt-1 sm:text-base">{d.title}</h3>
-                  <p className="mt-1 text-sm leading-relaxed text-ink/60 sm:mt-2 sm:text-[15px]">{d.text}</p>
-                </div>
-              </li>
-            )}
-          </ol>
+          <DayTimeline />
 
           {/* TAZ AI moving to its own site.
           <Link href="/taz-ai" className="mt-8 inline-flex items-center gap-1 text-sm font-medium text-leaf hover:text-forest">
@@ -171,44 +144,29 @@ export default function Outreaches() {
         </div>
       </section>
 
-      {/* Voices */}
-      <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
+      {/* Featured story */}
+      <section className="border-t border-ink/10 bg-white py-12 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <SectionHead title="From the field" />
-          <div className="mt-8 grid gap-8 border-t border-ink/10 pt-8 sm:mt-12 sm:gap-10 sm:pt-10 md:grid-cols-3 md:gap-0">
-            {fieldStories.map((s) =>
-            <figure key={s.title} className="flex flex-col md:border-l md:border-ink/10 md:px-6 md:first:border-l-0 md:first:pl-0">
-                <blockquote className="text-[15px] leading-relaxed text-ink/80 sm:text-[17px]">“{s.quote}”</blockquote>
-                <figcaption className="mt-4 flex items-center gap-3 sm:mt-6 md:mt-auto md:pt-8">
-                  <img src={s.image} alt="" loading="lazy" className="h-10 w-10 rounded-full object-cover" />
-                  <span className="text-sm">
-                    <span className="block font-medium text-ink">{s.name}</span>
-                    <span className="block text-ink/50">{s.role}</span>
-                  </span>
-                </figcaption>
-              </figure>
-            )}
-          </div>
+          <FeaturedStory outreach={featured} onRead={setSelected} />
         </div>
       </section>
 
       {/* Close */}
-      <section className="border-t border-ink/10 bg-white py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto grid max-w-6xl gap-6 px-5 sm:gap-10 sm:px-8 lg:grid-cols-12 lg:items-end">
-          <h2 className="text-2xl font-medium leading-[1.15] tracking-[-0.025em] text-ink sm:text-5xl sm:leading-[1.1] sm:tracking-[-0.03em] lg:col-span-8">
-            Know a community that needs care? Host an outreach with us.
+      <section className="border-t border-ink/10 bg-white px-5 py-20 sm:px-8 sm:py-28">
+        <div className="mx-auto max-w-6xl text-center">
+          <h2 className="mx-auto max-w-2xl text-balance text-[32px] font-semibold leading-[1.08] tracking-[-0.03em] text-ink sm:text-5xl">
+            Bring care to a community you love.
           </h2>
-          <div className="lg:col-span-4">
-            <p className="text-[15px] leading-relaxed text-ink/60 sm:text-[16px]">
-              We bring the clinicians, the medicine and the follow-up. You bring the community.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink to="/partner">Partner with us</ButtonLink>
-              <ButtonLink href={site.whatsapp} external variant="secondary">
-                <WhatsAppIcon className="h-4 w-4" /> WhatsApp
-              </ButtonLink>
-            </div>
-          </div>
+          <p className="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-ink/65 sm:text-base">
+            Host or sponsor an outreach. We bring the clinicians and the medicine.
+          </p>
+          <Link
+            href="/partner"
+            className="group mt-8 inline-flex h-12 items-center gap-1.5 rounded-full bg-leaf px-6 text-[15px] font-medium text-white transition-colors hover:bg-forest focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2">
+
+            Partner with us
+            <ArrowRightIcon className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+          </Link>
         </div>
       </section>
 

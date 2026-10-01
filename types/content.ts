@@ -16,6 +16,8 @@ export type Outreach = {
   date: string;
   image: string;
   summary: string;
+  /** One short line for highlights, e.g. the featured story. */
+  tagline?: string;
   peopleReached: number;
   /** Who was reached, e.g. "people", "mothers", "community members". */
   reachedLabel: string;

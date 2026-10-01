@@ -10,6 +10,7 @@ export const pastOutreaches: Outreach[] = [
   state: 'Ogun State',
   date: '14 December 2025',
   image: images.community,
+  tagline: 'Free checks, consultations and medicine for a whole community, with BUAMS.',
   summary:
   'With the Babcock University Association of Medical Students (BUAMS), we took Health Fair 3.0 to Sagamu, bringing healthcare services and health education to community members.',
   peopleReached: 500,

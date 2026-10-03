@@ -93,6 +93,14 @@ export const team: TeamMember[] = [
   bio: 'Ensures all planned activities are carried out and keeps every team member accountable.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
+},
+{
+  name: 'Ogundipe Joel Oluwashina',
+  role: 'Head Graphics Designer',
+  image: '/team/ogundipe-joel-oluwashina.jpg',
+  bio: 'Manages the team that creates evidence-based flyers and carousels to educate the public about health.',
+  linkedin: 'https://linkedin.com',
+  x: 'https://x.com'
 }];
 
 

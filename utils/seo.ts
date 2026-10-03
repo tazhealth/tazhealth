@@ -42,5 +42,17 @@ export const organizationJsonLd = {
   sameAs: socials.map((s) => s.href)
 };
 
+
+export const breadcrumbJsonLd = (items: {name: string;path: string;}[]) => ({
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    item: `${SITE_URL}${item.path === '/' ? '' : item.path}`
+  }))
+});
+
 /** Serialises JSON-LD safely for a <script> tag. */
 export const jsonLdScript = (data: unknown) => ({ __html: JSON.stringify(data).replace(/</g, '\\u003c') });

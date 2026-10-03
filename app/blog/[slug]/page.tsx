@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { ArticleCard } from '@/components/blog/ArticleCard';
 import { articles } from '@/data/articles';
-import { SITE_URL, jsonLdScript } from '@/utils/seo';
+import { SITE_URL, breadcrumbJsonLd, jsonLdScript } from '@/utils/seo';
 
 export const dynamicParams = false;
 
@@ -50,10 +50,16 @@ export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
     mainEntityOfPage: `${SITE_URL}/blog/${article.slug}`,
     articleSection: article.category
   };
+  const breadcrumbs = breadcrumbJsonLd([
+  { name: 'Home', path: '/' },
+  { name: 'Blog', path: '/blog' },
+  { name: article.title, path: `/blog/${article.slug}` }]
+  );
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(jsonLd)} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(breadcrumbs)} />
       <article className="bg-white pb-12 pt-28 sm:pt-32 lg:pt-40">
         <div className="mx-auto max-w-2xl px-5 sm:px-8">
           <p className="flex items-center gap-3 text-sm">

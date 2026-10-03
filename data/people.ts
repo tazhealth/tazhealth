@@ -109,6 +109,14 @@ export const team: TeamMember[] = [
   bio: 'Manages TAZhealth’s social media accounts, publicising our work and sharing evidence of what we do.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
+},
+{
+  name: 'Anita Gomina',
+  role: 'Content Team Lead',
+  image: '/team/anita-gomina.jpg',
+  bio: 'Supervises and approves every TAZhealth post across our social media platforms.',
+  linkedin: 'https://linkedin.com',
+  x: 'https://x.com'
 }];
 
 

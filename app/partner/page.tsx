@@ -148,7 +148,7 @@ export default function Partner() {
       </section>
 
       {/* TAZ AI */}
-      <section className="overflow-hidden bg-[#F4F5F4] pt-12 sm:pt-16">
+      <section className="overflow-hidden bg-[#F4F5F4] pt-12 sm:pt-16 lg:pb-16">
         <Split
           eyebrow="Bring TAZ AI to your programme"
           title="Follow-up that runs itself."
@@ -157,7 +157,7 @@ export default function Partner() {
           flip>
 
           <div className="flex justify-center">
-            <div className="translate-y-6">
+            <div className="translate-y-6 lg:translate-y-0">
               <PhoneMockup className="w-[248px] sm:w-[270px]">
                 <SmsThread language="Pidgin" messages={pidginThread} startDelay={300} />
               </PhoneMockup>

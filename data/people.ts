@@ -88,7 +88,7 @@ export const team: TeamMember[] = [
 },
 {
   name: 'Fagbenro Winifred Olajumoke',
-  role: 'Chief Monitoring and Evaluation Officer',
+  role: 'Chief Monitoring and Evaluation Officer / Secretary',
   image: '/team/fagbenro-winifred-olajumoke.jpg',
   bio: 'Ensures all planned activities are carried out and keeps every team member accountable.',
   linkedin: 'https://linkedin.com',

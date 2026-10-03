@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteLayout } from "@/components/layout/SiteLayout";
 import { KEYWORDS, SITE_DESCRIPTION, SITE_URL, jsonLdScript, organizationJsonLd, websiteJsonLd } from "@/utils/seo";
 import "./globals.css";
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(organizationJsonLd)} />
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(websiteJsonLd)} />
         <SiteLayout>{children}</SiteLayout>
+        <Analytics />
       </body>
     </html>
   );

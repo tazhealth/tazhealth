@@ -101,6 +101,14 @@ export const team: TeamMember[] = [
   bio: 'Manages the team that creates evidence-based flyers and carousels to educate the public about health.',
   linkedin: 'https://linkedin.com',
   x: 'https://x.com'
+},
+{
+  name: 'Ugwuagbo Stephanie Nmesoma',
+  role: 'Social Media Manager',
+  image: '/team/ugwuagbo-stephanie-nmesoma.jpg',
+  bio: 'Manages TAZhealth’s social media accounts, publicising our work and sharing evidence of what we do.',
+  linkedin: 'https://linkedin.com',
+  x: 'https://x.com'
 }];
 
 

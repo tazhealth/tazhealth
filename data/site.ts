@@ -12,7 +12,6 @@ export const site = {
   address: 'Plot 2 Citiscape Villa, Asokoro Extension, Abuja',
   mapsHref: 'https://www.google.com/maps/search/?api=1&query=Plot+2+Citiscape+Villa%2C+Asokoro+Extension%2C+Abuja',
   chatRoom: 'https://whatsapp.com/channel/0029VbCaEK79cDDjLlKAiX29',
-  // Volunteer sign-up Google Form.
   volunteerForm: 'https://forms.gle/YMFfHZWzUrXEiF6S8'
 };
 

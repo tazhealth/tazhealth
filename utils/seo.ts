@@ -43,6 +43,17 @@ export const organizationJsonLd = {
 };
 
 
+export const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  name: 'TAZhealth',
+  alternateName: ['TAZhealth Initiative', 'TAZ Health'],
+  url: `${SITE_URL}/`,
+  publisher: { '@id': `${SITE_URL}/#organization` }
+};
+
+
 export const breadcrumbJsonLd = (items: {name: string;path: string;}[]) => ({
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',

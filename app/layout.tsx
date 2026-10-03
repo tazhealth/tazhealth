@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { SiteLayout } from "@/components/layout/SiteLayout";
-import { KEYWORDS, SITE_DESCRIPTION, SITE_URL, jsonLdScript, organizationJsonLd } from "@/utils/seo";
+import { KEYWORDS, SITE_DESCRIPTION, SITE_URL, jsonLdScript, organizationJsonLd, websiteJsonLd } from "@/utils/seo";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -49,6 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" data-scroll-behavior="smooth" className={`${montserrat.variable} antialiased`}>
       <body className="bg-white font-sans text-ink">
         <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(organizationJsonLd)} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(websiteJsonLd)} />
         <SiteLayout>{children}</SiteLayout>
       </body>
     </html>

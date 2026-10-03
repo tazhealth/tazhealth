@@ -260,7 +260,7 @@ export default function About() {
               Anything else you want to know? Message us and a real person will reply.
             </p>
             <div className="mt-6 flex flex-wrap gap-2.5">
-              <ButtonLink href={site.volunteerGroup} external>Volunteer with us</ButtonLink>
+              <ButtonLink href={site.volunteerForm} external>Volunteer with us</ButtonLink>
               <ButtonLink to="/contact" variant="secondary">Contact us</ButtonLink>
             </div>
           </div>

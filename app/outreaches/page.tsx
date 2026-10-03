@@ -90,7 +90,7 @@ export default function Outreaches() {
               {upcomingOutreaches.map((u) =>
               <li key={u.id}>
                   <a
-                  href={site.volunteerGroup}
+                  href={site.volunteerForm}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group grid grid-cols-[3.75rem_1fr_auto] items-center gap-3 border-b border-ink/10 py-4 sm:gap-4 sm:py-6 transition-colors hover:bg-mint/50 md:grid-cols-12 md:px-2">

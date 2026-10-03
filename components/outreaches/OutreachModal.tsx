@@ -130,7 +130,7 @@ export function OutreachModal({ outreach, onClose }: OutreachModalProps) {
                           {next.volunteersNeeded ? `${next.volunteersNeeded} volunteers needed` : next.note ?? 'Volunteers welcome'}
                         </span>
                       </p>
-                      <ButtonLink href={site.volunteerGroup} external onClick={onClose} className="h-10 px-5">
+                      <ButtonLink href={site.volunteerForm} external onClick={onClose} className="h-10 px-5">
                         Volunteer
                       </ButtonLink>
                     </div>

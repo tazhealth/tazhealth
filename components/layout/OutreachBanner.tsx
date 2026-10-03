@@ -44,7 +44,7 @@ export function OutreachBanner({ collapsed }: {collapsed: boolean;}) {
       <div className="overflow-hidden">
         <div className="relative mx-auto flex h-9 max-w-7xl items-center justify-center px-12 text-[13px]">
           <a
-            href={site.volunteerGroup}
+            href={site.volunteerForm}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex min-w-0 items-center gap-2.5 text-white/85 hover:text-white">

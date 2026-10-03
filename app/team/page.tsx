@@ -57,7 +57,7 @@ export default function Team() {
               you.
             </p>
             <a
-              href={site.volunteerGroup}
+              href={site.volunteerForm}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-6 inline-flex h-11 items-center rounded-full border border-ink bg-transparent px-5 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-leaf focus-visible:ring-offset-2">

@@ -18,7 +18,7 @@ export const allowedLinks: Record<string, string> = {
   '/blog': 'Blog',
   ...Object.fromEntries(articles.map((a) => [`/blog/${a.slug}`, `Article: ${a.title}`])),
   [site.chatRoom]: 'TAZhealth WhatsApp channel',
-  [site.volunteerGroup]: 'Volunteer: join our WhatsApp community group for outreach updates',
+  [site.volunteerForm]: 'Volunteer: sign-up form',
   [`mailto:${site.email}`]: 'Email TAZhealth'
 };
 

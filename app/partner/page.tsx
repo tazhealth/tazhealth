@@ -212,7 +212,7 @@ export default function Partner() {
               Give a Saturday at an outreach, or make follow-up calls from home.
             </p>
           </div>
-          <ButtonLink href={site.volunteerGroup} external variant="secondary" className="w-fit shrink-0">
+          <ButtonLink href={site.volunteerForm} external variant="secondary" className="w-fit shrink-0">
             Volunteer with us <ArrowRightIcon className="h-4 w-4" />
           </ButtonLink>
         </div>

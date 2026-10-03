@@ -14,7 +14,7 @@ const columns: {title: string;links: FooterLink[];}[] = [
 {
   title: 'Get involved',
   links: [
-  { label: 'Volunteer', href: site.volunteerGroup, external: true },
+  { label: 'Volunteer', href: site.volunteerForm, external: true },
   { label: 'Partner with us', href: '/partner' },
   { label: 'Join our community', href: site.chatRoom, external: true },
   { label: 'Donate', href: '/contact?topic=donate' },

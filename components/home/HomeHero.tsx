@@ -55,7 +55,7 @@ export function HomeHero() {
         </motion.p>
 
         <motion.div {...rise(0.25)} className="mx-auto mt-7 grid max-w-sm grid-cols-2 gap-2.5 sm:mt-8 sm:flex sm:max-w-none sm:justify-center sm:gap-3">
-          <ButtonLink href={site.volunteerGroup} external size="lg" className="px-3 sm:px-7">
+          <ButtonLink href={site.volunteerForm} external size="lg" className="px-3 sm:px-7">
             Volunteer with us
           </ButtonLink>
           <ButtonLink to="/outreaches" size="lg" variant="secondary" className="px-3 sm:px-7">

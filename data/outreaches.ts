@@ -18,7 +18,7 @@ export const pastOutreaches: Outreach[] = [
   services: ['Health education', 'Vitals', 'Blood glucose', 'BMI', 'Malaria testing', 'HPV testing', 'Free consultations', 'Free medication'],
   partners: ['Babcock University Association of Medical Students (BUAMS)'],
   contribution: 350000,
-  volunteers: 4
+  volunteers: 10
 },
 {
   id: 'joy-to-the-world-isheri-osun',

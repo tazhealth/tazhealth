@@ -5,8 +5,8 @@ export const site = {
   mission:
   'To improve health outcomes by ensuring equitable healthcare access and equipping individuals with the resources and knowledge needed to make informed health decisions.',
   email: 'tazhealth.ng@gmail.com',
-  phone: '+234 814 525 3563',
-  phoneHref: 'tel:+2348145253563',
+  phone: '+234 902 565 3249',
+  phoneHref: 'tel:+2349025653249',
   whatsappDisplay: '+234 902 565 3249',
   whatsapp: 'https://wa.me/2349025653249?text=Hello%20TAZhealth%2C%20I%27d%20like%20to%20get%20involved.',
   address: 'Plot 2 Citiscape Villa, Asokoro Extension, Abuja',

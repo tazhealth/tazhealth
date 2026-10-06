@@ -80,7 +80,7 @@ export const team: TeamMember[] = [
 },
 {
   name: 'Adelaja Jesunifemi Deborah',
-  role: 'Outreach Coordinator',
+  role: 'Outreach Team Lead',
   image: '/team/adelaja-jesunifemi-deborah.jpg',
   bio: 'Oversees TAZhealth’s outreaches, planning, coordinating and executing each one.',
   linkedin: 'https://linkedin.com',
@@ -104,7 +104,7 @@ export const team: TeamMember[] = [
 },
 {
   name: 'Ugwuagbo Stephanie Nmesoma',
-  role: 'Social Media Manager',
+  role: 'Social Media Team Lead',
   image: '/team/ugwuagbo-stephanie-nmesoma.jpg',
   bio: 'Manages TAZhealth’s social media accounts, publicising our work and sharing evidence of what we do.',
   linkedin: 'https://linkedin.com',

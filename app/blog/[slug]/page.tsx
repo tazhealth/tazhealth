@@ -6,6 +6,16 @@ import { SITE_URL, breadcrumbJsonLd, jsonLdScript } from '@/utils/seo';
 
 export const dynamicParams = false;
 
+function toBlocks(body: string[]) {
+  const blocks: (string | string[])[] = [];
+  for (const line of body) {
+    if (!line.startsWith('- ')) blocks.push(line);
+    else if (Array.isArray(blocks.at(-1))) (blocks.at(-1) as string[]).push(line.slice(2));
+    else blocks.push([line.slice(2)]);
+  }
+  return blocks;
+}
+
 export function generateStaticParams() {
   return articles.map((a) => ({ slug: a.slug }));
 }
@@ -78,13 +88,17 @@ export default async function ArticlePage(props: PageProps<'/blog/[slug]'>) {
 
         <div className="mx-auto mt-10 max-w-2xl space-y-5 px-5 text-[16px] leading-[1.8] text-ink/75 sm:px-8 sm:text-[17px]">
           <p className="text-lg leading-relaxed text-ink sm:text-xl">{article.excerpt}</p>
-          {article.body.map((p, i) =>
-          p.startsWith('## ') ?
+          {toBlocks(article.body).map((b, i) =>
+          Array.isArray(b) ?
+          <ul key={i} className="list-disc space-y-1.5 pl-5 marker:text-leaf">
+                {b.map((item) => <li key={item}>{item}</li>)}
+              </ul> :
+          b.startsWith('## ') ?
           <h2 key={i} className="!mt-12 text-xl font-medium tracking-[-0.015em] text-ink sm:text-2xl">
-                {p.slice(3)}
+                {b.slice(3)}
               </h2> :
 
-          <p key={i}>{p}</p>
+          <p key={i}>{b}</p>
           )}
         </div>
       </article>

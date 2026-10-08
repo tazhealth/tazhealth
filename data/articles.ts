@@ -84,7 +84,7 @@ export const articles: Article[] = [
 {
   slug: 'why-we-come-back',
   title: 'Why we keep calling after the outbreak teams leave',
-  category: 'Field Stories',
+  category: 'Health Tips',
   date: 'Aug 28, 2026',
   author: 'TAZhealth Team',
   image: images.phone,

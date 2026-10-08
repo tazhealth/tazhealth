@@ -14,6 +14,36 @@ export type Article = {
 // Body lines starting with "## " render as subheadings.
 export const articles: Article[] = [
 {
+  slug: 'health-fair-3-sagamu',
+  title: 'Health Fair 3.0: free care for 500 people in Sagamu',
+  category: 'Field Stories',
+  date: 'Oct 8, 2026',
+  author: 'TAZhealth Team',
+  image: images.community,
+  excerpt: 'Our largest outreach yet brought free screening, consultations and medicine to the people of Sagamu, Ogun State.',
+  body: [
+  'For many families, getting a health check is not a simple matter. It can mean taking time off work, paying for transport and consultation fees, and sitting in a queue for hours, often while feeling perfectly fine. So routine screening gets postponed, small problems go unnoticed, and people only seek care when something has become serious.',
+  'Health Fair 3.0 was designed to remove those barriers. On 24 September 2025, TAZhealth, in association with the Babcock University Association of Medical Students (BUAMS) and the Adventist Medical Students Association of Nigeria, brought a full day of free healthcare to the people of Sagamu, Ogun State.',
+  '## Why this outreach mattered',
+  'Conditions like high blood pressure, diabetes and malaria are common in many communities, and some of them cause no obvious symptoms in the early stages. A person can live with raised blood pressure or blood sugar for a long time without knowing. By the time symptoms appear, the condition may already be affecting the heart, kidneys, eyes or other organs. Bringing screening, advice and treatment to one location, free of charge, gives people a chance to find out where they stand while problems are still easier to manage.',
+  '## What the community received',
+  'Everyone who came to Health Fair 3.0 had access to a range of services.',
+  'Health education sessions. Before and alongside the screenings, volunteers shared practical information on staying healthy, recognising warning signs and knowing when to seek care.',
+  'Free health checks. Participants could have their vital signs checked, including blood pressure, blood glucose and BMI. Malaria and HPV screening were also available.',
+  'Free medical consultations. Participants could speak directly with healthcare professionals about their results and any health concerns, ask questions and get guidance on what to do next.',
+  'Free medication. A diagnosis is only useful if it can be followed by treatment. By providing medication on site, the outreach helped ensure that people left with more than a test result.',
+  '## The people involved',
+  'Reaching so many people in one day took careful planning and a lot of coordination. BUAMS brought together volunteers to run the screenings, consultations and health talks, while we provided funding and organisational support, contributing ₦350,000 to the programme and deploying four volunteers to help it run smoothly.',
+  'For the students involved, an outreach like this is also a chance to put their training into practice: listening to patients, explaining health information in plain language and seeing first-hand the health needs of the communities they will one day serve.',
+  '## The impact',
+  'We reached 500 people, making Health Fair 3.0 the largest outreach TAZhealth has carried out to date. Each of those 500 people received some combination of education, screening, consultation and treatment they might not otherwise have had access to.',
+  'This event builds on work that began with our first outreach at Yemisi Alogi Orphanage and Children’s Home in Abeokuta in April 2025. Since then, the team has delivered outreaches focused on malaria prevention, community screening, maternal health and heart health, allowing us to directly reach a total of 1,018 people so far.',
+  '## The future and beyond',
+  'The outreach in Sagamu gave community members access to healthcare services they need. But the end goal is bigger: communities that are more health conscious and that take an active part in looking after their own health.',
+  'We are grateful to BUAMS, to every volunteer who gave their time, and to the people of Sagamu who came out to take charge of their health. We look forward to reaching more communities in the months ahead.']
+
+},
+{
   slug: 'know-your-blood-pressure',
   title: 'High blood pressure has no symptoms. Here’s why you should check yours.',
   category: 'Health Tips',

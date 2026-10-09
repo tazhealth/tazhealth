@@ -7,14 +7,11 @@ import { TestimonialSlider } from '@/components/home/TestimonialSlider';
 // import { TazAiShowcase } from '@/components/home/TazAiShowcase';
 import { PartnersStrip } from '@/components/home/PartnersStrip';
 import { ButtonLink } from '@/components/ui/ButtonLink';
-import { CountUp } from '@/components/ui/CountUp';
 import { ArticleCard } from '@/components/blog/ArticleCard';
 import { articles } from '@/data/articles';
 import { GalleryGrid } from '@/components/ui/GalleryGrid';
 import { Reveal, RevealGroup, RevealItem } from '@/components/ui/Reveal';
 import { gallery, images } from '@/data/images';
-import { outreachImpact } from '@/data/impact';
-import { cn } from '@/utils/cn';
 
 export const metadata: Metadata = {
   title: { absolute: 'TAZhealth | Free Medical Outreaches for Underserved Nigerian Communities' },
@@ -80,20 +77,6 @@ export default function Home() {
             )}
           </RevealGroup>
         </div>
-      </section>
-
-      {/* Numbers */}
-      <section className="bg-forest py-14 text-white lg:py-16" aria-label="Our impact so far">
-        <ul className="mx-auto grid max-w-6xl grid-cols-2 gap-y-10 px-5 sm:px-8 lg:grid-cols-4">
-          {outreachImpact.map((s, i) =>
-          <li key={s.label} className={cn('text-center', i > 0 && 'lg:border-l lg:border-white/15')}>
-              <p className="text-4xl font-semibold tracking-tight text-white sm:text-5xl">
-                <CountUp to={s.value} prefix={s.prefix} suffix={s.suffix} />
-              </p>
-              <p className="mt-1 text-[15px] text-white/75">{s.label}</p>
-            </li>
-          )}
-        </ul>
       </section>
 
       {/* Voices */}
